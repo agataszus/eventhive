@@ -1,0 +1,13 @@
+@import "../../styles/variables";
+
+.button {
+  background: $color-primary;
+
+  &:hover {
+    color: red;
+  }
+}
+
+.button__text {
+  font-family: sans-serif;
+}
