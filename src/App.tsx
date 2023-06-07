@@ -1,35 +1,36 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-// eslint-disable-next-line import/no-unresolved
-import viteLogo from "/vite.svg";
-import "./App.css";
+import { AuthTokenContextProvider } from "./components/authTokenContextProvider/AuthTokenContextProvider";
+// import { Button } from "./components/button/Button";
+import { ChangePasswordForm } from "./components/changePasswordForm/ChangePasswordForm";
+import { LoginForm } from "./components/loginForm/LoginForm";
+// import { registerUser } from "./services/api/auth/registerUser";
+// import { registerOrganization } from "./services/api/auth/registerOrganization";
+import "./styles/_global.scss";
+import { ProfileForm } from "./components/profileForm/ProfileForm";
+import { UpdateProfileForm } from "./components/updateProfileForm/UpdateProfileForm";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <AuthTokenContextProvider>
+      {/* <Button
+        text="Register"
+        onClick={() => {
+          registerUser({ email: "agata@qwe.com", password: "123QweAgata" });
+        }}
+      /> */}
+      {/* <Button
+        text="Register Organization"
+        onClick={() => {
+          registerOrganization({
+            email: "organization@test.test",
+            password: "123TestOrg",
+          });
+        }}
+      /> */}
+      <LoginForm />
+      <ChangePasswordForm />
+      <ProfileForm />
+      <UpdateProfileForm />
+    </AuthTokenContextProvider>
   );
 }
 
