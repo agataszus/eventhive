@@ -1,20 +1,6 @@
-import { ProfileDto, UserDto } from "../api-types.gen";
 import { apiClient } from "../client";
 import { getProfileRoute } from "../routes";
-
-export type CreateUserProfileDto = {
-  firstName: string;
-  lastName: string;
-  region: ProfileDto.RegionEnum;
-};
-export type ActionsReturnUserProfileDto = Omit<
-  UserDto,
-  | "password"
-  | "organizationProfile"
-  | "profile.eventLikes"
-  | "profile.tickets"
-  | "profile.payments"
-> & { organizationProfile: boolean | null };
+import { ActionsReturnUserProfileDto, CreateUserProfileDto } from "./types";
 
 export const createUserProfile = async (
   userData: CreateUserProfileDto,

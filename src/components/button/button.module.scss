@@ -2,9 +2,21 @@
 
 .button {
   background: $color-primary;
+  padding: $space-3 $space-8;
+  color: inherit;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  font-weight: $font-weight-1;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px #1d1d1d;
+  flex-grow: 1;
+  border: 2px solid $color-primary;
+  letter-spacing: 1.2px;
 
   &:hover {
-    color: red;
+    background-color: $color-secondary;
+    border: 2px solid $color-secondary;
   }
 }
 

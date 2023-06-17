@@ -1,11 +1,11 @@
 import { apiClient } from "../client";
-import { getEventsRoute } from "../routes";
+import { getOrganizationEventsRoute } from "../routes";
 import { AllEventsDto } from "./types";
 
-export const getEvents = async (token: string) => {
+export const getOrganizationEvents = async (token: string) => {
   const data = await apiClient<undefined, AllEventsDto>({
     method: "GET",
-    route: getEventsRoute(),
+    route: getOrganizationEventsRoute(),
     token,
   });
 

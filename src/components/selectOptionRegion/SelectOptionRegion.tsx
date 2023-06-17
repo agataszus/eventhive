@@ -1,13 +1,15 @@
+import styles from "./selectRegion.module.scss";
+
 type SelectOptionRegionProps = {
   name: string;
 };
 
 export const SelectOptionRegion = ({ name }: SelectOptionRegionProps) => {
   return (
-    <>
-      <label>
+    <div className={styles.selectContainer}>
+      <label className={styles.selectLabel}>
         Select Region:
-        <select name={name}>
+        <select className={styles.select} name={name}>
           <option value="">--- Select ---</option>
           <option value="PL">PL</option>
           <option value="US">US</option>
@@ -17,6 +19,6 @@ export const SelectOptionRegion = ({ name }: SelectOptionRegionProps) => {
           <option value="IT">IT</option>
         </select>
       </label>
-    </>
+    </div>
   );
 };

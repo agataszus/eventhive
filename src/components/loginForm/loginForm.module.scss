@@ -1,0 +1,14 @@
+@import "../../styles/variables";
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+}
+
+.button {
+  margin-top: $space-6;
+  width: 100%;
+  display: flex;
+  justify-content: stretch;
+}

@@ -196,7 +196,7 @@ export interface CreateTicketTypeDto {
    * @type {string}
    * @memberof CreateTicketTypeDto
    */
-  availableTillDate?: string;
+  availableTillDate?: string | null;
 }
 /**
  *
@@ -287,19 +287,19 @@ export interface EventDto {
    * @type {Array<EventFileDto>}
    * @memberof EventDto
    */
-  files: Array<EventFileDto>;
+  files?: Array<EventFileDto>;
   /**
    *
    * @type {Array<EventLikeDto>}
    * @memberof EventDto
    */
-  likes: Array<EventLikeDto>;
+  likes?: Array<EventLikeDto>;
   /**
    *
    * @type {Array<TicketTypeDto>}
    * @memberof EventDto
    */
-  ticketTypes: Array<TicketTypeDto>;
+  ticketTypes?: Array<TicketTypeDto>;
   /**
    *
    * @type {Date}
@@ -422,7 +422,10 @@ export interface EventLikeDto {
  * @export
  * @interface GetPotentialPaymentDto
  */
-export interface GetPotentialPaymentDto {}
+export interface GetPotentialPaymentDto {
+  tickets: PaymentTicketDto[];
+  paymentMethod: CreatePaymentDto.PaymentMethodEnum;
+}
 /**
  *
  * @export
@@ -581,13 +584,13 @@ export interface OrganizationProfileDto {
    * @type {Array<EventDto>}
    * @memberof OrganizationProfileDto
    */
-  events: Array<EventDto>;
+  events?: Array<EventDto>;
   /**
    *
    * @type {UserDto}
    * @memberof OrganizationProfileDto
    */
-  user: UserDto;
+  user?: UserDto;
   /**
    *
    * @type {Date}
@@ -789,19 +792,19 @@ export interface ProfileDto {
    * @type {Array<EventLikeDto>}
    * @memberof ProfileDto
    */
-  eventLikes: Array<EventLikeDto>;
+  eventLikes?: Array<EventLikeDto>;
   /**
    *
    * @type {Array<TicketDto>}
    * @memberof ProfileDto
    */
-  tickets: Array<TicketDto>;
+  tickets?: Array<TicketDto>;
   /**
    *
    * @type {Array<PaymentDto>}
    * @memberof ProfileDto
    */
-  payments: Array<PaymentDto>;
+  payments?: Array<PaymentDto>;
   /**
    *
    * @type {Date}
@@ -943,19 +946,19 @@ export interface TicketTypeDto {
    * @type {string}
    * @memberof TicketTypeDto
    */
-  availableTillDate: string;
+  availableTillDate: string | null;
   /**
    *
    * @type {EventDto}
    * @memberof TicketTypeDto
    */
-  event: EventDto;
+  event?: EventDto;
   /**
    *
    * @type {Array<TicketDto>}
    * @memberof TicketTypeDto
    */
-  tickets: Array<TicketDto>;
+  tickets?: Array<TicketDto>;
   /**
    *
    * @type {Date}

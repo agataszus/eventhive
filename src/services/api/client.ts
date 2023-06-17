@@ -33,7 +33,7 @@ export const apiClient = async <Payload, ResponseData>({
   const response = await fetch(route, options);
   const data = await response.json();
 
-  if (!response.ok) throw new Error(data?.error?.message ?? "Unknown error");
+  if (!response.ok) throw new Error(data?.message ?? "Unknown error");
 
   return data as ResponseData;
 };

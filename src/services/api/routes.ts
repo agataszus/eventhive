@@ -17,7 +17,7 @@ export const getCancelEventRoute = (id: number) =>
 export const getLikeEventRoute = (id: number) => `${getEventRoute(id)}/like`;
 export const getUnlikeEventRoute = (id: number) =>
   `${getEventRoute(id)}/unlike`;
-export const getEventStats = (id: number) => `${getEventRoute(id)}/stats`;
+export const getEventStatsRoute = (id: number) => `${getEventRoute(id)}/stats`;
 export const getOrganizationEventsRoute = () => `${getEventsRoute()}/mine`;
 
 // PROFILE
@@ -32,3 +32,10 @@ export const getTicketTypeRoute = (eventId: number, id: number) =>
 export const getUserTicketsRoute = () =>
   `${getMainUrl()}/event-ticket/instance`;
 export const getTicketRoute = (id: number) => `${getUserTicketsRoute()}/${id}`;
+
+// PAYMENT
+export const getPaymentRoute = () => `${getMainUrl()}/payment`;
+export const getPaymentDetailsRoute = (id: number) =>
+  `${getPaymentRoute()}/${id}`;
+export const getPotentialPaymentDetailsRoute = () =>
+  `${getMainUrl()}/calculate`;

@@ -1,0 +1,37 @@
+@import "../../styles/variables";
+
+.selectContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $space-2;
+}
+
+.selectLabel {
+  font-size: $font-size-1;
+  font-weight: $font-weight-3;
+  letter-spacing: 0.8px;
+}
+
+.select {
+  width: 100%;
+  padding: $space-3 $space-5;
+  margin: $space-2 0;
+  box-sizing: border-box;
+  background-color: $background-color-dark;
+  border-radius: 8px;
+  border: 2px solid $color-primary;
+  color: $font-color-light;
+  font-size: $font-size-3;
+  font-weight: $font-weight-2;
+
+  &::placeholder {
+    font-size: $font-size-3;
+    font-weight: $font-weight-2;
+    color: $color-primary;
+  }
+
+  :focus {
+    border: 2px solid $color-secondary;
+  }
+}

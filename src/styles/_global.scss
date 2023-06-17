@@ -1,3 +1,4 @@
+@import "./variables";
 /*
   CSS Reset
   http://meyerweb.com/eric/tools/css/reset/ 
@@ -128,4 +129,36 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+body {
+  font-family: $font-family, sans-serif;
+  color: $font-color-light;
+  background-color: $background-color-dark;
+  font-size: 16px;
+  font-weight: $font-weight-1;
+}
+
+h1 {
+  font-size: 42px;
+  font-weight: $font-weight-3;
+  letter-spacing: 0.8px;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: $font-weight-2;
+  letter-spacing: 0.8px;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: $font-weight-2;
+  letter-spacing: 0.7px;
+}
+
+p {
+  font-size: 18px;
+  font-weight: $font-weight-1;
+  line-height: 1.5;
 }

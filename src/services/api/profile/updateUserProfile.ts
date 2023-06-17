@@ -1,15 +1,9 @@
-import { ProfileDto } from "../api-types.gen";
 import { apiClient } from "../client";
 import { getProfileRoute } from "../routes";
-
-export type UpdateUserProfileDto = {
-  firstName?: string;
-  lastName?: string;
-  region?: ProfileDto.RegionEnum;
-};
+import { CreateUserProfileDto } from "./types";
 
 export const updateUserProfile = async (
-  userData: UpdateUserProfileDto,
+  userData: Partial<CreateUserProfileDto>,
   token: string
 ) => {
   const data = await apiClient({
