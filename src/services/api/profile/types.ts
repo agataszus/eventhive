@@ -20,3 +20,5 @@ export type CreateOrganizationProfileDto = {
 };
 
 export type OrganizationAccountDto = Omit<UserDto, "password" | "profile">;
+
+export type UpdateUserProfileDto = Partial<CreateUserProfileDto>;
