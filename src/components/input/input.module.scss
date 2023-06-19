@@ -9,7 +9,7 @@
 
 .inputLabel {
   font-size: $font-size-1;
-  font-weight: $font-weight-3;
+  font-weight: $font-weight-medium;
   letter-spacing: 0.8px;
 }
 
@@ -23,11 +23,11 @@
   border: 2px solid $color-primary;
   color: $font-color-light;
   font-size: $font-size-3;
-  font-weight: $font-weight-2;
+  font-weight: $font-weight-regular;
 
   &::placeholder {
     font-size: $font-size-3;
-    font-weight: $font-weight-2;
+    font-weight: $font-weight-regular;
     color: $color-primary;
   }
 

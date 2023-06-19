@@ -27,9 +27,24 @@ export const ChangePasswordForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Input labelText="Email" name="emailValue" />
-      <Input labelText="Password" name="passwordValue" />
-      <Input labelText="New password" name="newPasswordValue" />
+      <Input
+        labelText="Email"
+        name="emailValue"
+        type="text"
+        placeholder="Your email"
+      />
+      <Input
+        labelText="Password"
+        name="passwordValue"
+        type="password"
+        placeholder="Your password"
+      />
+      <Input
+        labelText="New password"
+        name="newPasswordValue"
+        type="password"
+        placeholder="New password"
+      />
       <Button text="Log in" />
     </form>
   );
