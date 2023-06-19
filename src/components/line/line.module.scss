@@ -1,0 +1,8 @@
+@import "../../styles/variables";
+
+.line {
+  width: 100%;
+  height: 0;
+  border-bottom: 2px solid $font-color-light-secondary;
+  opacity: 20%;
+}

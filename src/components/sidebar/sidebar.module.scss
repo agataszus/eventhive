@@ -1,0 +1,21 @@
+@import "../../styles/variables";
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  height: 100%;
+}
+
+.logo {
+  padding: 0 $space-6;
+}
+
+.line {
+  padding: 0 $space-4;
+}
+
+.profile {
+  padding: 0 $space-7 $space-6;
+  margin-top: auto;
+}

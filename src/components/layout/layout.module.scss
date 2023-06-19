@@ -1,0 +1,17 @@
+@import "../../styles/variables";
+
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 320px;
+  background-color: $background-color-dark;
+}
+
+.content {
+  width: 100%;
+  background-color: $background-color-medium;
+  overflow-y: scroll;
+}

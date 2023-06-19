@@ -1,0 +1,26 @@
+@import "../../styles/variables";
+
+.action-1 {
+  font-size: $font-size-3;
+  font-weight: $font-weight-medium;
+  color: $font-color-light-secondary;
+}
+
+.subtitle-1 {
+  font-size: $font-size-3;
+  font-weight: $font-weight-medium;
+  color: $font-color-light;
+  text-transform: uppercase;
+}
+
+.caption-1 {
+  font-size: $font-size-4;
+  font-weight: $font-weight-medium;
+  color: $font-color-light-secondary;
+}
+
+.caption-2 {
+  font-size: $font-size-2;
+  font-weight: $font-weight-medium;
+  color: $font-color-light-secondary;
+}

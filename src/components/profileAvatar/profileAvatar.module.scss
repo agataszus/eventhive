@@ -1,0 +1,35 @@
+@import "../../styles/variables";
+
+.profileAvatar {
+  display: flex;
+  gap: $space-6;
+  align-items: center;
+}
+
+.image {
+  width: 72px;
+  height: auto;
+  border-radius: 100%;
+  border: 1px solid $color-primary;
+}
+
+.imageContainer {
+  position: relative;
+}
+
+.imageContainer::after {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  background-color: $color-primary;
+  border-radius: 100%;
+  position: absolute;
+  right: 2px;
+  bottom: 6px;
+}
+
+.nameContainer {
+  display: flex;
+  flex-direction: column;
+}
