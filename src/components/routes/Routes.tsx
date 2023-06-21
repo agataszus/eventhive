@@ -3,6 +3,7 @@ import {
   createBrowserRouter,
 } from "react-router-dom";
 import { Layout } from "../layout/Layout";
+import { HomePage } from "../../pages/dashboard/homePage/HomePage";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "home",
-        element: <div>Dashboard home page</div>,
+        element: <HomePage />,
       },
       {
         path: "liked-events",

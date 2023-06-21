@@ -1,0 +1,45 @@
+@import "../../styles/variables";
+
+.searchContainer {
+  display: flex;
+  gap: $space-3;
+  height: 34px;
+}
+
+.searchInput {
+  width: 240px;
+  border-radius: 32px;
+  font-size: $font-size-2;
+  padding: 0 $space-4;
+  background-color: inherit;
+  color: $font-color-light-secondary;
+  border: 1px solid $font-color-light-secondary;
+  opacity: 50%;
+
+  &::placeholder {
+    color: $font-color-light-secondary;
+    font-size: $font-size-2;
+  }
+
+  &:focus {
+    outline: none;
+    opacity: 100%;
+  }
+}
+
+.button {
+  background-color: $color-primary;
+  width: 34px;
+  height: 34px;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.icon {
+  fill: $font-color-light;
+  width: 16px;
+  height: auto;
+}

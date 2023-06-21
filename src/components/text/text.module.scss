@@ -1,12 +1,38 @@
 @import "../../styles/variables";
 
 .action-1 {
+  font-size: $font-size-4;
+  font-weight: $font-weight-medium;
+  color: $font-color-light-secondary;
+}
+
+.action-2 {
   font-size: $font-size-3;
   font-weight: $font-weight-medium;
   color: $font-color-light-secondary;
 }
 
+.action-3 {
+  font-size: $font-size-2;
+  font-weight: $font-weight-medium;
+  color: $font-color-light;
+  text-decoration: underline;
+}
+
 .subtitle-1 {
+  font-size: $font-size-4;
+  font-weight: $font-weight-semibold;
+  color: $color-secondary;
+}
+
+.subtitle-2 {
+  font-size: $font-size-4;
+  font-weight: $font-weight-medium;
+  color: $font-color-light-secondary;
+  text-transform: uppercase;
+}
+
+.subtitle-3 {
   font-size: $font-size-3;
   font-weight: $font-weight-medium;
   color: $font-color-light;
@@ -23,4 +49,31 @@
   font-size: $font-size-2;
   font-weight: $font-weight-medium;
   color: $font-color-light-secondary;
+}
+
+.caption-3 {
+  font-size: $font-size-2;
+  font-weight: $font-weight-medium;
+  color: $font-color-light;
+}
+
+.heading-1 {
+  font-size: $font-size-12;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.2px;
+  color: $font-color-light;
+}
+
+.heading-2 {
+  font-size: $font-size-6;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 2px;
+  color: $font-color-light-secondary;
+  text-transform: uppercase;
+}
+
+.num-1 {
+  font-size: $font-size-7;
+  font-weight: $font-weight-semibold;
+  color: $font-color-light;
 }

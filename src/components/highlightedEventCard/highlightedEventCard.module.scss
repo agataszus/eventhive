@@ -1,0 +1,49 @@
+@import "../../styles/variables";
+
+.card {
+  width: 100%;
+  height: 525px;
+  display: flex;
+  justify-content: space-between;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.65) 30%,
+      rgba(255, 255, 255, 0) 70%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url(../../assets/orangeWarsaw.jpeg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 14px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  margin: auto 0;
+  gap: $space-5;
+  padding: $space-8;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: $space-7;
+}
+
+.button {
+  width: 180px;
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: $space-4;
+  margin-top: $space-3;
+}
+
+.dateContainer {
+  padding: $space-8;
+  margin-top: auto;
+}

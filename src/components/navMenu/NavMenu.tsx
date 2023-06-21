@@ -15,7 +15,7 @@ export const NavMenu = () => {
           <Link to="/dashboard/home">
             <div className={styles.linkLabel}>
               <Home2LineIcon className={styles.icon} />
-              <Text tag="p" variant="action-1">
+              <Text tag="p" variant="action-2">
                 Home
               </Text>
             </div>
@@ -24,7 +24,7 @@ export const NavMenu = () => {
         <li className={styles.link}>
           <div className={styles.linkLabel}>
             <HeartLineIcon className={styles.icon} />
-            <Text tag="p" variant="action-1">
+            <Text tag="p" variant="action-2">
               Liked events
             </Text>
           </div>
@@ -32,7 +32,7 @@ export const NavMenu = () => {
         <li className={styles.link}>
           <div className={styles.linkLabel}>
             <Coupon2LineIcon className={styles.icon} />
-            <Text tag="p" variant="action-1">
+            <Text tag="p" variant="action-2">
               My tickets
             </Text>
           </div>
@@ -40,7 +40,7 @@ export const NavMenu = () => {
         <li className={styles.link}>
           <div className={styles.linkLabel}>
             <RoadMapLineIcon className={styles.icon} />
-            <Text tag="p" variant="action-1">
+            <Text tag="p" variant="action-2">
               Map
             </Text>
           </div>
@@ -51,43 +51,48 @@ export const NavMenu = () => {
       </div>
       <div className={styles.menu}>
         <div className={styles.link}>
-          <Text tag="h4" variant="subtitle-1">
+          <Text tag="h4" variant="subtitle-3">
             Categories
           </Text>
         </div>
         <ul className={styles.categoriesMenu}>
           <li className={styles.link}>
-            <Text tag="p" variant="action-1">
+            <Text tag="p" variant="action-2">
+              Music
+            </Text>
+          </li>
+          <li className={styles.link}>
+            <Text tag="p" variant="action-2">
               Pop
             </Text>
           </li>
           <li className={styles.link}>
-            <Text tag="p" variant="action-1">
+            <Text tag="p" variant="action-2">
               Electronic
             </Text>
           </li>
           <li className={styles.link}>
-            <Text tag="p" variant="action-1">
+            <Text tag="p" variant="action-2">
               Rock
             </Text>
           </li>
           <li className={styles.link}>
-            <Text tag="p" variant="action-1">
+            <Text tag="p" variant="action-2">
               Classical
             </Text>
           </li>
           <li className={styles.link}>
-            <Text tag="p" variant="action-1">
+            <Text tag="p" variant="action-2">
               Country
             </Text>
           </li>
           <li className={styles.link}>
-            <Text tag="p" variant="action-1">
+            <Text tag="p" variant="action-2">
               Alternative
             </Text>
           </li>
           <li className={styles.link}>
-            <Text tag="p" variant="action-1">
+            <Text tag="p" variant="action-2">
               Film Music
             </Text>
           </li>

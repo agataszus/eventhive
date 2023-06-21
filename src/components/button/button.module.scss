@@ -2,24 +2,14 @@
 
 .button {
   background: $color-primary;
-  padding: $space-3 $space-8;
-  color: inherit;
-  border: none;
-  font: inherit;
-  cursor: pointer;
-  font-weight: $font-weight-light;
-  border-radius: 8px;
+  height: 38px;
+  border-radius: 32px;
   box-shadow: 0 4px 16px #1d1d1d;
-  flex-grow: 1;
-  border: 2px solid $color-primary;
+  // flex-grow: 1;
+  width: 100%;
   letter-spacing: 1.2px;
 
   &:hover {
     background-color: $color-secondary;
-    border: 2px solid $color-secondary;
   }
-}
-
-.button__text {
-  font-family: sans-serif;
 }

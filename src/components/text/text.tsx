@@ -4,12 +4,18 @@ import styles from "./text.module.scss";
 type Tag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span" | "div";
 
 type Variant =
-  // | "heading-1"
-  // | "heading-2"
-  // | "heading-3"
-  // | "paragraph"
-  // | "subtitle"
-  "action-1" | "subtitle-1" | "caption-1" | "caption-2";
+  | "action-1"
+  | "action-2"
+  | "action-3"
+  | "subtitle-1"
+  | "subtitle-2"
+  | "subtitle-3"
+  | "caption-1"
+  | "caption-2"
+  | "caption-3"
+  | "heading-1"
+  | "heading-2"
+  | "num-1";
 
 type TextProps = {
   children: ReactNode;
