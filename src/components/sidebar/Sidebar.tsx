@@ -1,4 +1,4 @@
-import { Line } from "../line/Line";
+import { Divider } from "../divider/Divider";
 import { Logo } from "../logo/Logo";
 import { NavMenu } from "../navMenu/NavMenu";
 import { ProfileAvatar } from "../profileAvatar/ProfileAvatar";
@@ -10,14 +10,14 @@ export const Sidebar = () => {
       <div className={styles.logo}>
         <Logo />
       </div>
-      <div className={styles.line}>
-        <Line />
+      <div className={styles.divider}>
+        <Divider />
       </div>
       <div>
         <NavMenu />
       </div>
-      <div className={styles.line}>
-        <Line />
+      <div className={styles.divider}>
+        <Divider />
       </div>
       <div className={styles.profile}>
         <ProfileAvatar />
