@@ -7,12 +7,18 @@
 }
 
 .action-2 {
+  font-size: $font-size-4;
+  font-weight: $font-weight-medium;
+  color: $font-color-light;
+}
+
+.action-3 {
   font-size: $font-size-3;
   font-weight: $font-weight-medium;
   color: $font-color-light-secondary;
 }
 
-.action-3 {
+.action-4 {
   font-size: $font-size-2;
   font-weight: $font-weight-medium;
   color: $font-color-light;
@@ -31,12 +37,18 @@
   color: $font-color-light-secondary;
   text-transform: uppercase;
 }
-
-.subtitle-3 {
+ś .subtitle-3 {
   font-size: $font-size-3;
   font-weight: $font-weight-medium;
   color: $font-color-light;
   text-transform: uppercase;
+}
+
+.subtitle-4 {
+  font-size: $font-size-2;
+  font-weight: $font-weight-regular;
+  letter-spacing: 0.3px;
+  color: $color-secondary;
 }
 
 .caption-1 {
@@ -47,7 +59,9 @@
 
 .caption-2 {
   font-size: $font-size-2;
-  font-weight: $font-weight-medium;
+  font-weight: $font-weight-light;
+  line-height: 1.5;
+  letter-spacing: 0.3px;
   color: $font-color-light-secondary;
 }
 

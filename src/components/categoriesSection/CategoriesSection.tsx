@@ -1,6 +1,6 @@
 import { CategoryTile } from "../categoryTile/CategoryTile";
 import { Text } from "../text/text";
-import styles from "./categoriesBox.module.scss";
+import styles from "./categoriesSection.module.scss";
 import ArrowRightSLineIcon from "remixicon-react/ArrowRightSLineIcon";
 import ArrowLeftSLineIcon from "remixicon-react/ArrowLeftSLineIcon";
 import festivals from "../../assets/categories/festivals.jpg";
@@ -12,9 +12,9 @@ import country from "../../assets/categories/country.jpg";
 import alternative from "../../assets/categories/alternative.jpg";
 import film from "../../assets/categories/film.jpg";
 
-export const CategoriesBox = () => {
+export const CategoriesSection = () => {
   return (
-    <div className={styles.categoriesBox}>
+    <div className={styles.categoriesSection}>
       <div className={styles.titleLabel}>
         <Text tag="h3" variant="subtitle-2">
           Categories

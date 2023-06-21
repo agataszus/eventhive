@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import styles from "./text.module.scss";
+import classNames from "classnames";
 
 type Tag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span" | "div";
 
@@ -7,9 +8,11 @@ type Variant =
   | "action-1"
   | "action-2"
   | "action-3"
+  | "action-4"
   | "subtitle-1"
   | "subtitle-2"
   | "subtitle-3"
+  | "subtitle-4"
   | "caption-1"
   | "caption-2"
   | "caption-3"
@@ -21,10 +24,11 @@ type TextProps = {
   children: ReactNode;
   tag: Tag;
   variant: Variant;
+  extraClass?: string;
 };
 
-export const Text = ({ children, tag, variant }: TextProps) => {
-  const className = styles[variant];
+export const Text = ({ children, tag, variant, extraClass }: TextProps) => {
+  const className = classNames(styles[variant], extraClass);
 
   switch (tag) {
     case "h1":

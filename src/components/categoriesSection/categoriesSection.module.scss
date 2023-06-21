@@ -1,0 +1,30 @@
+@import "../../styles/variables";
+
+.categoriesSection {
+  display: flex;
+  flex-direction: column;
+  padding: $space-8 $space-6;
+  background-color: $background-color-medium-dark;
+  gap: $space-6;
+}
+
+.titleLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  width: 24px;
+  height: auto;
+  fill: $font-color-light-secondary;
+  cursor: pointer;
+}
+
+.categories {
+  width: 100%;
+  display: flex;
+  gap: $space-7;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}

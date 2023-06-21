@@ -16,7 +16,7 @@ export const HighlightedEventCard = () => {
             Biggest music festival in Warsaw
           </Text>
         </div>
-        <Text tag="p" variant="action-3">
+        <Text tag="p" variant="action-4">
           Read more
         </Text>
         <div className={styles.buttonsContainer}>

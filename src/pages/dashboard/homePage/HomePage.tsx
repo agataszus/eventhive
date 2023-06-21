@@ -1,6 +1,6 @@
-import { CategoriesBox } from "../../../components/categoriesBox/CategoriesBox";
+import { CategoriesSection } from "../../../components/categoriesSection/CategoriesSection";
+import { PopularEventsSection } from "../../../components/popularEventsSection/PopularEventsSection";
 import { HighlightedEventCard } from "../../../components/highlightedEventCard/HighlightedEventCard";
-import { PopularEvents } from "../../../components/popularEvents/PopularEvents";
 import { TopBar } from "../../../components/topBar/TopBar";
 import styles from "./homePage.module.scss";
 
@@ -14,11 +14,11 @@ export const HomePage = () => {
         <div className={styles.content}>
           <HighlightedEventCard />
         </div>
-        <div className={styles.categoriesBox}>
-          <CategoriesBox />
+        <div className={styles.categoriesSection}>
+          <CategoriesSection />
         </div>
         <div>
-          <PopularEvents />
+          <PopularEventsSection />
         </div>
       </div>
     </div>
