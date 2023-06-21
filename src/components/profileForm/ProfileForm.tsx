@@ -13,10 +13,10 @@ export const ProfileForm = () => {
     event.preventDefault();
 
     const profileFormData = new FormData(event.target as HTMLFormElement);
-    const firstNameValue = profileFormData.get("firstNameValue") as string;
-    const lastNameValue = profileFormData.get("lastNameValue") as string;
+    const firstNameValue = profileFormData.get("firstName") as string;
+    const lastNameValue = profileFormData.get("lastName") as string;
     const regionValue = profileFormData.get(
-      "regionValue"
+      "region"
     ) as unknown as ProfileDto.RegionEnum;
 
     const userData: CreateUserProfileDto = {
@@ -33,17 +33,17 @@ export const ProfileForm = () => {
     <form onSubmit={handleSubmit}>
       <Input
         labelText="First Name"
-        name="firstNameValue"
+        name="firstName"
         type="text"
         placeholder="Your name"
       />
       <Input
         labelText="Last Name"
-        name="lastNameValue"
+        name="lastName"
         type="text"
         placeholder="Your last name"
       />
-      <SelectOptionRegion name="regionValue" />
+      <SelectOptionRegion name="region" />
       <Button text="Save Profile" />
     </form>
   );

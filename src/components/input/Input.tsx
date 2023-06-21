@@ -10,7 +10,9 @@ type InputProps = {
 export const Input = ({ labelText, name, type, placeholder }: InputProps) => {
   return (
     <div className={styles.inputContainer}>
-      <label className={styles.inputLabel}>{labelText}</label>
+      <label className={styles.inputLabel} htmlFor={name}>
+        {labelText}
+      </label>
       <input
         className={styles.input}
         id={name}

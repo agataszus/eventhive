@@ -1,0 +1,11 @@
+@import "../../styles/variables";
+
+.icon {
+  fill: $font-color-light-secondary;
+}
+
+.linkLabel {
+  display: flex;
+  gap: $space-4;
+  align-items: center;
+}

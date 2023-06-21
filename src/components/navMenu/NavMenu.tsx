@@ -1,25 +1,24 @@
-import { Link } from "react-router-dom";
 import styles from "./navMenu.module.scss";
 import { Text } from "../text/text";
-import { Line } from "../line/Line";
+import { Divider } from "../divider/Divider";
 import Home2LineIcon from "remixicon-react/Home2LineIcon";
 import HeartLineIcon from "remixicon-react/HeartLineIcon";
 import Coupon2LineIcon from "remixicon-react/Coupon2LineIcon";
 import RoadMapLineIcon from "remixicon-react/RoadMapLineIcon";
+import { NavMenuLink } from "../navMenuLink/NavMenuLink";
+import { eventsCategories } from "../../services/api/event/eventsCategories";
+import { NavMenuCategory } from "../navMenuCategory/NavMenuCategory";
 
 export const NavMenu = () => {
   return (
     <div>
       <ul className={styles.menu}>
         <li className={styles.link}>
-          <Link to="/dashboard/home">
-            <div className={styles.linkLabel}>
-              <Home2LineIcon className={styles.icon} />
-              <Text tag="p" variant="action-3">
-                Home
-              </Text>
-            </div>
-          </Link>
+          <NavMenuLink
+            linkTo="/dashboard/home"
+            Icon={Home2LineIcon}
+            text="Home"
+          />
         </li>
         <li className={styles.link}>
           <div className={styles.linkLabel}>
@@ -46,8 +45,8 @@ export const NavMenu = () => {
           </div>
         </li>
       </ul>
-      <div className={styles.line}>
-        <Line />
+      <div className={styles.divider}>
+        <Divider />
       </div>
       <div className={styles.menu}>
         <div className={styles.link}>
@@ -56,46 +55,13 @@ export const NavMenu = () => {
           </Text>
         </div>
         <ul className={styles.categoriesMenu}>
-          <li className={styles.link}>
-            <Text tag="p" variant="action-3">
-              Music
-            </Text>
-          </li>
-          <li className={styles.link}>
-            <Text tag="p" variant="action-3">
-              Pop
-            </Text>
-          </li>
-          <li className={styles.link}>
-            <Text tag="p" variant="action-3">
-              Electronic
-            </Text>
-          </li>
-          <li className={styles.link}>
-            <Text tag="p" variant="action-3">
-              Rock
-            </Text>
-          </li>
-          <li className={styles.link}>
-            <Text tag="p" variant="action-3">
-              Classical
-            </Text>
-          </li>
-          <li className={styles.link}>
-            <Text tag="p" variant="action-3">
-              Country
-            </Text>
-          </li>
-          <li className={styles.link}>
-            <Text tag="p" variant="action-3">
-              Alternative
-            </Text>
-          </li>
-          <li className={styles.link}>
-            <Text tag="p" variant="action-3">
-              Film Music
-            </Text>
-          </li>
+          {Object.values(eventsCategories).map((category) => {
+            return (
+              <li className={styles.link} key={category}>
+                <NavMenuCategory label={category} />
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>
