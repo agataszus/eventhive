@@ -1,3 +1,4 @@
+import { DateTileSmall } from "../dateTileSmall/DateTileSmall";
 import { Text } from "../text/text";
 import styles from "./eventTile.module.scss";
 import HeartLineIcon from "remixicon-react/HeartLineIcon";
@@ -13,6 +14,9 @@ export const EventTile = ({ name, description, picture }: EventTileProps) => {
     <div className={styles.eventTile}>
       <div className={styles.imageBox}>
         <img src={picture} alt={name} className={styles.image} />
+        <div className={styles.dateTile}>
+          <DateTileSmall />
+        </div>
       </div>
       <Text tag="h4" variant="action-2">
         {name}

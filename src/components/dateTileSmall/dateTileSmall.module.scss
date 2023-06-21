@@ -1,0 +1,15 @@
+@import "../../styles/variables";
+
+.tile {
+  height: 54px;
+  width: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $space-1;
+  border: 2px solid $font-color-light;
+  background-color: $background-color-light;
+  border-radius: 8px;
+  opacity: 80%;
+}

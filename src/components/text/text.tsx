@@ -16,6 +16,7 @@ type Variant =
   | "caption-1"
   | "caption-2"
   | "caption-3"
+  | "caption-4"
   | "heading-1"
   | "heading-2"
   | "num-1";
