@@ -1,9 +1,9 @@
 import { apiClient } from "../client";
 import { getProfileRoute } from "../routes";
-import { CreateUserProfileDto } from "./types";
+import { UpdateUserProfileDto } from "./types";
 
 export const updateUserProfile = async (
-  userData: Partial<CreateUserProfileDto>,
+  userData: UpdateUserProfileDto,
   token: string
 ) => {
   const data = await apiClient({

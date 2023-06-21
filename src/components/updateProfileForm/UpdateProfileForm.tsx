@@ -1,8 +1,6 @@
 import { ProfileDto } from "../../services/api/api-types.gen";
-import {
-  UpdateUserProfileDto,
-  updateUserProfile,
-} from "../../services/api/profile/updateUserProfile";
+import { UpdateUserProfileDto } from "../../services/api/profile/types";
+import { updateUserProfile } from "../../services/api/profile/updateUserProfile";
 import { useAuthToken } from "../../services/authTokenStore/useAuthToken";
 import { Button } from "../button/Button";
 import { Input } from "../input/Input";
@@ -51,8 +49,18 @@ export const UpdateProfileForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Input labelText="First Name" name="firstNameValue" />
-      <Input labelText="Last Name" name="lastNameValue" />
+      <Input
+        labelText="First Name"
+        name="firstNameValue"
+        type="text"
+        placeholder="Your name"
+      />
+      <Input
+        labelText="Last Name"
+        name="lastNameValue"
+        type="text"
+        placeholder="Your last name"
+      />
       <SelectOptionRegion name="regionValue" />
       <Button text="Save Changes" />
     </form>

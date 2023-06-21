@@ -1,8 +1,6 @@
 import { ProfileDto } from "../../services/api/api-types.gen";
-import {
-  CreateUserProfileDto,
-  createUserProfile,
-} from "../../services/api/profile/createUserProfile";
+import { createUserProfile } from "../../services/api/profile/createUserProfile";
+import { CreateUserProfileDto } from "../../services/api/profile/types";
 import { useAuthToken } from "../../services/authTokenStore/useAuthToken";
 import { Button } from "../button/Button";
 import { Input } from "../input/Input";
@@ -15,10 +13,10 @@ export const ProfileForm = () => {
     event.preventDefault();
 
     const profileFormData = new FormData(event.target as HTMLFormElement);
-    const firstNameValue = profileFormData.get("firstNameValue") as string;
-    const lastNameValue = profileFormData.get("lastNameValue") as string;
+    const firstNameValue = profileFormData.get("firstName") as string;
+    const lastNameValue = profileFormData.get("lastName") as string;
     const regionValue = profileFormData.get(
-      "regionValue"
+      "region"
     ) as unknown as ProfileDto.RegionEnum;
 
     const userData: CreateUserProfileDto = {
@@ -33,9 +31,19 @@ export const ProfileForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Input labelText="First Name" name="firstNameValue" />
-      <Input labelText="Last Name" name="lastNameValue" />
-      <SelectOptionRegion name="regionValue" />
+      <Input
+        labelText="First Name"
+        name="firstName"
+        type="text"
+        placeholder="Your name"
+      />
+      <Input
+        labelText="Last Name"
+        name="lastName"
+        type="text"
+        placeholder="Your last name"
+      />
+      <SelectOptionRegion name="region" />
       <Button text="Save Profile" />
     </form>
   );
