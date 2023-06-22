@@ -1,0 +1,45 @@
+@import "../../styles/variables";
+
+.overlay {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $background-color-dark;
+  opacity: 0;
+  visibility: hidden;
+  // transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+  transition-property: opacity, visibility;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  z-index: 10;
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 100%;
+  background-color: $color-primary;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  transition-property: opacity, visibility;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  z-index: 11;
+}
+
+.overlayIcon {
+  fill: $font-color-light;
+  width: 24px;
+  height: auto;
+}

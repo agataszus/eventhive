@@ -5,6 +5,16 @@
   display: flex;
   flex-direction: column;
   gap: $space-4;
+
+  &:hover .overlay {
+    visibility: visible;
+    opacity: 60%;
+  }
+
+  &:hover .overlayIcon {
+    visibility: visible;
+    opacity: 100%;
+  }
 }
 
 .imageBox {
@@ -30,6 +40,15 @@
   }
 }
 
+.title {
+  height: 44px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 .image {
   width: 100%;
   height: 100%;
@@ -46,6 +65,7 @@
 }
 
 .description {
+  height: 42px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;

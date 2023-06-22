@@ -21,28 +21,13 @@ export const NavMenu = () => {
           />
         </li>
         <li className={styles.link}>
-          <div className={styles.linkLabel}>
-            <HeartLineIcon className={styles.icon} />
-            <Text tag="p" variant="action-3">
-              Liked events
-            </Text>
-          </div>
+          <NavMenuLink linkTo="/" Icon={HeartLineIcon} text="Liked events" />
         </li>
         <li className={styles.link}>
-          <div className={styles.linkLabel}>
-            <Coupon2LineIcon className={styles.icon} />
-            <Text tag="p" variant="action-3">
-              My tickets
-            </Text>
-          </div>
+          <NavMenuLink linkTo="/" Icon={Coupon2LineIcon} text="My tickets" />
         </li>
         <li className={styles.link}>
-          <div className={styles.linkLabel}>
-            <RoadMapLineIcon className={styles.icon} />
-            <Text tag="p" variant="action-3">
-              Map
-            </Text>
-          </div>
+          <NavMenuLink linkTo="/" Icon={RoadMapLineIcon} text="Map" />
         </li>
       </ul>
       <div className={styles.divider}>
@@ -58,7 +43,7 @@ export const NavMenu = () => {
           {Object.values(eventsCategories).map((category) => {
             return (
               <li className={styles.link} key={category}>
-                <NavMenuCategory label={category} />
+                <NavMenuCategory label={category} isActive={false} />
               </li>
             );
           })}

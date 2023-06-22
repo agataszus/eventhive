@@ -15,7 +15,9 @@
 }
 
 .link {
+  display: block;
   padding: 0 $space-8;
+  position: relative;
 }
 
 .icon {

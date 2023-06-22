@@ -1,0 +1,15 @@
+@import "../../styles/variables";
+
+.active {
+  display: block;
+  height: 40px;
+  width: 100%;
+  background-color: $color-primary;
+  border-top-right-radius: 32px;
+  border-bottom-right-radius: 32px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-15%, -50%);
+  z-index: 0;
+}

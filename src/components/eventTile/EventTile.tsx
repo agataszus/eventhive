@@ -3,6 +3,8 @@ import { Text } from "../text/text";
 import styles from "./eventTile.module.scss";
 import HeartLineIcon from "remixicon-react/HeartLineIcon";
 import alternativePic from "../../assets/no-picture.png";
+import EyeFillIcon from "remixicon-react/EyeFillIcon";
+import { SeeMoreOverlay } from "../seeMoreOverlay/SeeMoreOverlay";
 
 type EventTileProps = {
   name: string;
@@ -13,7 +15,6 @@ type EventTileProps = {
   key?: string;
 };
 
-export const EventTile = ({ name, description, picture }: EventTileProps) => {
 export const EventTile = ({
   name,
   description,
@@ -21,21 +22,37 @@ export const EventTile = ({
   day,
   month,
 }: EventTileProps) => {
+  // const overlayRef = useRef<HTMLDivElement>(null);
+
+  // const handleOnMouseEnter = () => {
+  //   overlayRef.current?.classList.add(styles.overlayShow);
+  // };
+
+  // const handleOnMouseLeave = () => {
+  //   overlayRef.current?.classList.remove(styles.overlayShow);
+  // };
+
   return (
-    <div className={styles.eventTile}>
+    <div
+      className={styles.eventTile}
+      // onMouseEnter={handleOnMouseEnter}
+      // onMouseLeave={handleOnMouseLeave}
+    >
       <div className={styles.imageBox}>
-        <img src={picture} alt={name} className={styles.image} />
+        <SeeMoreOverlay
+          overlayClass={styles.overlay}
+          iconClass={styles.overlayIcon}
+        />
         <img
           src={picture || alternativePic}
           alt={name}
           className={styles.image}
         />
         <div className={styles.dateTile}>
-          <DateTileSmall />
           <DateTileSmall day={day} month={month} />
         </div>
       </div>
-      <Text tag="h4" variant="action-2">
+      <Text tag="h4" variant="action-2" extraClass={styles.title}>
         {name}
       </Text>
       <Text tag="p" variant="caption-2" extraClass={styles.description}>
@@ -44,7 +61,6 @@ export const EventTile = ({
       <div className={styles.likesBox}>
         <HeartLineIcon className={styles.icon} />
         <Text tag="p" variant="subtitle-4">
-          1,758 likes
           {Math.round(1500 + Math.random() * 500)} likes
         </Text>
       </div>

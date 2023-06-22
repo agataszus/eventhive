@@ -3,14 +3,14 @@ import { Text } from "../text/text";
 import styles from "./categoriesSection.module.scss";
 import ArrowRightSLineIcon from "remixicon-react/ArrowRightSLineIcon";
 import ArrowLeftSLineIcon from "remixicon-react/ArrowLeftSLineIcon";
-import festivals from "../../assets/categories/festivals.jpg";
-import pop from "../../assets/categories/pop.jpg";
-import electronic from "../../assets/categories/electronic.jpg";
-import rock from "../../assets/categories/rock.jpg";
-import classical from "../../assets/categories/classical.jpg";
-import country from "../../assets/categories/country.jpg";
-import alternative from "../../assets/categories/alternative.jpg";
-import film from "../../assets/categories/film.jpg";
+import festivals from "../../assets/categories/festivals.png";
+import pop from "../../assets/categories/pop.png";
+import electronic from "../../assets/categories/electronic.png";
+import rock from "../../assets/categories/rock.png";
+import classical from "../../assets/categories/classical.png";
+import country from "../../assets/categories/country.png";
+import alternative from "../../assets/categories/alternative.png";
+import film from "../../assets/categories/film.png";
 
 export const CategoriesSection = () => {
   return (

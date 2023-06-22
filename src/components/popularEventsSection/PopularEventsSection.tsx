@@ -2,13 +2,15 @@ import { Text } from "../text/text";
 import styles from "./popularEventsSection.module.scss";
 import ArrowRightSLineIcon from "remixicon-react/ArrowRightSLineIcon";
 import ArrowLeftSLineIcon from "remixicon-react/ArrowLeftSLineIcon";
-import festivals from "../../assets/categories/festivals.jpg";
-import pop from "../../assets/categories/pop.jpg";
-import electronic from "../../assets/categories/electronic.jpg";
+// import festivals from "../../assets/categories/festivals.jpg";
+// import pop from "../../assets/categories/pop.jpg";
+// import electronic from "../../assets/categories/electronic.jpg";
 import { EventTile } from "../eventTile/EventTile";
 import { useEventsQuery } from "../../queries/useEventsQuery";
 
 export const PopularEventsSection = () => {
+  const { data: events } = useEventsQuery();
+
   return (
     <div className={styles.popularEventsSection}>
       <div className={styles.titleLabel}>
@@ -21,7 +23,6 @@ export const PopularEventsSection = () => {
         </div>
       </div>
       <div className={styles.events}>
-        <EventTile
         {events?.map((event) => {
           const date = new Date(event.startDate);
           const day = new Intl.DateTimeFormat("en-US", {
