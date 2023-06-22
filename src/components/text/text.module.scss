@@ -9,6 +9,7 @@
 .action-2 {
   font-size: $font-size-4;
   font-weight: $font-weight-medium;
+  line-height: 1.2;
   color: $font-color-light;
 }
 
@@ -37,7 +38,8 @@
   color: $font-color-light-secondary;
   text-transform: uppercase;
 }
-ś .subtitle-3 {
+
+.subtitle-3 {
   font-size: $font-size-3;
   font-weight: $font-weight-medium;
   color: $font-color-light;

@@ -4,11 +4,16 @@ import {
 } from "react-router-dom";
 import { Layout } from "../layout/Layout";
 import { HomePage } from "../../pages/dashboard/homePage/HomePage";
+import { LoginPage } from "../../pages/login/LoginPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <></>,
+  },
+  {
+    path: "/login",
+    element: <LoginPage />,
   },
   {
     path: "/dashboard",

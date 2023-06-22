@@ -6,6 +6,7 @@ import festivals from "../../assets/categories/festivals.jpg";
 import pop from "../../assets/categories/pop.jpg";
 import electronic from "../../assets/categories/electronic.jpg";
 import { EventTile } from "../eventTile/EventTile";
+import { useEventsQuery } from "../../queries/useEventsQuery";
 
 export const PopularEventsSection = () => {
   return (
@@ -21,6 +22,27 @@ export const PopularEventsSection = () => {
       </div>
       <div className={styles.events}>
         <EventTile
+        {events?.map((event) => {
+          const date = new Date(event.startDate);
+          const day = new Intl.DateTimeFormat("en-US", {
+            day: "numeric",
+          }).format(date);
+          const month = new Intl.DateTimeFormat("en-US", {
+            month: "short",
+          }).format(date);
+
+          return (
+            <EventTile
+              name={event.title}
+              description={event.description}
+              picture={event.externalImageUrls[0]}
+              key={`${event.id}`}
+              day={day}
+              month={month}
+            />
+          );
+        })}
+        {/* <EventTile
           name="Fest Festival"
           description="4 days, over 200 performances, and unforgettable emotions"
           picture={festivals}
@@ -49,7 +71,7 @@ export const PopularEventsSection = () => {
           name="Ultra Music Festival"
           description="The world's premier electronic music festival, boasting elite DJs and unparalleled production located in the beautiful city of Miami."
           picture={pop}
-        />
+        /> */}
       </div>
     </div>
   );
