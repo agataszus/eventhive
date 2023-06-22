@@ -5,6 +5,7 @@ import {
 import { Layout } from "../layout/Layout";
 import { HomePage } from "../../pages/dashboard/homePage/HomePage";
 import { LoginPage } from "../../pages/login/LoginPage";
+import { LikedEventsPage } from "../../pages/dashboard/likedEventsPage/LikedEventsPage";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
       },
       {
         path: "liked-events",
-        element: <></>,
+        element: <LikedEventsPage />,
       },
       {
         path: "my-tickets",

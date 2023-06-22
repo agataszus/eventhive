@@ -21,7 +21,11 @@ export const NavMenu = () => {
           />
         </li>
         <li className={styles.link}>
-          <NavMenuLink linkTo="/" Icon={HeartLineIcon} text="Liked events" />
+          <NavMenuLink
+            linkTo="/dashboard/liked-events"
+            Icon={HeartLineIcon}
+            text="Liked events"
+          />
         </li>
         <li className={styles.link}>
           <NavMenuLink linkTo="/" Icon={Coupon2LineIcon} text="My tickets" />

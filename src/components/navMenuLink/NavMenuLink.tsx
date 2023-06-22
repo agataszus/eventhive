@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./navMenuLink.module.scss";
 import { Text } from "../text/text";
 import Home2LineIcon from "remixicon-react/Home2LineIcon";
 import { NavActive } from "../navActive/NavActive";
 import classNames from "classnames";
+import { useEffect, useState } from "react";
 
 type NavMenuLinkProps = {
   linkTo: string;
@@ -12,7 +13,13 @@ type NavMenuLinkProps = {
 };
 
 export const NavMenuLink = ({ linkTo, Icon, text }: NavMenuLinkProps) => {
-  const isActive = linkTo === window.location.pathname;
+  const [isActive, setIsActive] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const isNowActive = linkTo === location.pathname;
+    setIsActive(isNowActive);
+  }, [location, linkTo]);
 
   let activeTextClass = "";
   if (isActive) {
