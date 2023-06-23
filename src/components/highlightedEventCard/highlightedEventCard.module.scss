@@ -21,7 +21,7 @@
 .description {
   display: flex;
   flex-direction: column;
-  width: 45%;
+  width: 50%;
   margin: auto 0;
   gap: $space-5;
   padding: $space-8;
@@ -31,6 +31,23 @@
   display: flex;
   flex-direction: column;
   gap: $space-7;
+}
+
+.titleText {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.descriptionText {
+  width: 80%;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .button {
