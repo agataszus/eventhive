@@ -5,14 +5,22 @@ import { DateTile } from "../dateTile/DateTile";
 import { Like } from "../like/Like";
 import { Text } from "../text/text";
 import styles from "./highlightedEventCard.module.scss";
+import { Loader } from "../loader/Loader";
 
 export const HighlightedEventCard = () => {
-  const { data: events } = useEventsQuery();
+  const { data: events, isLoading } = useEventsQuery();
 
   const randomNumber = useMemo(() => {
     const randomNum = Math.random();
     return randomNum;
   }, []);
+
+  if (isLoading)
+    return (
+      <div className={styles.cardLoading}>
+        <Loader variant="large" />
+      </div>
+    );
 
   if (!events) return null;
   const highlightedEvent = events[Math.floor(randomNumber * events.length)];
