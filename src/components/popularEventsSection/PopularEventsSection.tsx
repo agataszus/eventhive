@@ -5,9 +5,10 @@ import ArrowLeftSLineIcon from "remixicon-react/ArrowLeftSLineIcon";
 import { EventTile } from "../eventTile/EventTile";
 import { useEventsQuery } from "../../queries/useEventsQuery";
 import { Loader } from "../loader/Loader";
+import { Error } from "../error/Error";
 
 export const PopularEventsSection = () => {
-  const { data: events, isLoading } = useEventsQuery();
+  const { data: events, isLoading, isError } = useEventsQuery();
 
   return (
     <div className={styles.popularEventsSection}>
@@ -22,6 +23,7 @@ export const PopularEventsSection = () => {
       </div>
       <div className={styles.events}>
         {isLoading && <Loader variant="large" />}
+        {isError && <Error message="Something went wrong" />}
         {events?.map((event) => {
           const date = new Date(event.startDate);
           const day = new Intl.DateTimeFormat("en-US", {

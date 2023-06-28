@@ -6,9 +6,10 @@ import { Like } from "../like/Like";
 import { Text } from "../text/text";
 import styles from "./highlightedEventCard.module.scss";
 import { Loader } from "../loader/Loader";
+import { Error } from "../error/Error";
 
 export const HighlightedEventCard = () => {
-  const { data: events, isLoading } = useEventsQuery();
+  const { data: events, isLoading, isError } = useEventsQuery();
 
   const randomNumber = useMemo(() => {
     const randomNum = Math.random();
@@ -19,6 +20,13 @@ export const HighlightedEventCard = () => {
     return (
       <div className={styles.cardLoading}>
         <Loader variant="large" />
+      </div>
+    );
+
+  if (isError)
+    return (
+      <div className={styles.cardLoading}>
+        <Error message="Could not load the event. Try again!"></Error>
       </div>
     );
 
