@@ -5,7 +5,7 @@ import { getEvents } from "../services/api/event/getEvents";
 export const useEventsQuery = () => {
   const { token } = useAuthToken();
 
-  const query = useQuery("events", () => getEvents("dfghj"), {
+  const query = useQuery("events", () => getEvents(token), {
     enabled: Boolean(token),
   });
 
