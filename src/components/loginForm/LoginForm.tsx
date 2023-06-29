@@ -58,9 +58,12 @@ export const LoginForm = () => {
         <Input name="password" type="password" placeholder="Password" />
       </div>
       <Button text="Login" isLoading={isLoading} />
-      <Text tag="p" variant="caption-2" extraClass={styles.register}>
-        Do not have account? Register here...
-      </Text>
+      {/* <Text tag="p" variant="caption-2" extraClass={styles.register}>
+        Do not have account?{" "}
+        <Text tag="span" variant="action-4">
+          Sign up here...
+        </Text>
+      </Text> */}
     </form>
   );
 };
