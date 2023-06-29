@@ -45,25 +45,19 @@ export const LoginForm = () => {
 
   return (
     <form className={styles.loginForm} onSubmit={handleSubmit}>
-      {isError && (
-        <Text tag="p" variant="error-1">
-          {error.message}
-        </Text>
-      )}
       <Text tag="h3" variant="heading-4" extraClass={styles.title}>
         login into account
       </Text>
       <div className={styles.inputs}>
+        {isError && (
+          <Text tag="p" variant="error-1">
+            Wrong email address or password. Try again!
+          </Text>
+        )}
         <Input name="email" type="text" placeholder="Email" />
         <Input name="password" type="password" placeholder="Password" />
       </div>
       <Button text="Login" isLoading={isLoading} />
-      {/* <Text tag="p" variant="caption-2" extraClass={styles.register}>
-        Do not have account?{" "}
-        <Text tag="span" variant="action-4">
-          Sign up here...
-        </Text>
-      </Text> */}
     </form>
   );
 };

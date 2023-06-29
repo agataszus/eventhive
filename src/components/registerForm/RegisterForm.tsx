@@ -76,14 +76,6 @@ export const RegisterForm = () => {
         )}
       </div>
       <Button text="Register" isLoading={isLoading} />
-      {/* <Text tag="p" variant="caption-2" extraClass={styles.signUp}>
-        Already have account?{" "}
-        <link onClick={}>
-          <Text tag="span" variant="action-4">
-            Sign in here...
-          </Text>
-        </link>
-      </Text> */}
     </form>
   );
 };
