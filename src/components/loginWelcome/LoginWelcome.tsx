@@ -2,7 +2,11 @@ import { Button } from "../button/Button";
 import { Text } from "../text/text";
 import styles from "./loginWelcome.module.scss";
 
-export const LoginWelcome = () => {
+type LoginWelcomeProps = {
+  handleClick: () => void;
+};
+
+export const LoginWelcome = ({ handleClick }: LoginWelcomeProps) => {
   return (
     <div className={styles.container}>
       <Text tag="h2" variant="subtitle-2">
@@ -18,7 +22,7 @@ export const LoginWelcome = () => {
         All events in one application!
       </Text>
       <div className={styles.button}>
-        <Button text="Sign In" />
+        <Button text="Sign In" onClick={handleClick} />
       </div>
     </div>
   );

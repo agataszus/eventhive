@@ -5,7 +5,6 @@ import styles from "./loginPage.module.scss";
 import { LoginForm } from "../../components/loginForm/LoginForm";
 import { LoginWelcome } from "../../components/loginWelcome/LoginWelcome";
 import { Logo } from "../../components/logo/Logo";
-import { Text } from "../../components/text/text";
 import { SwitchLogin } from "../../components/switchToLogin/SwitchLogin";
 
 export const LoginPage = () => {
@@ -16,7 +15,7 @@ export const LoginPage = () => {
       <Logo />
       <div className={styles.loginContent}>
         <div className={styles.welcomeSection}>
-          <LoginWelcome />
+          <LoginWelcome handleClick={() => setIsLogin(true)} />
         </div>
         <div className={styles.formNav}>
           <div className={styles.navigation}>
