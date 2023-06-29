@@ -84,10 +84,17 @@
   font-size: $font-size-12;
   font-weight: $font-weight-semibold;
   letter-spacing: 0.2px;
-  color: $font-color-light;
+  color: $color-primary;
 }
 
 .heading-2 {
+  font-size: $font-size-12;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.2px;
+  color: $font-color-light;
+}
+
+.heading-3 {
   font-size: $font-size-6;
   font-weight: $font-weight-semibold;
   letter-spacing: 2px;
@@ -95,8 +102,23 @@
   text-transform: uppercase;
 }
 
+.heading-4 {
+  font-size: $font-size-6;
+  font-weight: $font-weight-medium;
+  letter-spacing: 1.1;
+  color: $font-color-light;
+  text-transform: uppercase;
+}
+
 .num-1 {
   font-size: $font-size-7;
   font-weight: $font-weight-semibold;
   color: $font-color-light;
+}
+
+.error-1 {
+  font-size: $font-size-2;
+  font-weight: $font-weight-light;
+  line-height: 1.1;
+  color: red;
 }

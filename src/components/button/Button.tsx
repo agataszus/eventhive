@@ -1,3 +1,4 @@
+import { Loader } from "../loader/Loader";
 import { Text } from "../text/text";
 import styles from "./button.module.scss";
 
@@ -10,9 +11,13 @@ type Props = {
 export const Button = ({ text, onClick, isLoading }: Props) => {
   return (
     <button className={styles.button} onClick={onClick}>
-      <Text tag="span" variant="subtitle-3">
-        {isLoading ? "Loading..." : text}
-      </Text>
+      {isLoading ? (
+        <Loader variant="extraSmall" />
+      ) : (
+        <Text tag="span" variant="subtitle-3">
+          {text}
+        </Text>
+      )}
     </button>
   );
 };

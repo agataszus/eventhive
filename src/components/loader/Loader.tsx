@@ -2,7 +2,7 @@ import classNames from "classnames";
 import styles from "./loader.module.scss";
 
 type LoaderProps = {
-  variant: "small" | "medium" | "large";
+  variant: "small" | "medium" | "large" | "extraSmall";
 };
 
 export const Loader = ({ variant }: LoaderProps) => {

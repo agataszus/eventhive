@@ -61,7 +61,7 @@ export const HighlightedEventCard = () => {
     >
       <div className={styles.description}>
         <div className={styles.title}>
-          <Text tag="h3" variant="heading-1" extraClass={styles.titleText}>
+          <Text tag="h3" variant="heading-2" extraClass={styles.titleText}>
             {highlightedEvent.title}
           </Text>
           <Text

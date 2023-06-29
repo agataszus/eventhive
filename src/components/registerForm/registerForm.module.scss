@@ -1,6 +1,6 @@
 @import "../../styles/variables";
 
-.loginForm {
+.form {
   display: flex;
   flex-direction: column;
   gap: $space-8;
@@ -18,6 +18,6 @@
   gap: $space-3;
 }
 
-.register {
+.signUp {
   text-align: center;
 }

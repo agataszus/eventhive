@@ -3,10 +3,11 @@
 .ldsRing {
   --loader-size: 64px;
   --loader-stroke: 8px;
+  --loader-size-full: 80px
   display: inline-block;
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: var(--loader-size-full);
+  height: var(--loader-size-full);
   margin: auto;
 
   & div {
@@ -44,17 +45,26 @@
   }
 }
 
+.extraSmall {
+  --loader-size: 24px;
+  --loader-stroke: 2px;
+  --loader-size-full: 32px
+}
+
 .small {
   --loader-size: 36px;
   --loader-stroke: 4px;
+  --loader-size-full: 44px
 }
 
 .medium {
   --loader-size: 48px;
   --loader-stroke: 6px;
+  --loader-size-full: 64px
 }
 
 .large {
   --loader-size: 64px;
   --loader-stroke: 8px;
+  --loader-size-full: 80px
 }
