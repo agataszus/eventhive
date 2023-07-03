@@ -12,7 +12,7 @@ export const LoginWelcome = ({ handleClick }: LoginWelcomeProps) => {
       <Text tag="h2" variant="subtitle-2">
         Best events website
       </Text>
-      <Text tag="h1" variant="heading-2" extraClass={styles.title}>
+      <Text tag="h1" variant="heading-2" className={styles.title}>
         <Text tag="span" variant="heading-1">
           Welcome{" "}
         </Text>

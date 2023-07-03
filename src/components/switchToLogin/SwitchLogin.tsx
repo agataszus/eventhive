@@ -8,7 +8,7 @@ type SwitchToLoginProps = {
 
 export const SwitchLogin = ({ text, linkText }: SwitchToLoginProps) => {
   return (
-    <Text tag="p" variant="caption-2" extraClass={styles.signUp}>
+    <Text tag="p" variant="caption-2" className={styles.signUp}>
       {text}{" "}
       <Text tag="span" variant="action-4">
         {linkText}

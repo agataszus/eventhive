@@ -48,7 +48,7 @@ export const LoginForm = () => {
 
   return (
     <form className={styles.loginForm} onSubmit={handleSubmit}>
-      <Text tag="h3" variant="heading-4" extraClass={styles.title}>
+      <Text tag="h3" variant="heading-4" className={styles.title}>
         login into account
       </Text>
       <div className={styles.inputs}>

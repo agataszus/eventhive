@@ -58,7 +58,7 @@ export const RegisterForm = () => {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <Text tag="h3" variant="heading-4" extraClass={styles.title}>
+      <Text tag="h3" variant="heading-4" className={styles.title}>
         create new account
       </Text>
       <div className={styles.inputs}>
