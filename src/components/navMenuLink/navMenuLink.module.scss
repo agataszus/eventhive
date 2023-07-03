@@ -2,10 +2,31 @@
 
 .icon {
   fill: $font-color-light-secondary;
+  z-index: 10;
 }
 
 .linkLabel {
   display: flex;
   gap: $space-4;
   align-items: center;
+
+  &:hover .icon {
+    fill: $font-color-light;
+    cursor: pointer;
+  }
+}
+
+.label {
+  position: relative;
+  z-index: 10;
+
+  &:hover {
+    color: $font-color-light;
+    cursor: pointer;
+  }
+}
+
+.active {
+  color: $font-color-light;
+  fill: $font-color-light;
 }

@@ -1,45 +1,56 @@
 import { ReactNode } from "react";
 import styles from "./text.module.scss";
+import classNames from "classnames";
 
 type Tag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span" | "div";
 
 type Variant =
-  // | "heading-1"
-  // | "heading-2"
-  // | "heading-3"
-  // | "paragraph"
-  // | "subtitle"
-  "action-1" | "subtitle-1" | "caption-1" | "caption-2";
+  | "action-1"
+  | "action-2"
+  | "action-3"
+  | "action-4"
+  | "subtitle-1"
+  | "subtitle-2"
+  | "subtitle-3"
+  | "subtitle-4"
+  | "caption-1"
+  | "caption-2"
+  | "caption-3"
+  | "caption-4"
+  | "heading-1"
+  | "heading-2"
+  | "num-1";
 
 type TextProps = {
   children: ReactNode;
   tag: Tag;
   variant: Variant;
+  className?: string;
 };
 
-export const Text = ({ children, tag, variant }: TextProps) => {
-  const className = styles[variant];
+export const Text = ({ children, tag, variant, className }: TextProps) => {
+  const extraClass = classNames(styles[variant], className);
 
   switch (tag) {
     case "h1":
-      return <h1 className={className}>{children}</h1>;
+      return <h1 className={extraClass}>{children}</h1>;
     case "h2":
-      return <h2 className={className}>{children}</h2>;
+      return <h2 className={extraClass}>{children}</h2>;
     case "h3":
-      return <h3 className={className}>{children}</h3>;
+      return <h3 className={extraClass}>{children}</h3>;
     case "h4":
-      return <h4 className={className}>{children}</h4>;
+      return <h4 className={extraClass}>{children}</h4>;
     case "h5":
-      return <h5 className={className}>{children}</h5>;
+      return <h5 className={extraClass}>{children}</h5>;
     case "h6":
-      return <h6 className={className}>{children}</h6>;
+      return <h6 className={extraClass}>{children}</h6>;
     case "p":
-      return <p className={className}>{children}</p>;
+      return <p className={extraClass}>{children}</p>;
     case "span":
-      return <span className={className}>{children}</span>;
+      return <span className={extraClass}>{children}</span>;
     case "div":
-      return <div className={className}>{children}</div>;
+      return <div className={extraClass}>{children}</div>;
     default:
-      return <span className={className}>{children}</span>;
+      return <span className={extraClass}>{children}</span>;
   }
 };

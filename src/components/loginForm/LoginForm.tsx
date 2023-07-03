@@ -5,9 +5,12 @@ import { useAuthToken } from "../../services/authTokenStore/useAuthToken";
 import styles from "./loginForm.module.scss";
 import { useLoginMutation } from "../../queries/useLoginMutation";
 import { useQueryClient } from "react-query";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 export const LoginForm = () => {
-  const { setToken } = useAuthToken();
+  const { token, setToken } = useAuthToken();
+  const navigate = useNavigate();
 
   const { mutate, isLoading, isError, error } = useLoginMutation();
   const queryClient = useQueryClient();
@@ -31,6 +34,12 @@ export const LoginForm = () => {
       },
     });
   };
+
+  useEffect(() => {
+    if (token) {
+      navigate("/dashboard/home");
+    }
+  }, [token, navigate]);
 
   return (
     <form className={styles.loginForm} onSubmit={handleSubmit}>

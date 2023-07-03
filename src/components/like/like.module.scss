@@ -1,0 +1,22 @@
+@import "../../styles/variables";
+
+.button {
+  height: 38px;
+  width: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  border: 1px solid $font-color-light;
+  opacity: 70%;
+
+  &:hover {
+    opacity: 100%;
+  }
+}
+
+.icon {
+  width: 22px;
+  height: auto;
+  fill: $font-color-light;
+}

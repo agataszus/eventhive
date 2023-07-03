@@ -1,11 +1,11 @@
 import { createContext } from "react";
 
-export type authTokenContext = {
+export type AuthTokenContext = {
   token: string;
   setToken: (newToken: string) => void;
 };
 
-const initialTokenContext: authTokenContext = {
+const initialTokenContext: AuthTokenContext = {
   token: "",
   setToken: () => null,
 };

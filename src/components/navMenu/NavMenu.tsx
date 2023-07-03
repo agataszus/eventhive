@@ -21,28 +21,17 @@ export const NavMenu = () => {
           />
         </li>
         <li className={styles.link}>
-          <div className={styles.linkLabel}>
-            <HeartLineIcon className={styles.icon} />
-            <Text tag="p" variant="action-1">
-              Liked events
-            </Text>
-          </div>
+          <NavMenuLink
+            linkTo="/dashboard/liked-events"
+            Icon={HeartLineIcon}
+            text="Liked events"
+          />
         </li>
         <li className={styles.link}>
-          <div className={styles.linkLabel}>
-            <Coupon2LineIcon className={styles.icon} />
-            <Text tag="p" variant="action-1">
-              My tickets
-            </Text>
-          </div>
+          <NavMenuLink linkTo="/" Icon={Coupon2LineIcon} text="My tickets" />
         </li>
         <li className={styles.link}>
-          <div className={styles.linkLabel}>
-            <RoadMapLineIcon className={styles.icon} />
-            <Text tag="p" variant="action-1">
-              Map
-            </Text>
-          </div>
+          <NavMenuLink linkTo="/" Icon={RoadMapLineIcon} text="Map" />
         </li>
       </ul>
       <div className={styles.divider}>
@@ -50,7 +39,7 @@ export const NavMenu = () => {
       </div>
       <div className={styles.menu}>
         <div className={styles.link}>
-          <Text tag="h4" variant="subtitle-1">
+          <Text tag="h4" variant="subtitle-3">
             Categories
           </Text>
         </div>
@@ -58,7 +47,7 @@ export const NavMenu = () => {
           {Object.values(eventsCategories).map((category) => {
             return (
               <li className={styles.link} key={category}>
-                <NavMenuCategory label={category} />
+                <NavMenuCategory label={category} isActive={false} />
               </li>
             );
           })}

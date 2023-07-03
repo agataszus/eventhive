@@ -133,6 +133,15 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+button {
+  padding: 0;
+  border: none;
+  outline: none;
+  font: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+}
 
 body {
   font-family: $font-family, sans-serif;
@@ -140,28 +149,4 @@ body {
   background-color: $background-color-dark;
   font-size: 16px;
   font-weight: $font-weight-light;
-}
-
-h1 {
-  font-size: 42px;
-  font-weight: $font-weight-medium;
-  letter-spacing: 0.8px;
-}
-
-h2 {
-  font-size: 32px;
-  font-weight: $font-weight-regular;
-  letter-spacing: 0.8px;
-}
-
-h3 {
-  font-size: 24px;
-  font-weight: $font-weight-regular;
-  letter-spacing: 0.7px;
-}
-
-p {
-  font-size: 18px;
-  font-weight: $font-weight-light;
-  line-height: 1.5;
 }

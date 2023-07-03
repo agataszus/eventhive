@@ -3,6 +3,9 @@ import {
   createBrowserRouter,
 } from "react-router-dom";
 import { Layout } from "../layout/Layout";
+import { HomePage } from "../../pages/dashboard/homePage/HomePage";
+import { LoginPage } from "../../pages/login/LoginPage";
+import { LikedEventsPage } from "../../pages/dashboard/likedEventsPage/LikedEventsPage";
 
 const router = createBrowserRouter([
   {
@@ -10,16 +13,20 @@ const router = createBrowserRouter([
     element: <></>,
   },
   {
+    path: "/login",
+    element: <LoginPage />,
+  },
+  {
     path: "/dashboard",
     element: <Layout />,
     children: [
       {
         path: "home",
-        element: <div>Dashboard home page</div>,
+        element: <HomePage />,
       },
       {
         path: "liked-events",
-        element: <></>,
+        element: <LikedEventsPage />,
       },
       {
         path: "my-tickets",
