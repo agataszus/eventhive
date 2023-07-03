@@ -6,6 +6,7 @@ import { EventTile } from "../eventTile/EventTile";
 import { useEventsQuery } from "../../queries/useEventsQuery";
 import { Loader } from "../loader/Loader";
 import { Error } from "../error/Error";
+import { parseEventDate } from "../../helpers/parseEventDate";
 
 export const PopularEventsSection = () => {
   const { data: events, isLoading, isError } = useEventsQuery();
@@ -25,13 +26,7 @@ export const PopularEventsSection = () => {
         {isLoading && <Loader variant="large" />}
         {isError && <Error message="Something went wrong" />}
         {events?.map((event) => {
-          const date = new Date(event.startDate);
-          const day = new Intl.DateTimeFormat("en-US", {
-            day: "numeric",
-          }).format(date);
-          const month = new Intl.DateTimeFormat("en-US", {
-            month: "short",
-          }).format(date);
+          const { day, month } = parseEventDate(event.startDate);
 
           return (
             <EventTile

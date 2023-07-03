@@ -28,32 +28,32 @@ type TextProps = {
   children: ReactNode;
   tag: Tag;
   variant: Variant;
-  extraClass?: string;
+  className?: string;
 };
 
-export const Text = ({ children, tag, variant, extraClass }: TextProps) => {
-  const className = classNames(styles[variant], extraClass);
+export const Text = ({ children, tag, variant, className }: TextProps) => {
+  const extraClass = classNames(styles[variant], className);
 
   switch (tag) {
     case "h1":
-      return <h1 className={className}>{children}</h1>;
+      return <h1 className={extraClass}>{children}</h1>;
     case "h2":
-      return <h2 className={className}>{children}</h2>;
+      return <h2 className={extraClass}>{children}</h2>;
     case "h3":
-      return <h3 className={className}>{children}</h3>;
+      return <h3 className={extraClass}>{children}</h3>;
     case "h4":
-      return <h4 className={className}>{children}</h4>;
+      return <h4 className={extraClass}>{children}</h4>;
     case "h5":
-      return <h5 className={className}>{children}</h5>;
+      return <h5 className={extraClass}>{children}</h5>;
     case "h6":
-      return <h6 className={className}>{children}</h6>;
+      return <h6 className={extraClass}>{children}</h6>;
     case "p":
-      return <p className={className}>{children}</p>;
+      return <p className={extraClass}>{children}</p>;
     case "span":
-      return <span className={className}>{children}</span>;
+      return <span className={extraClass}>{children}</span>;
     case "div":
-      return <div className={className}>{children}</div>;
+      return <div className={extraClass}>{children}</div>;
     default:
-      return <span className={className}>{children}</span>;
+      return <span className={extraClass}>{children}</span>;
   }
 };

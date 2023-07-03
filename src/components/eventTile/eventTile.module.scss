@@ -1,4 +1,5 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .eventTile {
   width: 190px;
@@ -41,12 +42,9 @@
 }
 
 .title {
+  @include overflow-ellipsis(2);
+
   height: 44px;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
 
 .image {
@@ -65,12 +63,9 @@
 }
 
 .description {
+  @include overflow-ellipsis(2);
+
   height: 42px;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
 
 .likesBox {

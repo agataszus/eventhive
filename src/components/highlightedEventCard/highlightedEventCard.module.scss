@@ -1,4 +1,5 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .card {
   width: 100%;
@@ -48,21 +49,15 @@
 }
 
 .titleText {
+  @include overflow-ellipsis(3);
+
   min-height: 80px;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
 
 .descriptionText {
+  @include overflow-ellipsis(2);
+
   width: 80%;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
 
 .button {
