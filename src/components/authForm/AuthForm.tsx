@@ -20,7 +20,7 @@ export const AuthForm = ({ isLogin, setIsLogin }: AuthFormProps) => {
         <div className={styles.loginView}>
           {isLogin ? <LoginForm /> : <RegisterForm />}
         </div>
-        <div onClick={() => setIsLogin(!isLogin)}>
+        <button onClick={() => setIsLogin(!isLogin)}>
           {isLogin ? (
             <SwitchLogin
               text="Don't have an account?"
@@ -32,7 +32,7 @@ export const AuthForm = ({ isLogin, setIsLogin }: AuthFormProps) => {
               linkText="Sign in here..."
             />
           )}
-        </div>
+        </button>
       </div>
     </div>
   );

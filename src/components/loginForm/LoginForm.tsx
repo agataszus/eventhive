@@ -9,6 +9,9 @@ import { useNavigate } from "react-router-dom";
 // import { useEffect } from "react";
 import { Text } from "../text/text";
 
+const EMAIL = "email";
+const PASSWORD = "password";
+
 export const LoginForm = () => {
   const { setToken } = useAuthToken();
   const navigate = useNavigate();
@@ -20,8 +23,8 @@ export const LoginForm = () => {
     event.preventDefault();
 
     const loginFormData = new FormData(event.target as HTMLFormElement);
-    const emailValue = loginFormData.get("email") as string;
-    const passwordValue = loginFormData.get("password") as string;
+    const emailValue = loginFormData.get(EMAIL) as string;
+    const passwordValue = loginFormData.get(PASSWORD) as string;
 
     const userData: RegisterDto = {
       email: emailValue,
@@ -54,8 +57,8 @@ export const LoginForm = () => {
             Wrong email address or password. Try again!
           </Text>
         )}
-        <Input name="email" type="text" placeholder="Email" />
-        <Input name="password" type="password" placeholder="Password" />
+        <Input name={EMAIL} type="text" placeholder="Email" />
+        <Input name={PASSWORD} type="password" placeholder="Password" />
       </div>
       <Button text="Login" isLoading={isLoading} />
     </form>
