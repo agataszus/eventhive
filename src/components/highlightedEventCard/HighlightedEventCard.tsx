@@ -1,19 +1,73 @@
+import { useMemo } from "react";
+import { useEventsQuery } from "../../queries/useEventsQuery";
 import { Button } from "../button/Button";
 import { DateTile } from "../dateTile/DateTile";
 import { Like } from "../like/Like";
 import { Text } from "../text/text";
 import styles from "./highlightedEventCard.module.scss";
+import { Loader } from "../loader/Loader";
+import { Error } from "../error/Error";
+import { parseEventDate } from "../../helpers/parseEventDate";
 
 export const HighlightedEventCard = () => {
+  const { data: events, isLoading, isError } = useEventsQuery();
+
+  const randomNumber = useMemo(() => {
+    const randomNum = Math.random();
+    return randomNum;
+  }, []);
+
+  if (isLoading)
+    return (
+      <div className={styles.cardLoading}>
+        <Loader variant="large" />
+      </div>
+    );
+
+  if (isError)
+    return (
+      <div className={styles.cardLoading}>
+        <Error message="Could not load the event. Try again!"></Error>
+      </div>
+    );
+
+  if (!events) return null;
+  const { title, description, startDate, externalImageUrls } =
+    events[Math.floor(randomNumber * events.length)];
+
+  const { day, month } = parseEventDate(startDate);
+
+  const getDarkenBackgroundImage = (url: string) => `linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.65) 30%,
+    rgba(255, 255, 255, 0) 70%,
+    rgba(0, 0, 0, 0.5) 100%
+  ),
+  url(${url})`;
+
   return (
-    <div className={styles.card}>
+    <div
+      className={styles.card}
+      style={
+        externalImageUrls.length
+          ? {
+              backgroundImage: getDarkenBackgroundImage(externalImageUrls[0]),
+            }
+          : undefined
+      }
+    >
       <div className={styles.description}>
         <div className={styles.title}>
-          <Text tag="h3" variant="heading-1">
-            Orange Warsaw Festival
+          <Text tag="h3" variant="heading-1" extraClass={styles.titleText}>
+            {title}
           </Text>
-          <Text tag="h4" variant="subtitle-1">
-            Biggest music festival in Warsaw
+          <Text
+            tag="h4"
+            variant="subtitle-1"
+            extraClass={styles.descriptionText}
+          >
+            {description}
           </Text>
         </div>
         <Text tag="p" variant="action-4">
@@ -27,7 +81,7 @@ export const HighlightedEventCard = () => {
         </div>
       </div>
       <div className={styles.dateContainer}>
-        <DateTile />
+        <DateTile day={day} month={month} />
       </div>
     </div>
   );

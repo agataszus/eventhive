@@ -1,0 +1,15 @@
+@import "../../styles/variables";
+
+.errorContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-3;
+  margin: auto;
+}
+
+.errorIcon {
+  width: 36px;
+  height: auto;
+  fill: $font-color-light;
+}

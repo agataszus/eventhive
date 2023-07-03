@@ -1,14 +1,19 @@
 import { Text } from "../text/text";
 import styles from "./dateTile.module.scss";
 
-export const DateTile = () => {
+type DateTileProps = {
+  day: string;
+  month: string;
+};
+
+export const DateTile = ({ day, month }: DateTileProps) => {
   return (
     <div className={styles.tile}>
       <Text tag="span" variant="num-1">
-        23
+        {day}
       </Text>
       <Text tag="span" variant="caption-3">
-        June
+        {month}
       </Text>
     </div>
   );
