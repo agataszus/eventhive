@@ -6,14 +6,14 @@ import styles from "./loginForm.module.scss";
 import { useLoginMutation } from "../../queries/useLoginMutation";
 import { useQueryClient } from "react-query";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { Text } from "../text/text";
 
 export const LoginForm = () => {
-  const { token, setToken } = useAuthToken();
+  const { setToken } = useAuthToken();
   const navigate = useNavigate();
 
-  const { mutate, isLoading, isError, error } = useLoginMutation();
+  const { mutate, isLoading, isError } = useLoginMutation();
   const queryClient = useQueryClient();
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {

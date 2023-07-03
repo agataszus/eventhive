@@ -1,6 +1,7 @@
 import styles from "./input.module.scss";
 
 type InputProps = {
+  labelText?: string;
   name: string;
   type: "text" | "password" | "number";
   placeholder: string;

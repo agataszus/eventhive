@@ -7,7 +7,14 @@ import { Input } from "../input/Input";
 import { Text } from "../text/text";
 import styles from "./registerForm.module.scss";
 import { useNavigate } from "react-router-dom";
+import { RegisteredUserDto } from "../../services/api/auth/types";
 import { useState } from "react";
+
+const FIRST_NAME = "firstName";
+const LAST_NAME = "lastName";
+const EMAIL = "email";
+const PASSWORD = "password";
+const REPEAT_PASSWORD = "repeatPassword";
 
 export const RegisterForm = () => {
   const { setToken } = useAuthToken();
@@ -21,31 +28,31 @@ export const RegisterForm = () => {
     event.preventDefault();
 
     const registerFormData = new FormData(event.target as HTMLFormElement);
-    const emailValue = registerFormData.get("email") as string;
-    const passwordValue = registerFormData.get("password") as string;
-    const repeatPasswordValue = registerFormData.get(
-      "repeatPassword"
-    ) as string;
+    const emailValue = registerFormData.get(EMAIL) as string;
+    const passwordValue = registerFormData.get(PASSWORD) as string;
+    const repeatPasswordValue = registerFormData.get(REPEAT_PASSWORD) as string;
 
     if (passwordValue !== repeatPasswordValue) {
       setIsPasswordCorrect(false);
       return;
-    } else {
-      setIsPasswordCorrect(true);
     }
+
+    setIsPasswordCorrect(true);
 
     const userData: RegisterDto = {
       email: emailValue,
       password: passwordValue,
     };
 
+    const handleSuccess = ({ tokens }: RegisteredUserDto) => {
+      const { accessToken } = tokens;
+      setToken(accessToken);
+      queryClient.invalidateQueries();
+      navigate("/dashboard/home");
+    };
+
     mutate(userData, {
-      onSuccess: ({ tokens }) => {
-        const { accessToken } = tokens;
-        setToken(accessToken);
-        queryClient.invalidateQueries();
-        navigate("/dashboard/home");
-      },
+      onSuccess: handleSuccess,
     });
   };
 
@@ -60,16 +67,16 @@ export const RegisterForm = () => {
             {error.message}
           </Text>
         )}
-        <Input name="firstName" type="text" placeholder="First Name" />
-        <Input name="lastName" type="text" placeholder="Last Name" />
-        <Input name="email" type="text" placeholder="Email" />
-        <Input name="password" type="password" placeholder="Password" />
+        <Input name={FIRST_NAME} type="text" placeholder="First Name" />
+        <Input name={LAST_NAME} type="text" placeholder="Last Name" />
+        <Input name={EMAIL} type="text" placeholder="Email" />
+        <Input name={PASSWORD} type="password" placeholder="Password" />
         <Input
-          name="repeatPassword"
+          name={REPEAT_PASSWORD}
           type="password"
           placeholder="Repeat password"
         />
-        {isPasswordCorrect ? undefined : (
+        {!isPasswordCorrect && (
           <Text tag="p" variant="error-1">
             Password does not match
           </Text>

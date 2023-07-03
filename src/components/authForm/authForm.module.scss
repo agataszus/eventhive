@@ -1,0 +1,29 @@
+@import "../../styles/variables";
+
+.formNav {
+  display: flex;
+  flex-direction: column;
+  gap: $space-10;
+  align-items: center;
+  margin: auto 0;
+}
+
+.loginView {
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 $space-6;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $space-8;
+  padding-bottom: $space-10;
+}
+
+.navigation {
+  display: flex;
+  gap: $space-2;
+}

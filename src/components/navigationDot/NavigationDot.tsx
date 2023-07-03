@@ -7,7 +7,7 @@ type NavigationDotProps = {
 };
 
 export const NavigationDot = ({ onClick, isActive }: NavigationDotProps) => {
-  const navStyles = classNames(styles.dot, isActive ? styles.active : "");
+  const navStyles = classNames(styles.dot, { [styles.active]: isActive });
 
   return <button className={navStyles} onClick={onClick}></button>;
 };
