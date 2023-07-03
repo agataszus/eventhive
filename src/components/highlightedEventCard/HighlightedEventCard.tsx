@@ -7,6 +7,7 @@ import { Text } from "../text/text";
 import styles from "./highlightedEventCard.module.scss";
 import { Loader } from "../loader/Loader";
 import { Error } from "../error/Error";
+import { parseEventDate } from "../../helpers/parseEventDate";
 
 export const HighlightedEventCard = () => {
   const { data: events, isLoading, isError } = useEventsQuery();
@@ -31,15 +32,10 @@ export const HighlightedEventCard = () => {
     );
 
   if (!events) return null;
-  const highlightedEvent = events[Math.floor(randomNumber * events.length)];
+  const { title, description, startDate, externalImageUrls } =
+    events[Math.floor(randomNumber * events.length)];
 
-  const date = new Date(highlightedEvent.startDate);
-  const day = new Intl.DateTimeFormat("en-US", {
-    day: "numeric",
-  }).format(date);
-  const month = new Intl.DateTimeFormat("en-US", {
-    month: "short",
-  }).format(date);
+  const { day, month } = parseEventDate(startDate);
 
   const getDarkenBackgroundImage = (url: string) => `linear-gradient(
     to right,
@@ -54,11 +50,9 @@ export const HighlightedEventCard = () => {
     <div
       className={styles.card}
       style={
-        highlightedEvent.externalImageUrls.length
+        externalImageUrls.length
           ? {
-              backgroundImage: getDarkenBackgroundImage(
-                highlightedEvent.externalImageUrls[0]
-              ),
+              backgroundImage: getDarkenBackgroundImage(externalImageUrls[0]),
             }
           : undefined
       }
@@ -66,14 +60,14 @@ export const HighlightedEventCard = () => {
       <div className={styles.description}>
         <div className={styles.title}>
           <Text tag="h3" variant="heading-1" extraClass={styles.titleText}>
-            {highlightedEvent.title}
+            {title}
           </Text>
           <Text
             tag="h4"
             variant="subtitle-1"
             extraClass={styles.descriptionText}
           >
-            {highlightedEvent.description}
+            {description}
           </Text>
         </div>
         <Text tag="p" variant="action-4">

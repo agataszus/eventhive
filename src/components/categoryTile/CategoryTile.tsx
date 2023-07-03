@@ -15,7 +15,7 @@ export const CategoryTile = ({ text, picture }: CategoryTileProps) => {
           overlayClass={styles.overlay}
           iconClass={styles.overlayIcon}
         />
-        {<img src={picture} alt={text} className={styles.image} />}
+        <img src={picture} alt={text} className={styles.image} />
       </div>
       <Text tag="h4" variant="action-1">
         {text}
