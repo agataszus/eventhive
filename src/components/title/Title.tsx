@@ -7,7 +7,7 @@ type TitleProps = {
 export const Title = ({ title }: TitleProps) => {
   return (
     <div>
-      <Text tag="h2" variant="heading-2">
+      <Text tag="h2" variant="heading-3">
         {title}
       </Text>
     </div>

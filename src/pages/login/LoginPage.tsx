@@ -1,18 +1,20 @@
-import { LoginForm } from "../../components/loginForm/LoginForm";
 import styles from "./loginPage.module.scss";
+import { LoginWelcome } from "../../components/loginWelcome/LoginWelcome";
+import { Logo } from "../../components/logo/Logo";
+import { AuthForm } from "../../components/authForm/AuthForm";
+import { useState } from "react";
 
 export const LoginPage = () => {
+  const [isLogin, setIsLogin] = useState(false);
+
   return (
     <div className={styles.loginPage}>
-      <div className={styles.aside}></div>
-      <div className={styles.loginView}>
-        <h2>Login</h2>
-        <h3>Login to your account</h3>
-        <p>
-          Welcome back to Socialife! Please provide your credentials to login
-          into your account. If you don&apos;t have the account register here.
-        </p>
-        <LoginForm />
+      <Logo />
+      <div className={styles.loginContent}>
+        <div className={styles.welcomeSection}>
+          <LoginWelcome handleClick={() => setIsLogin(true)} />
+        </div>
+        <AuthForm isLogin={isLogin} setIsLogin={setIsLogin} />
       </div>
     </div>
   );

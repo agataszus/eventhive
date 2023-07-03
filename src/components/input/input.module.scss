@@ -7,32 +7,25 @@
   gap: $space-2;
 }
 
-.inputLabel {
-  font-size: $font-size-1;
-  font-weight: $font-weight-medium;
-  letter-spacing: 0.8px;
-}
-
 .input {
   width: 100%;
   padding: $space-3 $space-5;
-  margin: $space-2 0;
   box-sizing: border-box;
-  background-color: $background-color-dark;
+  background-color: transparent;
   border-radius: 8px;
-  border: 2px solid $color-primary;
+  border: 1px solid $font-color-light-alpha20;
   color: $font-color-light;
-  font-size: $font-size-3;
+  font-size: $font-size-2;
   font-weight: $font-weight-regular;
 
   &::placeholder {
-    font-size: $font-size-3;
+    font-size: $font-size-2;
     font-weight: $font-weight-regular;
-    color: $color-primary;
+    color: $font-color-light;
   }
 
   &:focus {
     outline: none;
-    border: 2px solid $color-secondary;
+    border: 1px solid $font-color-light;
   }
 }

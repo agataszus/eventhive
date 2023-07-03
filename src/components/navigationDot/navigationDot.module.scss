@@ -1,0 +1,12 @@
+@import "../../styles/variables";
+
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  border: 1px solid $color-primary;
+}
+
+.active {
+  background-color: $color-primary;
+}

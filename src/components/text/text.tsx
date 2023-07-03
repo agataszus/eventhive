@@ -19,7 +19,10 @@ type Variant =
   | "caption-4"
   | "heading-1"
   | "heading-2"
-  | "num-1";
+  | "heading-3"
+  | "heading-4"
+  | "num-1"
+  | "error-1";
 
 type TextProps = {
   children: ReactNode;

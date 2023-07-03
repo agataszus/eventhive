@@ -6,21 +6,25 @@ import styles from "./loginForm.module.scss";
 import { useLoginMutation } from "../../queries/useLoginMutation";
 import { useQueryClient } from "react-query";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+// import { useEffect } from "react";
+import { Text } from "../text/text";
+
+const EMAIL = "email";
+const PASSWORD = "password";
 
 export const LoginForm = () => {
-  const { token, setToken } = useAuthToken();
+  const { setToken } = useAuthToken();
   const navigate = useNavigate();
 
-  const { mutate, isLoading, isError, error } = useLoginMutation();
+  const { mutate, isLoading, isError } = useLoginMutation();
   const queryClient = useQueryClient();
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const loginFormData = new FormData(event.target as HTMLFormElement);
-    const emailValue = loginFormData.get("emailValue") as string;
-    const passwordValue = loginFormData.get("passwordValue") as string;
+    const emailValue = loginFormData.get(EMAIL) as string;
+    const passwordValue = loginFormData.get(PASSWORD) as string;
 
     const userData: RegisterDto = {
       email: emailValue,
@@ -31,34 +35,32 @@ export const LoginForm = () => {
       onSuccess: ({ accessToken }) => {
         setToken(accessToken);
         queryClient.invalidateQueries();
+        navigate("/dashboard/home");
       },
     });
   };
 
-  useEffect(() => {
-    if (token) {
-      navigate("/dashboard/home");
-    }
-  }, [token, navigate]);
+  // useEffect(() => {
+  //   if (token) {
+  //     navigate("/dashboard/home");
+  //   }
+  // }, [token, navigate]);
 
   return (
     <form className={styles.loginForm} onSubmit={handleSubmit}>
-      {isError && <p>{error.message}</p>}
-      <Input
-        labelText="Email"
-        name="emailValue"
-        type="text"
-        placeholder="Your email"
-      />
-      <Input
-        labelText="Password"
-        name="passwordValue"
-        type="password"
-        placeholder="Your password"
-      />
-      <div className={styles.button}>
-        <Button text="Login" isLoading={isLoading} />
+      <Text tag="h3" variant="heading-4" className={styles.title}>
+        login into account
+      </Text>
+      <div className={styles.inputs}>
+        {isError && (
+          <Text tag="p" variant="error-1">
+            Wrong email address or password. Try again!
+          </Text>
+        )}
+        <Input name={EMAIL} type="text" placeholder="Email" />
+        <Input name={PASSWORD} type="password" placeholder="Password" />
       </div>
+      <Button text="Login" isLoading={isLoading} />
     </form>
   );
 };

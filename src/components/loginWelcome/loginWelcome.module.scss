@@ -1,0 +1,17 @@
+@import "../../styles/variables";
+
+.container {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: $space-7;
+}
+
+.title {
+  line-height: 1.3;
+}
+
+.button {
+  margin-top: $space-6;
+  width: 220px;
+}
