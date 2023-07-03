@@ -11,7 +11,6 @@ type EventTileProps = {
   description: string;
   day: string;
   month: string;
-  key?: string;
 };
 
 export const EventTile = ({
@@ -39,8 +38,8 @@ export const EventTile = ({
     >
       <div className={styles.imageBox}>
         <SeeMoreOverlay
-          overlayClass={styles.overlay}
-          iconClass={styles.overlayIcon}
+          overlayClassName={styles.overlay}
+          iconClassName={styles.overlayIcon}
         />
         <img
           src={picture || alternativePic}
@@ -51,10 +50,10 @@ export const EventTile = ({
           <DateTileSmall day={day} month={month} />
         </div>
       </div>
-      <Text tag="h4" variant="action-2" extraClass={styles.title}>
+      <Text tag="h4" variant="action-2" className={styles.title}>
         {name}
       </Text>
-      <Text tag="p" variant="caption-2" extraClass={styles.description}>
+      <Text tag="p" variant="caption-2" className={styles.description}>
         {description}
       </Text>
       <div className={styles.likesBox}>

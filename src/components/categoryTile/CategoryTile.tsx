@@ -12,8 +12,8 @@ export const CategoryTile = ({ text, picture }: CategoryTileProps) => {
     <div className={styles.categoryTile}>
       <div className={styles.imageBox}>
         <SeeMoreOverlay
-          overlayClass={styles.overlay}
-          iconClass={styles.overlayIcon}
+          overlayClassName={styles.overlay}
+          iconClassName={styles.overlayIcon}
         />
         <img src={picture} alt={text} className={styles.image} />
       </div>

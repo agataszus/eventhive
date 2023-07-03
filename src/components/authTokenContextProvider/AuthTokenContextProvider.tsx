@@ -1,5 +1,6 @@
 import { ReactNode, useEffect, useState } from "react";
 import { AuthTokenContext } from "../../services/authTokenStore/authTokenStore";
+const LOCAL_STORAGE_TOKEN = "token";
 
 type AuthTokenProviderProps = {
   children: ReactNode;
@@ -12,7 +13,7 @@ export const AuthTokenContextProvider = ({
 
   const saveToken = (token: string) => {
     setToken(token);
-    localStorage.setItem("token", token);
+    localStorage.setItem(LOCAL_STORAGE_TOKEN, token);
   };
 
   useEffect(() => {

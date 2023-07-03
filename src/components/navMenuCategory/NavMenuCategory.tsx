@@ -9,15 +9,11 @@ type NavMenuCategoryProps = {
 };
 
 export const NavMenuCategory = ({ label, isActive }: NavMenuCategoryProps) => {
-  let activeTextClass = "";
-  if (isActive) {
-    activeTextClass = styles.active;
-  }
-  const extraClass = classNames(styles.label, activeTextClass);
+  const className = classNames(styles.label, { [styles.active]: isActive });
 
   return (
     <>
-      <Text tag="p" variant="action-1" extraClass={extraClass}>
+      <Text tag="p" variant="action-1" className={className}>
         {label}
       </Text>
       {isActive && <NavActive />}

@@ -3,16 +3,16 @@ import EyeFillIcon from "remixicon-react/EyeFillIcon";
 import classNames from "classnames";
 
 type SeeMoreOverlayProps = {
-  overlayClass: string;
-  iconClass: string;
+  overlayClassName: string;
+  iconClassName: string;
 };
 
 export const SeeMoreOverlay = ({
-  overlayClass,
-  iconClass,
+  overlayClassName,
+  iconClassName,
 }: SeeMoreOverlayProps) => {
-  const overlayStyles = classNames(styles.overlay, overlayClass);
-  const iconStyles = classNames(styles.iconContainer, iconClass);
+  const overlayStyles = classNames(styles.overlay, overlayClassName);
+  const iconStyles = classNames(styles.iconContainer, iconClassName);
 
   return (
     <>
