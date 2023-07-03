@@ -1,1 +1,7 @@
-// TODO
+@mixin overflow-ellipsis($linesNumber) {
+  display: -webkit-box;
+  -webkit-line-clamp: $linesNumber;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

@@ -41,20 +41,24 @@ export const HighlightedEventCard = () => {
     month: "short",
   }).format(date);
 
+  const getDarkenBackgroundImage = (url: string) => `linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.65) 30%,
+    rgba(255, 255, 255, 0) 70%,
+    rgba(0, 0, 0, 0.5) 100%
+  ),
+  url(${url})`;
+
   return (
     <div
       className={styles.card}
       style={
         highlightedEvent.externalImageUrls.length
           ? {
-              backgroundImage: `linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 0.65) 30%,
-      rgba(255, 255, 255, 0) 70%,
-      rgba(0, 0, 0, 0.5) 100%
-    ),
-    url(${highlightedEvent.externalImageUrls[0]})`,
+              backgroundImage: getDarkenBackgroundImage(
+                highlightedEvent.externalImageUrls[0]
+              ),
             }
           : undefined
       }
