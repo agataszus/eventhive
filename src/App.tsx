@@ -5,14 +5,17 @@ import { CustomQueryClientProvider } from "./components/customQueryClientProvide
 // import { EventsList } from "./components/eventsList/EventsList";
 // import { Layout } from "./components/layout/Layout";
 import { RouterProvider } from "./components/routes/Routes";
+import { UserProfileContextProvider } from "./components/userProfileContextProvider/UserProfileContextProvider";
 
 function App() {
   return (
     <CustomQueryClientProvider>
       <AuthTokenContextProvider>
-        <RouterProvider />
-        {/* <LoginPage />
+        <UserProfileContextProvider>
+          <RouterProvider />
+          {/* <LoginPage />
         <EventsList /> */}
+        </UserProfileContextProvider>
       </AuthTokenContextProvider>
     </CustomQueryClientProvider>
   );

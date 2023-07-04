@@ -6,7 +6,7 @@ export const useEventsQuery = () => {
   const { token } = useAuthToken();
 
   const query = useQuery("events", () => getEvents(token), {
-    enabled: Boolean(token),
+    enabled: Boolean(token), // start query only after token is extracted from local storage
   });
 
   return query;
