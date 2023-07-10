@@ -85,7 +85,11 @@ export const ProfileForm = () => {
         />
         <SelectOptionRegion name={REGION} />
       </div>
-      <Button text="Save Profile" isLoading={isLoading || isAccountLoading} />
+      <Button
+        variant="narrow"
+        text="Save Profile"
+        isLoading={isLoading || isAccountLoading}
+      />
     </form>
   );
 };

@@ -45,7 +45,7 @@ export const ChangePasswordForm = () => {
         type="password"
         placeholder="New password"
       />
-      <Button text="Log in" />
+      <Button variant="thick" text="Log in" />
     </form>
   );
 };

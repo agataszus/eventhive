@@ -62,7 +62,7 @@ export const UpdateProfileForm = () => {
         placeholder="Your last name"
       />
       <SelectOptionRegion name="regionValue" />
-      <Button text="Save Changes" />
+      <Button variant="narrow" text="Save Changes" />
     </form>
   );
 };

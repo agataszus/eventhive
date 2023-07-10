@@ -22,7 +22,7 @@ export const LoginWelcome = ({ handleClick }: LoginWelcomeProps) => {
         All events in one application!
       </Text>
       <div className={styles.button}>
-        <Button text="Sign In" onClick={handleClick} />
+        <Button variant="thick" text="Sign In" onClick={handleClick} />
       </div>
     </div>
   );

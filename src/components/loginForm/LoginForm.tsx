@@ -60,7 +60,7 @@ export const LoginForm = () => {
         <Input name={EMAIL} type="text" placeholder="Email" />
         <Input name={PASSWORD} type="password" placeholder="Password" />
       </div>
-      <Button text="Login" isLoading={isLoading} />
+      <Button variant="thick" text="Login" isLoading={isLoading} />
     </form>
   );
 };

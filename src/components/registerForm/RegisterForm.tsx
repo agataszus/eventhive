@@ -93,7 +93,7 @@ export const RegisterForm = () => {
           </Text>
         )}
       </div>
-      <Button text="Register" isLoading={isLoading} />
+      <Button variant="thick" text="Register" isLoading={isLoading} />
     </form>
   );
 };

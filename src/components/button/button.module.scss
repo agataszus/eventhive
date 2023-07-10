@@ -2,7 +2,6 @@
 
 .button {
   background: $color-primary;
-  height: 38px;
   border-radius: 32px;
   box-shadow: 0 4px 16px #1d1d1d;
   // flex-grow: 1;
@@ -13,4 +12,12 @@
     background-color: $color-secondary;
     cursor: pointer;
   }
+}
+
+.narrow {
+  height: 38px;
+}
+
+.thick {
+  height: 46px;
 }
