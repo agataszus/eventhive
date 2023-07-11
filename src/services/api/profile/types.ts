@@ -11,6 +11,11 @@ export type CreateUserProfileOptions = {
   token: string;
 };
 
+export type UpdateUserProfileOptions = {
+  userData: UpdateUserProfileDto;
+  token: string;
+};
+
 export type ActionsReturnUserProfileDto = Omit<
   UserDto,
   "password" | "organizationProfile"

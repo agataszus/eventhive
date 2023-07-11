@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { ChangePasswordDto } from "../../services/api/api-types.gen";
-import { changePassword } from "../../services/api/auth/changePassword";
 import { useAuthToken } from "../../services/authTokenStore/useAuthToken";
 import { Button } from "../button/Button";
 import { Input } from "../input/Input";
 import { Text } from "../text/text";
 import styles from "./changePasswordForm.module.scss";
 import { useAccountQuery } from "../../queries/useAccountQuery";
+import { useChangePasswordMutation } from "../../queries/useChangePasswordMutation";
 
 const EMAIL = "email";
 const CURRENT_PASSWORD = "currentPassword";
@@ -18,9 +18,13 @@ export const ChangePasswordForm = () => {
   const [isPasswordCorrect, setIsPasswordCorrect] = useState(true);
   const { data } = useAccountQuery();
   const { email } = data?.profile ?? {};
+  const [isInputError, setIsInputError] = useState(false);
+  const { mutate, isLoading, isError, isSuccess } = useChangePasswordMutation();
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (document.activeElement instanceof HTMLElement)
+      document.activeElement.blur();
 
     const loginFormData = new FormData(event.target as HTMLFormElement);
     const emailValue = loginFormData.get(EMAIL) as string;
@@ -29,6 +33,18 @@ export const ChangePasswordForm = () => {
     const repeatNewPasswordValue = loginFormData.get(
       REPEAT_NEW_PASSWORD
     ) as string;
+
+    if (
+      !emailValue ||
+      !currentPasswordValue ||
+      !newPasswordValue ||
+      !repeatNewPasswordValue
+    ) {
+      setIsInputError(true);
+      return;
+    }
+
+    setIsInputError(false);
 
     if (newPasswordValue !== repeatNewPasswordValue) {
       setIsPasswordCorrect(false);
@@ -43,17 +59,39 @@ export const ChangePasswordForm = () => {
       newPassword: newPasswordValue,
     };
 
-    const { message } = await changePassword(userData, token);
-    console.log(message);
+    mutate(
+      { userData, token },
+      {
+        onSuccess: () => {
+          if (event.target instanceof HTMLFormElement) event.target.reset();
+        },
+      }
+    );
   };
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
+      {isSuccess && (
+        <Text tag="p" variant="success-1">
+          Password changed successfully!
+        </Text>
+      )}
+      {isInputError && (
+        <Text tag="p" variant="error-1">
+          All inputs required!
+        </Text>
+      )}
+      {isError && (
+        <Text tag="p" variant="error-1">
+          {`Coudn't change the password. Try again later`}
+        </Text>
+      )}
       <div className={styles.inputs}>
         <Input
           name={EMAIL}
           type="text"
-          placeholder={email ?? "abc@abc.com"}
+          placeholder={"abc@abc.com"}
+          defaultValue={email}
           labelText="Email"
         />
         <Input
@@ -81,7 +119,7 @@ export const ChangePasswordForm = () => {
         )}
       </div>
       <div className={styles.button}>
-        <Button variant="thick" text="Log in" />
+        <Button variant="thick" text="Log in" isLoading={isLoading} />
       </div>
     </form>
   );
