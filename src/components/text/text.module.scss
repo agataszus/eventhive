@@ -63,6 +63,13 @@
   color: $color-secondary;
 }
 
+.subtitle-5 {
+  font-size: $font-size-1;
+  font-weight: $font-weight-semibold;
+  text-transform: uppercase;
+  color: $color-secondary;
+}
+
 .caption-1 {
   font-size: $font-size-4;
   font-weight: $font-weight-medium;
@@ -117,6 +124,12 @@
   letter-spacing: 1.1;
   color: $font-color-light;
   text-transform: uppercase;
+}
+
+.heading-5 {
+  font-size: $font-size-7;
+  font-weight: $font-weight-semibold;
+  color: $font-color-light;
 }
 
 .num-1 {

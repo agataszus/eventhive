@@ -8,7 +8,6 @@ export const useOutsideClick = (
     (event: MouseEvent) => {
       if (!ref.current?.contains(event.target as HTMLElement)) {
         callbackFn(event);
-        console.log("close");
       }
     },
     [ref, callbackFn]

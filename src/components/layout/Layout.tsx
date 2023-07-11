@@ -1,9 +1,20 @@
+import { useEffect } from "react";
+import { useAuthToken } from "../../services/authTokenStore/useAuthToken";
 import { CreateProfileModal } from "../createProfileModal/CreateProfileModal";
 import { Sidebar } from "../sidebar/Sidebar";
 import styles from "./layout.module.scss";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 
 export const Layout = () => {
+  const { token } = useAuthToken();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!token) {
+      navigate("/login", { replace: true });
+    }
+  }, [token, navigate]);
+
   return (
     <div className={styles.layout}>
       <CreateProfileModal />

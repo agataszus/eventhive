@@ -6,6 +6,7 @@ import { Layout } from "../layout/Layout";
 import { HomePage } from "../../pages/dashboard/homePage/HomePage";
 import { LoginPage } from "../../pages/login/LoginPage";
 import { LikedEventsPage } from "../../pages/dashboard/likedEventsPage/LikedEventsPage";
+import { AccountPage } from "../../pages/dashboard/accountPage/AccountPage";
 
 const router = createBrowserRouter([
   {
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path: "account",
-        element: <LikedEventsPage />,
+        element: <AccountPage />,
       },
     ],
   },

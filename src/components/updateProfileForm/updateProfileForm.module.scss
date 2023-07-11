@@ -1,0 +1,21 @@
+@import "../../styles/variables";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $space-8;
+  background-color: inherit;
+  margin: auto;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  gap: $space-3;
+}
+
+.button {
+  width: 40%;
+  margin: auto;
+}
