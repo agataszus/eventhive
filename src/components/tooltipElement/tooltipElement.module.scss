@@ -1,0 +1,18 @@
+@import "../../styles/variables";
+
+.option {
+  display: flex;
+  gap: $space-3;
+  padding: $space-3;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $background-color-light;
+  }
+}
+
+.icon {
+  width: 20px;
+  height: auto;
+  fill: $font-color-light;
+}

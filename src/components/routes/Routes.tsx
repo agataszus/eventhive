@@ -32,6 +32,10 @@ const router = createBrowserRouter([
         path: "my-tickets",
         element: <></>,
       },
+      {
+        path: "account",
+        element: <LikedEventsPage />,
+      },
     ],
   },
 ]);

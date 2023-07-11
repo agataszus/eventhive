@@ -1,7 +1,7 @@
 import { useCallback, useRef, useState } from "react";
 import { useAccountQuery } from "../../queries/useAccountQuery";
 import { Loader } from "../loader/Loader";
-import { ProfileTooltip } from "../profileShowUp/ProfileTooltip";
+import { ProfileTooltip } from "../profileTooltip/ProfileTooltip";
 import { Text } from "../text/text";
 import styles from "./profileAvatar.module.scss";
 import Gravatar from "react-gravatar";
@@ -9,18 +9,14 @@ import { useOutsideClick } from "../../hooks/useOutsideClick";
 
 export const ProfileAvatar = () => {
   const [isTooltipOpen, setIsTooltipOpen] = useState(false);
-  const tooltipRef = useRef<HTMLDivElement>(null);
   const profileRef = useRef<HTMLDivElement>(null);
 
   const callbackFn = useCallback(
-    (event: MouseEvent) => {
-      if (!profileRef.current?.contains(event.target as HTMLElement))
-        setIsTooltipOpen(false);
-    },
+    () => setIsTooltipOpen(false),
     [setIsTooltipOpen]
   );
 
-  useOutsideClick(tooltipRef, callbackFn);
+  useOutsideClick(profileRef, callbackFn);
 
   const { data, isLoading, isError } = useAccountQuery();
 
@@ -59,7 +55,7 @@ export const ProfileAvatar = () => {
         </div>
       </div>
       {isTooltipOpen && (
-        <div ref={tooltipRef} className={styles.toolTip}>
+        <div className={styles.toolTip}>
           <ProfileTooltip />
         </div>
       )}
