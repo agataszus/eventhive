@@ -1,0 +1,29 @@
+@import "../../styles/variables";
+
+.optionsList {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  background-color: $background-color-medium-light;
+  z-index: 20;
+  border-radius: 6px;
+  box-shadow: 0px 8px 24px $background-color-dark;
+  border: 1px solid $font-color-light-alpha20;
+}
+
+.option {
+  display: flex;
+  gap: $space-3;
+  padding: $space-3;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $background-color-light;
+  }
+}
+
+.icon {
+  width: 20px;
+  height: auto;
+  fill: $font-color-light;
+}

@@ -9,6 +9,7 @@ type Variant =
   | "action-2"
   | "action-3"
   | "action-4"
+  | "action-5"
   | "subtitle-1"
   | "subtitle-2"
   | "subtitle-3"
