@@ -9,6 +9,8 @@ import styles from "./registerForm.module.scss";
 import { useNavigate } from "react-router-dom";
 import { RegisteredUserDto } from "../../services/api/auth/types";
 import { useState } from "react";
+import { useUserProfile } from "../../services/userProfileStore/useUserProfile";
+import { UserProfileData } from "../../services/userProfileStore/userProfileStore";
 
 const FIRST_NAME = "firstName";
 const LAST_NAME = "lastName";
@@ -18,6 +20,7 @@ const REPEAT_PASSWORD = "repeatPassword";
 
 export const RegisterForm = () => {
   const { setToken } = useAuthToken();
+  const { setUserProfile } = useUserProfile();
   const { mutate, isLoading, isError, error } = useRegisterMutation();
   const queryClient = useQueryClient();
   const navigate = useNavigate();
@@ -31,6 +34,8 @@ export const RegisterForm = () => {
     const emailValue = registerFormData.get(EMAIL) as string;
     const passwordValue = registerFormData.get(PASSWORD) as string;
     const repeatPasswordValue = registerFormData.get(REPEAT_PASSWORD) as string;
+    const firstNameValue = registerFormData.get(FIRST_NAME) as string;
+    const lastNameValue = registerFormData.get(LAST_NAME) as string;
 
     if (passwordValue !== repeatPasswordValue) {
       setIsPasswordCorrect(false);
@@ -44,9 +49,15 @@ export const RegisterForm = () => {
       password: passwordValue,
     };
 
+    const userProfileData: UserProfileData = {
+      firstName: firstNameValue,
+      lastName: lastNameValue,
+    };
+
     const handleSuccess = ({ tokens }: RegisteredUserDto) => {
       const { accessToken } = tokens;
       setToken(accessToken);
+      setUserProfile(userProfileData);
       queryClient.invalidateQueries();
       navigate("/dashboard/home");
     };
@@ -82,7 +93,7 @@ export const RegisterForm = () => {
           </Text>
         )}
       </div>
-      <Button text="Register" isLoading={isLoading} />
+      <Button variant="thick" text="Register" isLoading={isLoading} />
     </form>
   );
 };

@@ -4,7 +4,7 @@ import { updateUserProfile } from "../../services/api/profile/updateUserProfile"
 import { useAuthToken } from "../../services/authTokenStore/useAuthToken";
 import { Button } from "../button/Button";
 import { Input } from "../input/Input";
-import { SelectOptionRegion } from "../selectOptionRegion/SelectOptionRegion";
+import { SelectOptionRegion } from "../selectOptionRegion/SelectRegion";
 
 export const UpdateProfileForm = () => {
   const { token } = useAuthToken();
@@ -62,7 +62,7 @@ export const UpdateProfileForm = () => {
         placeholder="Your last name"
       />
       <SelectOptionRegion name="regionValue" />
-      <Button text="Save Changes" />
+      <Button variant="narrow" text="Save Changes" />
     </form>
   );
 };

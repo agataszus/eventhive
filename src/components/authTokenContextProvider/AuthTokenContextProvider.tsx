@@ -1,14 +1,8 @@
-import { ReactNode, useEffect, useState } from "react";
+import { PropsWithChildren, useEffect, useState } from "react";
 import { AuthTokenContext } from "../../services/authTokenStore/authTokenStore";
 const LOCAL_STORAGE_TOKEN = "token";
 
-type AuthTokenProviderProps = {
-  children: ReactNode;
-};
-
-export const AuthTokenContextProvider = ({
-  children,
-}: AuthTokenProviderProps) => {
+export const AuthTokenContextProvider = ({ children }: PropsWithChildren) => {
   const [token, setToken] = useState("");
 
   const saveToken = (token: string) => {

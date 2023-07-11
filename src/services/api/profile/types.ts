@@ -5,6 +5,12 @@ export type CreateUserProfileDto = {
   lastName: string;
   region: ProfileDto.RegionEnum;
 };
+
+export type CreateUserProfileOptions = {
+  userData: CreateUserProfileDto;
+  token: string;
+};
+
 export type ActionsReturnUserProfileDto = Omit<
   UserDto,
   "password" | "organizationProfile"
@@ -19,6 +25,6 @@ export type CreateOrganizationProfileDto = {
   coverUrl: string;
 };
 
-export type OrganizationAccountDto = Omit<UserDto, "password" | "profile">;
+export type OrganizationAccountDto = Omit<UserDto, "password">;
 
 export type UpdateUserProfileDto = Partial<CreateUserProfileDto>;

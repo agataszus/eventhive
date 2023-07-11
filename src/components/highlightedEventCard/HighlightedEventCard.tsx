@@ -75,7 +75,7 @@ export const HighlightedEventCard = () => {
         </Text>
         <div className={styles.buttonsContainer}>
           <div className={styles.button}>
-            <Button text="Buy Ticket" />
+            <Button text="Buy Ticket" variant="narrow" />
           </div>
           <Like />
         </div>

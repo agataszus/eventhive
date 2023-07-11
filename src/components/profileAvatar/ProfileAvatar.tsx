@@ -1,19 +1,35 @@
-import avatar from "../../assets/pexels-sasha-kim-8420889.jpg";
+import { useAccountQuery } from "../../queries/useAccountQuery";
+import { Loader } from "../loader/Loader";
 import { Text } from "../text/text";
 import styles from "./profileAvatar.module.scss";
+import Gravatar from "react-gravatar";
 
 export const ProfileAvatar = () => {
+  const { data, isLoading, isError } = useAccountQuery();
+
+  const { firstName, lastName, email } = data?.profile ?? {};
+
   return (
     <div className={styles.profileAvatar}>
       <div className={styles.imageContainer}>
-        <img src={avatar} alt="Profile picture" className={styles.image} />
+        {isLoading ? (
+          <Loader variant="extraSmall" />
+        ) : (
+          <Gravatar
+            email={email?.toLowerCase()}
+            size={100}
+            rating="pg"
+            default="identicon"
+            className={styles.image}
+          />
+        )}
       </div>
       <div className={styles.nameContainer}>
         <Text tag="p" variant="caption-1">
-          Sasha
+          {isError ? "------" : firstName}
         </Text>
         <Text tag="p" variant="caption-2">
-          Kim
+          {isError ? "------" : lastName}
         </Text>
       </div>
     </div>

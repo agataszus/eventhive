@@ -5,9 +5,15 @@ type InputProps = {
   name: string;
   type: "text" | "password" | "number";
   placeholder: string;
+  defaultValue?: string;
 };
 
-export const Input = ({ name, type, placeholder }: InputProps) => {
+export const Input = ({
+  name,
+  type,
+  placeholder,
+  defaultValue,
+}: InputProps) => {
   return (
     <div className={styles.inputContainer}>
       <input
@@ -16,6 +22,7 @@ export const Input = ({ name, type, placeholder }: InputProps) => {
         type={type}
         name={name}
         placeholder={placeholder}
+        defaultValue={defaultValue}
       ></input>
     </div>
   );
