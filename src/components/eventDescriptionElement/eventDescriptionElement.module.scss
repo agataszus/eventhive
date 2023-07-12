@@ -1,0 +1,12 @@
+@import "../../styles/variables";
+
+.descriptionContainer {
+  display: flex;
+  gap: $space-1;
+  align-items: center;
+}
+
+.category {
+  width: auto;
+  white-space: nowrap;
+}

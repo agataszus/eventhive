@@ -1,0 +1,19 @@
+@import "../../../styles/variables";
+
+.eventPage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(to right, #191919ef, #191919ef),
+    url(../../../assets/orangeWarsaw.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: $space-8;
+  padding: $space-6;
+}

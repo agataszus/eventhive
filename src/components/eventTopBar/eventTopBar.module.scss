@@ -1,0 +1,23 @@
+@import "../../styles/variables";
+
+.topBar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 78px;
+  padding: 0 $space-6;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.title {
+  display: flex;
+  gap: $space-3;
+  align-items: center;
+}
+
+.icon {
+  width: 24px;
+  height: auto;
+  fill: $font-color-light-secondary;
+}

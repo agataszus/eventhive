@@ -7,6 +7,7 @@ import { HomePage } from "../../pages/dashboard/homePage/HomePage";
 import { LoginPage } from "../../pages/login/LoginPage";
 import { LikedEventsPage } from "../../pages/dashboard/likedEventsPage/LikedEventsPage";
 import { AccountPage } from "../../pages/dashboard/accountPage/AccountPage";
+import { EventPage } from "../../pages/dashboard/eventPage/EventPage";
 
 const router = createBrowserRouter([
   {
@@ -30,8 +31,8 @@ const router = createBrowserRouter([
         element: <LikedEventsPage />,
       },
       {
-        path: "my-tickets",
-        element: <></>,
+        path: "event/:id",
+        element: <EventPage />,
       },
       {
         path: "account",

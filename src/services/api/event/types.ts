@@ -19,3 +19,8 @@ export type eventStatsDto = {
   }[];
   likes: number;
 };
+
+export type GetEventOptions = {
+  token: string;
+  id: number;
+};
