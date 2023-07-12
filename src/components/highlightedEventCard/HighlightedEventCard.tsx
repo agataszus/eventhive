@@ -8,6 +8,7 @@ import styles from "./highlightedEventCard.module.scss";
 import { Loader } from "../loader/Loader";
 import { Error } from "../error/Error";
 import { parseEventDate } from "../../helpers/parseEventDate";
+import { Link } from "react-router-dom";
 
 export const HighlightedEventCard = () => {
   const { data: events, isLoading, isError } = useEventsQuery();
@@ -32,7 +33,7 @@ export const HighlightedEventCard = () => {
     );
 
   if (!events) return null;
-  const { title, description, startDate, externalImageUrls } =
+  const { title, description, startDate, externalImageUrls, id } =
     events[Math.floor(randomNumber * events.length)];
 
   const { day, month } = parseEventDate(startDate);
@@ -70,9 +71,11 @@ export const HighlightedEventCard = () => {
             {description}
           </Text>
         </div>
-        <Text tag="p" variant="action-4">
-          Read more
-        </Text>
+        <Link to={`/dashboard/event/${id}`}>
+          <Text tag="p" variant="action-4">
+            Read more
+          </Text>
+        </Link>
         <div className={styles.buttonsContainer}>
           <div className={styles.button}>
             <Button text="Buy Ticket" variant="narrow" />

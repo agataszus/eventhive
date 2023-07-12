@@ -1,9 +1,11 @@
 import { EventDto } from "../api-types.gen";
 
-export type AllEventsDto = (Omit<
+export type AllEventsEventDto = Omit<
   EventDto,
   "createdBy" | "files" | "likes" | "ticketTypes"
-> & { likesNumber: number })[];
+> & { likesNumber: number };
+
+export type AllEventsDto = AllEventsEventDto[];
 
 export type UpdateEventDto = Omit<EventDto, "files" | "likes" | "ticketTypes">;
 

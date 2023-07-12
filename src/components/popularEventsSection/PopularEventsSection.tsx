@@ -6,10 +6,16 @@ import { EventTile } from "../eventTile/EventTile";
 import { useEventsQuery } from "../../queries/useEventsQuery";
 import { Loader } from "../loader/Loader";
 import { Error } from "../error/Error";
-import { parseEventDate } from "../../helpers/parseEventDate";
+import { useNavigate } from "react-router-dom";
 
 export const PopularEventsSection = () => {
   const { data: events, isLoading, isError } = useEventsQuery();
+  const navigate = useNavigate();
+
+  const handleClick = (id: number) => {
+    console.log("click");
+    navigate(`/dashboard/event/${id}`);
+  };
 
   return (
     <div className={styles.popularEventsSection}>
@@ -26,16 +32,11 @@ export const PopularEventsSection = () => {
         {isLoading && <Loader variant="large" />}
         {isError && <Error message="Something went wrong" />}
         {events?.map((event) => {
-          const { day, month } = parseEventDate(event.startDate);
-
           return (
             <EventTile
-              name={event.title}
-              description={event.description}
-              picture={event.externalImageUrls[0]}
-              key={`${event.id}`}
-              day={day}
-              month={month}
+              event={event}
+              key={event.id}
+              onClick={() => handleClick(event.id)}
             />
           );
         })}
