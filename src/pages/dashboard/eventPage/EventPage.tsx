@@ -7,10 +7,11 @@ import { Loader } from "../../../components/loader/Loader";
 import { EventTicketsSection } from "../../../components/eventTicketsSection/EventTicketsSection";
 import { PopularEventsSection } from "../../../components/popularEventsSection/PopularEventsSection";
 import { useRef } from "react";
+import { Error } from "../../../components/error/Error";
 
 export const EventPage = () => {
   const { id } = useParams();
-  const { data: event, isLoading, isError } = useEventQuery(Number(id));
+  const { data: event, isLoading } = useEventQuery(Number(id));
   const ticketsSectionRef = useRef<HTMLDivElement>(null);
 
   const handleBuyTicketsClick = () => {
@@ -18,7 +19,6 @@ export const EventPage = () => {
   };
 
   if (isLoading) {
-    console.log("loading");
     return (
       <div className={styles.eventPage}>
         <Loader variant="large" />
@@ -26,8 +26,19 @@ export const EventPage = () => {
     );
   }
 
-  if (!event) return null;
-  const { externalImageUrls } = event;
+  if (!event) {
+    return (
+      <div className={styles.eventPage}>
+        <EventTopBar />
+        <div className={styles.content}>
+          <Error message="Something went wrong. Try again later!" />
+        </div>
+      </div>
+    );
+  }
+
+  // if (!event) return null;
+  const { externalImageUrls } = event || {};
 
   const getGradientOnImage = (
     url: string
@@ -38,7 +49,7 @@ export const EventPage = () => {
     <div
       className={styles.eventPage}
       style={
-        externalImageUrls.length
+        externalImageUrls?.length
           ? { backgroundImage: getGradientOnImage(externalImageUrls[0]) }
           : undefined
       }
