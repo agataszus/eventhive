@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { PropsWithChildren } from "react";
 import styles from "./text.module.scss";
 import classNames from "classnames";
 
@@ -30,11 +30,10 @@ type Variant =
   | "success-1";
 
 type TextProps = {
-  children: ReactNode;
   tag: Tag;
   variant: Variant;
   className?: string;
-};
+} & PropsWithChildren;
 
 export const Text = ({ children, tag, variant, className }: TextProps) => {
   const extraClass = classNames(styles[variant], className);
