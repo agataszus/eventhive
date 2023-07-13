@@ -1,11 +1,12 @@
 @import "../../styles/variables";
 
-.categoriesSection {
-  background-color: $background-color-medium-dark;
+.ticketsSection {
+  background-color: $background-color-medium-light;
+  height: 387px;
 }
 
-.categories {
-  width: 100%;
+.tickets {
+  width: auto;
   display: flex;
   gap: $space-7;
   overflow-x: scroll;

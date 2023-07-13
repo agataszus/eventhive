@@ -1,0 +1,31 @@
+@import "../../styles/variables";
+
+.overlay {
+  position: absolute;
+  width: 540px;
+  height: 240px;
+  border-radius: 14px;
+  background-color: $background-color-dark;
+  opacity: 80%;
+  left: 0;
+  top: 0;
+  z-index: 5;
+}
+.soldOut {
+  display: flex;
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 240px;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  border: 4px solid $font-color-light;
+  border-radius: 8px;
+  rotate: 345deg;
+  z-index: 10;
+  font-size: $font-size-9;
+  font-weight: $font-weight-semibold;
+}

@@ -60,7 +60,7 @@ export const ProfileForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className={styles.profileForm}>
-      <Text tag="h3" variant="heading-4" className={styles.title}>
+      <Text tag="h3" variant="heading-5" className={styles.title}>
         Create Your Profile
       </Text>
       <div className={styles.inputs}>

@@ -1,17 +1,20 @@
-import { useParams } from "react-router-dom";
-import { useEventQuery } from "../../queries/useEventQuery";
-import styles from "./eventCard.module.scss";
+import styles from "./eventSection.module.scss";
 import { Text } from "../text/text";
 import { EventDescriptionElement } from "../eventDescriptionElement/EventDescriptionElement";
 import { parseEventDate } from "../../helpers/parseEventDate";
 import { Button } from "../button/Button";
 import { Like } from "../like/Like";
+import { IdEventDto } from "../../services/api/event/types";
 
-export const EventCard = () => {
-  const { id } = useParams();
-  const { data: event } = useEventQuery(Number(id));
+type EventSectionProps = {
+  event: IdEventDto;
+  onBuyTicketsClick: () => void;
+};
 
-  if (!event) return null;
+export const EventSection = ({
+  event,
+  onBuyTicketsClick,
+}: EventSectionProps) => {
   const {
     title,
     startDate,
@@ -20,7 +23,7 @@ export const EventCard = () => {
     description,
     locationName,
     category,
-    isCanceled,
+    // isCanceled,
     createdBy: { name },
   } = event;
 
@@ -48,7 +51,7 @@ export const EventCard = () => {
         />
       </div>
       <div className={styles.informationContainer}>
-        <Text tag="h3" variant="heading-4">
+        <Text tag="h3" variant="heading-5">
           {title}
         </Text>
         <ul className={styles.description}>
@@ -75,7 +78,11 @@ export const EventCard = () => {
         </div>
         <div className={styles.buttons}>
           <div className={styles.buttonBuy}>
-            <Button variant="narrow" text="Buy ticket!" />
+            <Button
+              variant="narrow"
+              text="Buy ticket!"
+              onClick={onBuyTicketsClick}
+            />
           </div>
           <Like />
         </div>

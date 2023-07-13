@@ -6,7 +6,7 @@ export const getTicketTypesForEvent = async (
   token: string,
   eventId: number
 ) => {
-  const data = await apiClient<undefined, GetTicketsTypesDto>({
+  const data = await apiClient<undefined, GetTicketsTypesDto[]>({
     method: "GET",
     route: getTicketsTypesRoute(eventId),
     token,

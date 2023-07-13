@@ -32,7 +32,7 @@ export const PersonalInformation = () => {
       ) : (
         <div className={styles.informationContainer}>
           <div className={styles.nameContainer}>
-            <Text tag="h4" variant="heading-5">
+            <Text tag="h4" variant="heading-3">
               {firstName} {lastName}
             </Text>
             <Text tag="p" variant="subtitle-4">
