@@ -1,5 +1,4 @@
 import { parseEventDate } from "../../helpers/parseEventDate";
-import { useEventQuery } from "../../queries/useEventQuery";
 import { Button } from "../button/Button";
 import { DateTileSmall } from "../dateTileSmall/DateTileSmall";
 import { Text } from "../text/text";
