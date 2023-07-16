@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import { useEventsQuery } from "../../queries/useEventsQuery";
 import { Button } from "../button/Button";
 import { DateTile } from "../dateTile/DateTile";
@@ -8,10 +8,11 @@ import styles from "./highlightedEventCard.module.scss";
 import { Loader } from "../loader/Loader";
 import { Error } from "../error/Error";
 import { parseEventDate } from "../../helpers/parseEventDate";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const HighlightedEventCard = () => {
   const { data: events, isLoading, isError } = useEventsQuery();
+  const navigate = useNavigate();
 
   const randomNumber = useMemo(() => {
     const randomNum = Math.random();
@@ -78,7 +79,11 @@ export const HighlightedEventCard = () => {
         </Link>
         <div className={styles.buttonsContainer}>
           <div className={styles.button}>
-            <Button text="Buy Ticket" variant="narrow" />
+            <Button
+              text="Buy Ticket"
+              variant="narrow"
+              onClick={() => navigate(`/dashboard/event/${id}`)}
+            />
           </div>
           <Like id={id} />
         </div>

@@ -7,7 +7,7 @@ import { Text } from "../text/text";
 export const PersonalInformation = () => {
   const { data, isLoading } = useAccountQuery();
 
-  const { firstName, lastName, email, eventLikes, tickets } =
+  const { firstName, lastName, email, tickets, likedEventsNumber } =
     data?.profile ?? {};
 
   return (
@@ -41,7 +41,7 @@ export const PersonalInformation = () => {
           </div>
           <div className={styles.dataContainer}>
             <Text tag="p" variant="caption-3">
-              Liked events: {eventLikes?.length ?? 0}
+              Liked events: {likedEventsNumber}
             </Text>
             <Text tag="p" variant="caption-3">
               Bought tickets: {tickets?.length ?? 0}

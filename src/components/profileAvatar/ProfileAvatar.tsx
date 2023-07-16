@@ -29,7 +29,6 @@ export const ProfileAvatar = () => {
         className={styles.profileAvatar}
         onClick={() => {
           setIsTooltipOpen(!isTooltipOpen);
-          console.log("open");
         }}
       >
         <div className={styles.imageContainer}>

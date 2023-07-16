@@ -1,0 +1,80 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.eventCard {
+  display: flex;
+  width: 100%;
+  height: 320px;
+  background-color: $background-color-medium-dark;
+  border-radius: 18px;
+}
+
+.imageContainer {
+  position: relative;
+  height: 100%;
+  min-width: 320px;
+  flex: 0;
+  border-bottom-left-radius: 18px;
+  border-top-left-radius: 18px;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      to left top,
+      rgba(0, 0, 0, 0.8),
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0)
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom-left-radius: 18px;
+    border-top-left-radius: 18px;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.dateTile {
+  position: absolute;
+  right: $space-4;
+  bottom: $space-4;
+  z-index: 2;
+}
+
+.title {
+  cursor: pointer;
+}
+
+.description {
+  @include overflow-ellipsis(7);
+}
+
+.descriptionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  padding: $space-7;
+  justify-content: center;
+  text-align: justify;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.buttonBuy {
+  min-width: 240px;
+}
