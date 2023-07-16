@@ -7,6 +7,7 @@ import styles from "./likedEventCard.module.scss";
 import { Like } from "../like/Like";
 import { Link, useNavigate } from "react-router-dom";
 import { AllEventsEventDto } from "../../services/api/event/types";
+import { getEventPath } from "../routes/paths";
 
 type LikedEventCardProps = {
   event: AllEventsEventDto;
@@ -32,7 +33,7 @@ export const LikedEventCard = ({ event }: LikedEventCardProps) => {
         </div>
       </div>
       <div className={styles.descriptionContainer}>
-        <Link to={`/dashboard/event/${id}`}>
+        <Link to={getEventPath(id)}>
           <Text tag="h3" variant="heading-5" className={styles.title}>
             {title}
           </Text>
@@ -46,7 +47,7 @@ export const LikedEventCard = ({ event }: LikedEventCardProps) => {
             <Button
               variant="narrow"
               text="Buy ticket!"
-              onClick={() => navigate(`/dashboard/event/${id}`)}
+              onClick={() => navigate(getEventPath(id))}
             />
           </div>
         </div>

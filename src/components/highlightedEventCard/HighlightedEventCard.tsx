@@ -9,6 +9,7 @@ import { Loader } from "../loader/Loader";
 import { Error } from "../error/Error";
 import { parseEventDate } from "../../helpers/parseEventDate";
 import { Link, useNavigate } from "react-router-dom";
+import { getEventPath } from "../routes/paths";
 
 export const HighlightedEventCard = () => {
   const { data: events, isLoading, isError } = useEventsQuery();
@@ -72,7 +73,7 @@ export const HighlightedEventCard = () => {
             {description}
           </Text>
         </div>
-        <Link to={`/dashboard/event/${id}`}>
+        <Link to={getEventPath(id)}>
           <Text tag="p" variant="action-4">
             Read more
           </Text>
@@ -82,7 +83,7 @@ export const HighlightedEventCard = () => {
             <Button
               text="Buy Ticket"
               variant="narrow"
-              onClick={() => navigate(`/dashboard/event/${id}`)}
+              onClick={() => navigate(getEventPath(id))}
             />
           </div>
           <Like id={id} />

@@ -11,6 +11,7 @@ import { RegisteredUserDto } from "../../services/api/auth/types";
 import { useState } from "react";
 import { useUserProfile } from "../../services/userProfileStore/useUserProfile";
 import { UserProfileData } from "../../services/userProfileStore/userProfileStore";
+import { getDashboardHomePath } from "../routes/paths";
 
 const FIRST_NAME = "firstName";
 const LAST_NAME = "lastName";
@@ -59,7 +60,7 @@ export const RegisterForm = () => {
       setToken(accessToken);
       setUserProfile(userProfileData);
       queryClient.invalidateQueries();
-      navigate("/dashboard/home");
+      navigate(getDashboardHomePath());
     };
 
     mutate(userData, {

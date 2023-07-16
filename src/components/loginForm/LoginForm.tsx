@@ -8,6 +8,7 @@ import { useQueryClient } from "react-query";
 import { useNavigate } from "react-router-dom";
 // import { useEffect } from "react";
 import { Text } from "../text/text";
+import { getDashboardHomePath } from "../routes/paths";
 
 const EMAIL = "email";
 const PASSWORD = "password";
@@ -35,7 +36,7 @@ export const LoginForm = () => {
       onSuccess: ({ accessToken }) => {
         setToken(accessToken);
         queryClient.invalidateQueries();
-        navigate("/dashboard/home");
+        navigate(getDashboardHomePath());
       },
     });
   };

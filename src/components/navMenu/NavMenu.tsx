@@ -8,6 +8,11 @@ import RoadMapLineIcon from "remixicon-react/RoadMapLineIcon";
 import { NavMenuLink } from "../navMenuLink/NavMenuLink";
 import { eventsCategories } from "../../services/api/event/eventsCategories";
 import { NavMenuCategory } from "../navMenuCategory/NavMenuCategory";
+import {
+  getDashboardHomePath,
+  getLikedEventsPath,
+  getRootPath,
+} from "../routes/paths";
 
 export const NavMenu = () => {
   return (
@@ -15,14 +20,14 @@ export const NavMenu = () => {
       <ul className={styles.menu}>
         <li className={styles.link}>
           <NavMenuLink
-            linkTo="/dashboard/home"
+            linkTo={getDashboardHomePath()}
             Icon={Home2LineIcon}
             text="Home"
           />
         </li>
         <li className={styles.link}>
           <NavMenuLink
-            linkTo="/dashboard/liked-events"
+            linkTo={getLikedEventsPath()}
             Icon={HeartLineIcon}
             text="Liked events"
           />
@@ -35,7 +40,11 @@ export const NavMenu = () => {
           />
         </li>
         <li className={styles.link}>
-          <NavMenuLink linkTo="/" Icon={RoadMapLineIcon} text="Map" />
+          <NavMenuLink
+            linkTo={getRootPath()}
+            Icon={RoadMapLineIcon}
+            text="Map"
+          />
         </li>
       </ul>
       <div className={styles.divider}>
