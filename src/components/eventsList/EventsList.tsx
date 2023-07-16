@@ -1,11 +1,12 @@
 import { useQuery } from "react-query";
 import { getEvents } from "../../services/api/event/getEvents";
 import { useAuthToken } from "../../services/authTokenStore/useAuthToken";
+import { getEventsKey } from "../../queries/queryKeys";
 
 export const EventsList = () => {
   const { token } = useAuthToken();
 
-  const { data, isLoading, isError, isSuccess } = useQuery("events", () =>
+  const { data, isLoading, isError, isSuccess } = useQuery(getEventsKey(), () =>
     getEvents(token)
   );
 

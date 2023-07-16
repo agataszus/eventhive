@@ -11,6 +11,7 @@ import { Text } from "../text/text";
 import styles from "./profileForm.module.scss";
 import { useAccountQuery } from "../../queries/useAccountQuery";
 import { useState } from "react";
+import { getAccountKey } from "../../queries/queryKeys";
 
 const FIRST_NAME = "firstName";
 const LAST_NAME = "lastName";
@@ -52,7 +53,7 @@ export const ProfileForm = () => {
       { userData, token },
       {
         onSuccess: () => {
-          queryClient.invalidateQueries("account");
+          queryClient.invalidateQueries(getAccountKey());
         },
       }
     );

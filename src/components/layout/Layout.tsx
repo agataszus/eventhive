@@ -5,7 +5,7 @@ import { Sidebar } from "../sidebar/Sidebar";
 import styles from "./layout.module.scss";
 import { Outlet, useNavigate } from "react-router-dom";
 import { useScrollOnRouteChange } from "../../hooks/useScrollOnRouteChange";
-import { getEventPath, getLoginPath } from "../routes/paths";
+import { getLoginPath } from "../routes/paths";
 
 export const Layout = () => {
   const { token } = useAuthToken();

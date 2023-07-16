@@ -10,6 +10,7 @@ import { Text } from "../text/text";
 import styles from "./updateProfileForm.module.scss";
 import { useUpdateProfileMutation } from "../../queries/useUpdateProfileMutation";
 import { useQueryClient } from "react-query";
+import { getAccountKey } from "../../queries/queryKeys";
 
 const FIRST_NAME = "firstName";
 const LAST_NAME = "lastName";
@@ -54,7 +55,7 @@ export const UpdateProfileForm = () => {
       { userData, token },
       {
         onSuccess: () => {
-          queryClient.invalidateQueries("account");
+          queryClient.invalidateQueries(getAccountKey());
 
           if (event.target instanceof HTMLFormElement) event.target.reset();
         },
@@ -77,7 +78,7 @@ export const UpdateProfileForm = () => {
         )}
         {isError && (
           <Text tag="p" variant="error-1">
-            {`Coudn't update the account. Try again later`}
+            {`Couldn't update the account. Try again later`}
           </Text>
         )}
         <Input
