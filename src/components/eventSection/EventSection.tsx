@@ -23,6 +23,7 @@ export const EventSection = ({
     description,
     locationName,
     category,
+    id,
     // isCanceled,
     createdBy: { name },
   } = event;
@@ -84,7 +85,7 @@ export const EventSection = ({
               onClick={onBuyTicketsClick}
             />
           </div>
-          <Like />
+          <Like id={id} />
         </div>
       </div>
     </div>

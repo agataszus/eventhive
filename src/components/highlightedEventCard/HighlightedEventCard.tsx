@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useEventsQuery } from "../../queries/useEventsQuery";
 import { Button } from "../button/Button";
 import { DateTile } from "../dateTile/DateTile";
@@ -80,7 +80,7 @@ export const HighlightedEventCard = () => {
           <div className={styles.button}>
             <Button text="Buy Ticket" variant="narrow" />
           </div>
-          <Like />
+          <Like id={id} />
         </div>
       </div>
       <div className={styles.dateContainer}>

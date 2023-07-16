@@ -1,3 +1,9 @@
+import { TopBar } from "../../../components/topBar/TopBar";
+
 export const LikedEventsPage = () => {
-  return <div>Liked Events</div>;
+  return (
+    <div>
+      <TopBar title="Liked events" />
+    </div>
+  );
 };
