@@ -10,13 +10,13 @@ type TooltipLabelProps = {
 
 export const TooltipElement = ({ Icon, text, onClick }: TooltipLabelProps) => {
   return (
-    <button>
-      <li className={styles.option} onClick={onClick}>
+    <li>
+      <button className={styles.option} onClick={onClick}>
         <Icon className={styles.icon} />
         <Text tag="p" variant="action-5">
           {text}
         </Text>
-      </li>
-    </button>
+      </button>
+    </li>
   );
 };
