@@ -2,6 +2,8 @@
 
 .option {
   display: flex;
+  width: 100%;
+  align-items: center;
   gap: $space-3;
   padding: $space-3;
   cursor: pointer;
