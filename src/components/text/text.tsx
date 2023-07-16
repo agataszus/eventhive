@@ -9,10 +9,12 @@ type Variant =
   | "action-2"
   | "action-3"
   | "action-4"
+  | "action-5"
   | "subtitle-1"
   | "subtitle-2"
   | "subtitle-3"
   | "subtitle-4"
+  | "subtitle-5"
   | "caption-1"
   | "caption-2"
   | "caption-3"
@@ -21,8 +23,10 @@ type Variant =
   | "heading-2"
   | "heading-3"
   | "heading-4"
+  | "heading-5"
   | "num-1"
-  | "error-1";
+  | "error-1"
+  | "success-1";
 
 type TextProps = {
   tag: Tag;

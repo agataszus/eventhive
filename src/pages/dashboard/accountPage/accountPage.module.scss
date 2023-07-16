@@ -1,0 +1,8 @@
+@import "../../../styles/variables";
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  padding: $space-10 $space-13;
+  gap: $space-11;
+}

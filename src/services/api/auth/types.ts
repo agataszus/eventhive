@@ -1,4 +1,4 @@
-import { UserDto } from "../api-types.gen";
+import { ChangePasswordDto, UserDto } from "../api-types.gen";
 
 export type Tokens = {
   accessToken: string;
@@ -11,4 +11,9 @@ export type RegisteredUserDto = {
 
 export type Message = {
   message: string;
+};
+
+export type ChangePasswordOption = {
+  userData: ChangePasswordDto;
+  token: string;
 };

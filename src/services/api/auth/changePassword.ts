@@ -1,12 +1,12 @@
 import { ChangePasswordDto } from "../api-types.gen";
 import { apiClient } from "../client";
 import { getChangePasswordRoute } from "../routes";
-import { Message } from "./types";
+import { ChangePasswordOption, Message } from "./types";
 
-export const changePassword = async (
-  userData: ChangePasswordDto,
-  token: string
-) => {
+export const changePassword = async ({
+  userData,
+  token,
+}: ChangePasswordOption) => {
   const data = await apiClient<ChangePasswordDto, Message>({
     method: "PATCH",
     route: getChangePasswordRoute(),

@@ -1,3 +1,4 @@
+import { Text } from "../text/text";
 import styles from "./input.module.scss";
 
 type InputProps = {
@@ -13,9 +14,17 @@ export const Input = ({
   type,
   placeholder,
   defaultValue,
+  labelText,
 }: InputProps) => {
   return (
     <div className={styles.inputContainer}>
+      {labelText && (
+        <label htmlFor={name}>
+          <Text tag="span" variant="subtitle-5">
+            {labelText}
+          </Text>
+        </label>
+      )}
       <input
         className={styles.input}
         id={name}
