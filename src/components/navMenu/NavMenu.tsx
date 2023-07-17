@@ -64,7 +64,6 @@ export const NavMenu = () => {
                   <NavMenuCategory
                     label={categoryName}
                     category={categoryKey}
-                    isActive={false}
                   />
                 </li>
               );

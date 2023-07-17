@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { NavActive } from "../navActive/NavActive";
 import { Text } from "../text/text";
 import styles from "./navMenuCategory.module.scss";
@@ -7,15 +7,13 @@ import { getCategoryPath } from "../routes/paths";
 
 type NavMenuCategoryProps = {
   label: string;
-  isActive: boolean;
   category: string;
 };
 
-export const NavMenuCategory = ({
-  label,
-  isActive,
-  category,
-}: NavMenuCategoryProps) => {
+export const NavMenuCategory = ({ label, category }: NavMenuCategoryProps) => {
+  const location = useLocation();
+  const isActive = getCategoryPath(category) === location.pathname;
+
   const className = classNames(styles.label, { [styles.active]: isActive });
 
   return (
