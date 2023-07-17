@@ -1,0 +1,36 @@
+@import "../../styles/variables";
+
+.imageContainer {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  z-index: 10;
+  background-image: linear-gradient(
+    165deg,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.65) 40%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0)
+  );
+  background-position: center;
+  background-size: cover;
+}
+
+.title {
+  padding: $space-8 $space-9;
+  text-transform: uppercase;
+  font-size: $font-size-13;
+}
+
+.backgroundTitle {
+  position: absolute;
+  top: $space-9;
+  left: $space-9;
+  font-size: $font-size-15;
+  font-weight: $font-weight-bold;
+  color: $font-color-light;
+  opacity: 25%;
+  text-transform: uppercase;
+}

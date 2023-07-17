@@ -107,17 +107,17 @@ export namespace CreateEventDto {
    * @enum {string}
    */
   export enum CategoryEnum {
-    Music = <any>"music",
-    PopMusic = <any>"pop-music",
-    ElectronicMusic = <any>"electronic-music",
-    RockMusic = <any>"rock-music",
-    ClassicalMusic = <any>"classical-music",
-    CountryMusic = <any>"country-music",
-    AlternativeMusic = <any>"alternative-music",
-    FilmMusic = <any>"film-music",
-    Show = <any>"show",
-    Movies = <any>"movies",
-    Other = <any>"other",
+    Music = "music",
+    PopMusic = "pop-music",
+    ElectronicMusic = "electronic-music",
+    RockMusic = "rock-music",
+    ClassicalMusic = "classical-music",
+    CountryMusic = "country-music",
+    AlternativeMusic = "alternative-music",
+    FilmMusic = "film-music",
+    Show = "show",
+    Movies = "movies",
+    Other = "other",
   }
 }
 /**
@@ -162,9 +162,9 @@ export namespace CreatePaymentDto {
    * @enum {string}
    */
   export enum PaymentMethodEnum {
-    Card = <any>"card",
-    Transfer = <any>"transfer",
-    Blik = <any>"blik",
+    Card = "card",
+    Transfer = "transfer",
+    Blik = "blik",
   }
 }
 /**
@@ -324,17 +324,17 @@ export namespace EventDto {
    * @enum {string}
    */
   export enum CategoryEnum {
-    Music = <any>"music",
-    PopMusic = <any>"pop-music",
-    ElectronicMusic = <any>"electronic-music",
-    RockMusic = <any>"rock-music",
-    ClassicalMusic = <any>"classical-music",
-    CountryMusic = <any>"country-music",
-    AlternativeMusic = <any>"alternative-music",
-    FilmMusic = <any>"film-music",
-    Show = <any>"show",
-    Movies = <any>"movies",
-    Other = <any>"other",
+    Music = "music",
+    PopMusic = "pop-music",
+    ElectronicMusic = "electronic-music",
+    RockMusic = "rock-music",
+    ClassicalMusic = "classical-music",
+    CountryMusic = "country-music",
+    AlternativeMusic = "alternative-music",
+    FilmMusic = "film-music",
+    Show = "show",
+    Movies = "movies",
+    Other = "other",
   }
 }
 /**
@@ -522,7 +522,7 @@ export namespace ModelFile {
    * @enum {string}
    */
   export enum TypeEnum {
-    Image = <any>"image",
+    Image = "image",
   }
 }
 /**
@@ -615,12 +615,12 @@ export namespace OrganizationProfileDto {
    * @enum {string}
    */
   export enum RegionEnum {
-    PL = <any>"PL",
-    US = <any>"US",
-    DE = <any>"DE",
-    FR = <any>"FR",
-    CZ = <any>"CZ",
-    IT = <any>"IT",
+    PL = "PL",
+    US = "US",
+    DE = "DE",
+    FR = "FR",
+    CZ = "CZ",
+    IT = "IT",
   }
 }
 /**
@@ -719,17 +719,17 @@ export namespace PaymentDto {
    * @enum {string}
    */
   export enum MethodEnum {
-    Card = <any>"card",
-    Transfer = <any>"transfer",
-    Blik = <any>"blik",
+    Card = "card",
+    Transfer = "transfer",
+    Blik = "blik",
   }
   /**
    * @export
    * @enum {string}
    */
   export enum StatusEnum {
-    Processing = <any>"processing",
-    Paid = <any>"paid",
+    Processing = "processing",
+    Paid = "paid",
   }
 }
 /**
@@ -830,12 +830,12 @@ export namespace ProfileDto {
    * @enum {string}
    */
   export enum RegionEnum {
-    PL = <any>"PL",
-    US = <any>"US",
-    DE = <any>"DE",
-    FR = <any>"FR",
-    CZ = <any>"CZ",
-    IT = <any>"IT",
+    PL = "PL",
+    US = "US",
+    DE = "DE",
+    FR = "FR",
+    CZ = "CZ",
+    IT = "IT",
   }
 }
 /**
@@ -1071,9 +1071,9 @@ export namespace UserDto {
    * @enum {string}
    */
   export enum RoleEnum {
-    Admin = <any>"admin",
-    Organization = <any>"organization",
-    User = <any>"user",
+    Admin = "admin",
+    Organization = "organization",
+    User = "user",
   }
 }
 /**

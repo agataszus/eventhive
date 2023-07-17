@@ -5,3 +5,5 @@ export const getDashboardHomePath = () => `${getDashboardPath()}/home`;
 export const getLikedEventsPath = () => `${getDashboardPath()}/liked-events`;
 export const getEventPath = (id: number) => `${getDashboardPath()}/event/${id}`;
 export const getAccountPath = () => `${getDashboardPath()}/account`;
+export const getCategoryPath = (category: string) =>
+  `${getDashboardPath()}/categories/${category}`;

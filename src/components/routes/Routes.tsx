@@ -8,6 +8,7 @@ import { LoginPage } from "../../pages/login/LoginPage";
 import { LikedEventsPage } from "../../pages/dashboard/likedEventsPage/LikedEventsPage";
 import { AccountPage } from "../../pages/dashboard/accountPage/AccountPage";
 import { EventPage } from "../../pages/dashboard/eventPage/EventPage";
+import { CategoryPage } from "../../pages/dashboard/categoryPage/CategoryPage";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "account",
         element: <AccountPage />,
+      },
+      {
+        path: "categories/:category",
+        element: <CategoryPage />,
       },
     ],
   },

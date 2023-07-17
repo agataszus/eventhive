@@ -57,13 +57,19 @@ export const NavMenu = () => {
           </Text>
         </div>
         <ul className={styles.categoriesMenu}>
-          {Object.values(eventsCategories).map((category) => {
-            return (
-              <li className={styles.link} key={category}>
-                <NavMenuCategory label={category} isActive={false} />
-              </li>
-            );
-          })}
+          {Object.entries(eventsCategories).map(
+            ([categoryKey, categoryName]) => {
+              return (
+                <li className={styles.link} key={categoryKey}>
+                  <NavMenuCategory
+                    label={categoryName}
+                    category={categoryKey}
+                    isActive={false}
+                  />
+                </li>
+              );
+            }
+          )}
         </ul>
       </div>
     </div>

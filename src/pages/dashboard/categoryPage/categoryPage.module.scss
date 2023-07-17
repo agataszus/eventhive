@@ -1,0 +1,19 @@
+@import "../../../styles/variables";
+
+.content {
+  display: flex;
+  flex-direction: column;
+  min-height: 448px;
+  gap: $space-8;
+  padding: $space-6;
+  background-image: linear-gradient(to right, #191919ef, #191919ef);
+  background-position: center;
+  background-size: cover;
+  background-size: 140%;
+}
+
+.eventsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-6;
+}
