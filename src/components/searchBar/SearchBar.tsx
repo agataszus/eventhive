@@ -10,7 +10,7 @@ import { Text } from "../text/text";
 export const SearchBar = () => {
   const [searchValue, setSearchValue] = useState("");
   const [areSuggestionsVisible, setAreSuggestionsVisible] = useState(false);
-  const { data: events, isLoading, isError } = useEventsQuery();
+  const { data: events, isLoading, isError, isSuccess } = useEventsQuery();
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -68,7 +68,7 @@ export const SearchBar = () => {
               </Text>
             </div>
           )}
-          {!searchedEvents?.length && (
+          {!searchedEvents?.length && isSuccess && (
             <div className={styles.information}>
               <Text tag="p" variant="caption-3">
                 No events found...
