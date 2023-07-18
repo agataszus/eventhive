@@ -1,8 +1,14 @@
 @import "../../../styles/variables";
 
+.page {
+  padding-top: 78px;
+  z-index: 10;
+}
+
 .sections {
   display: flex;
   flex-direction: column;
   padding: $space-10 $space-13;
   gap: $space-11;
+  z-index: 5;
 }

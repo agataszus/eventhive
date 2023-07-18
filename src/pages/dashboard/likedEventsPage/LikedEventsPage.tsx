@@ -10,7 +10,7 @@ export const LikedEventsPage = () => {
 
   if (!events && isError)
     return (
-      <div>
+      <div className={styles.page}>
         <TopBar title="Liked events" />
         <div className={styles.likedEventsSection}>
           <Error message="Couldn't get events. Try again later!" />
@@ -20,7 +20,7 @@ export const LikedEventsPage = () => {
 
   if (isLoading)
     return (
-      <div>
+      <div className={styles.page}>
         <TopBar title="Liked events" />
         <div className={styles.likedEventsSection}>
           <Loader variant="large" />
@@ -31,7 +31,7 @@ export const LikedEventsPage = () => {
   const likedEvents = events?.filter((event) => event.isLiked);
 
   return (
-    <div>
+    <div className={styles.page}>
       <TopBar title="Liked events" />
       <div className={styles.likedEventsSection}>
         {likedEvents?.length ? (

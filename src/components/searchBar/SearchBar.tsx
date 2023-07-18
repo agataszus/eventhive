@@ -68,6 +68,13 @@ export const SearchBar = () => {
               </Text>
             </div>
           )}
+          {!searchedEvents?.length && (
+            <div className={styles.information}>
+              <Text tag="p" variant="caption-3">
+                No events found...
+              </Text>
+            </div>
+          )}
           {searchedEvents?.map((event) => (
             <li key={event.id}>
               <SearchSuggestion event={event} />

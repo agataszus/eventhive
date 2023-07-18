@@ -1,5 +1,10 @@
 @import "../../../styles/variables";
 
+.page {
+  padding-top: 78px;
+  z-index: 10;
+}
+
 .likedEventsSection {
   display: flex;
   flex-direction: column;
