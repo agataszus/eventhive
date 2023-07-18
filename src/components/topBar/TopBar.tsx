@@ -1,4 +1,4 @@
-import { Search } from "../search/Search";
+import { SearchBar } from "../searchBar/SearchBar";
 import { Title } from "../title/Title";
 import styles from "./topBar.module.scss";
 
@@ -10,7 +10,7 @@ export const TopBar = ({ title }: TopBarProps) => {
   return (
     <div className={styles.topBar}>
       <Title title={title} />
-      <Search />
+      <SearchBar />
     </div>
   );
 };
