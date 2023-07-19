@@ -8,6 +8,15 @@ import { Button } from "../button/Button";
 import { getEventPath } from "../routes/paths";
 import styles from "./categoryEventCard.module.scss";
 
+const getDarkenBackgroundImage = (url: string) => `linear-gradient(
+  45deg,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.65) 10%,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(255, 255, 255, 0)
+),
+url(${url})`;
+
 type CategoryEventCardProps = {
   event: AllEventsEventDto;
 };
@@ -16,15 +25,6 @@ export const CategoryEventCard = ({ event }: CategoryEventCardProps) => {
   const navigate = useNavigate();
   const { title, description, externalImageUrls, startDate, id } = event;
   const { day, month } = parseEventDate(startDate);
-
-  const getDarkenBackgroundImage = (url: string) => `linear-gradient(
-    45deg,
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 0.65) 10%,
-      rgba(255, 255, 255, 0) 20%,
-      rgba(255, 255, 255, 0)
-  ),
-  url(${url})`;
 
   return (
     <div

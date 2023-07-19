@@ -1,17 +1,10 @@
 import { EventDto } from "../../services/api/api-types.gen";
 import styles from "./categoryPicture.module.scss";
 import { Text } from "../text/text";
-import { eventsCategories } from "../../services/api/event/eventsCategories";
-import { categoriesPictures } from "../../pages/dashboard/categoryPage/categoriesPictures";
+import { categoriesToLabelMap } from "../../services/api/event/categoriesToLabelMap";
+import { categoriesToPicturesMap } from "../../pages/dashboard/categoryPage/categoriesToPicturesMap";
 
-type CategoryPictureProps = {
-  category: EventDto.CategoryEnum;
-};
-
-export const CategoryPicture = ({ category }: CategoryPictureProps) => {
-  const picture = categoriesPictures[category];
-
-  const getDarkenBackgroundImage = (url: string) => `linear-gradient(
+const getDarkenBackgroundImage = (url: string) => `linear-gradient(
     165deg,
     rgba(0, 0, 0, 0.8),
     rgba(0, 0, 0, 0.65) 40%,
@@ -19,6 +12,13 @@ export const CategoryPicture = ({ category }: CategoryPictureProps) => {
     rgba(255, 255, 255, 0)
   ),
   url(${url})`;
+
+type CategoryPictureProps = {
+  category: EventDto.CategoryEnum;
+};
+
+export const CategoryPicture = ({ category }: CategoryPictureProps) => {
+  const picture = categoriesToPicturesMap[category];
 
   return (
     <div
@@ -32,9 +32,11 @@ export const CategoryPicture = ({ category }: CategoryPictureProps) => {
       }
     >
       <Text tag="h3" variant="heading-2" className={styles.title}>
-        {eventsCategories[category]}
+        {categoriesToLabelMap[category]}
       </Text>
-      <div className={styles.backgroundTitle}>{eventsCategories[category]}</div>
+      <div className={styles.backgroundTitle}>
+        {categoriesToLabelMap[category]}
+      </div>
     </div>
   );
 };

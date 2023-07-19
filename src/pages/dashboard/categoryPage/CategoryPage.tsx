@@ -1,15 +1,20 @@
 import { useLocation } from "react-router-dom";
 import { TopBar } from "../../../components/topBar/TopBar";
-import { eventsCategories } from "../../../services/api/event/eventsCategories";
+import { categoriesToLabelMap } from "../../../services/api/event/categoriesToLabelMap";
 import { EventDto } from "../../../services/api/api-types.gen";
 import { CategoryPicture } from "../../../components/categoryPicture/CategoryPicture";
 import styles from "./categoryPage.module.scss";
 import { useEventsQuery } from "../../../queries/useEventsQuery";
 import { CategoryEventCard } from "../../../components/categoryEventCard/CategoryEventCard";
 import { CategoriesSection } from "../../../components/categoriesSection/CategoriesSection";
-import { categoriesPictures } from "./categoriesPictures";
+import { categoriesToPicturesMap } from "./categoriesToPicturesMap";
 import { Error } from "../../../components/error/Error";
 import { Loader } from "../../../components/loader/Loader";
+
+const getGradientOnImage = (
+  url: string
+) => `linear-gradient(to right, #191919ef, #191919ef),
+      url(${url})`;
 
 const checkIsCategoryEnum = (
   category: string
@@ -39,18 +44,13 @@ export const CategoryPage = () => {
       </div>
     );
 
-  const picture = categoriesPictures[category];
-
-  const getGradientOnImage = (
-    url: string
-  ) => `linear-gradient(to right, #191919ef, #191919ef),
-      url(${url})`;
+  const picture = categoriesToPicturesMap[category];
 
   const categoryEvents = events?.filter((event) => event.category === category);
 
   return (
     <div>
-      <TopBar title={eventsCategories[category] ?? "Unknown"} />
+      <TopBar title={categoriesToLabelMap[category] ?? "Unknown"} />
       <CategoryPicture category={category} />
       <div
         className={styles.content}
@@ -61,7 +61,7 @@ export const CategoryPage = () => {
         {isLoading && <Loader variant="large" />}
         {isError && <Error message="Couldn't load events" />}
         {isSuccess && !categoryEvents?.length && (
-          <Error message="There is no events in this category" />
+          <Error message="There are no events in this category" />
         )}
         <div className={styles.eventsContainer}>
           {categoryEvents?.map((event) => (
