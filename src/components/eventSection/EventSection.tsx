@@ -1,6 +1,6 @@
 import styles from "./eventSection.module.scss";
 import { Text } from "../text/text";
-import { EventDescriptionElement } from "../eventDescriptionElement/EventDescriptionElement";
+import { EventProperty } from "../eventProperty/EventProperty";
 import { parseEventDate } from "../../helpers/parseEventDate";
 import { Button } from "../button/Button";
 import { Like } from "../like/Like";
@@ -55,18 +55,16 @@ export const EventSection = ({
           {title}
         </Text>
         <ul className={styles.description}>
-          <EventDescriptionElement category="Date">
+          <EventProperty category="Date">
             {firstDay} {endDate && `- ${lastDay}`}
-          </EventDescriptionElement>
-          <EventDescriptionElement category="Location">
+          </EventProperty>
+          <EventProperty category="Location">
             {locationName || "----------"}
-          </EventDescriptionElement>
-          <EventDescriptionElement category="Organizer">
+          </EventProperty>
+          <EventProperty category="Organizer">
             {name || "----------"}
-          </EventDescriptionElement>
-          <EventDescriptionElement category="Category">
-            {category}
-          </EventDescriptionElement>
+          </EventProperty>
+          <EventProperty category="Category">{category}</EventProperty>
         </ul>
         <div className={styles.about}>
           <Text tag="h4" variant="subtitle-2">

@@ -9,6 +9,11 @@ import { PopularEventsSection } from "../../../components/popularEventsSection/P
 import { useRef } from "react";
 import { Error } from "../../../components/error/Error";
 
+const getGradientOnImage = (
+  url: string
+) => `linear-gradient(to right, #191919ef, #191919ef),
+  url(${url})`;
+
 export const EventPage = () => {
   const { id } = useParams();
   const { data: event, isLoading } = useEventQuery(Number(id));
@@ -39,11 +44,6 @@ export const EventPage = () => {
 
   // if (!event) return null;
   const { externalImageUrls } = event || {};
-
-  const getGradientOnImage = (
-    url: string
-  ) => `linear-gradient(to right, #191919ef, #191919ef),
-    url(${url})`;
 
   return (
     <div
