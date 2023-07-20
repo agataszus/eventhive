@@ -17,3 +17,16 @@
   z-index: 1000;
   box-shadow: 0 12px 16px rgba(0, 0, 0, 0.15);
 }
+
+.actionContainer {
+  display: flex;
+  gap: $space-6;
+  align-items: center;
+}
+
+.icon {
+  fill: $font-color-light;
+  height: 30px;
+  width: auto;
+  cursor: pointer;
+}

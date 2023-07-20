@@ -10,6 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 9999;
 }
 
 .loader {
@@ -22,7 +23,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  z-index: 15;
+  z-index: 99999;
 }
 
 .modal {
@@ -33,7 +34,7 @@
   width: 430px;
   height: 580px;
   background-color: $background-color-dark;
-  z-index: 15;
+  z-index: 99999;
   border-radius: 8px;
   border: 1px solid $background-color-medium-dark;
   display: flex;

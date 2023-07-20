@@ -1,0 +1,42 @@
+@import "../../styles/variables";
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 420px;
+  background-color: $background-color-dark;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: -10px 0 16px rgba(0, 0, 0, 0.15);
+}
+
+.titleLabel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $space-6;
+  height: 100px;
+}
+
+.icon {
+  fill: $font-color-light;
+  width: 24px;
+  height: auto;
+}
+
+.divider {
+  padding: 0 $space-6;
+}
+
+.buttonContainer {
+  display: flex;
+  width: 100%;
+  height: 140px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 $space-8;
+  margin-top: auto;
+}
