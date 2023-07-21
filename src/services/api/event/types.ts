@@ -3,7 +3,7 @@ import { EventDto } from "../api-types.gen";
 export type ListEventDto = Omit<
   EventDto,
   "createdBy" | "files" | "likes" | "ticketTypes"
-> & { likesNumber: number };
+> & { likesNumber: number; isLiked: boolean };
 
 export type AllEventsDto = ListEventDto[];
 

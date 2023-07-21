@@ -817,6 +817,7 @@ export interface ProfileDto {
    * @memberof ProfileDto
    */
   editedAt?: Date;
+  likedEventsNumber: boolean;
 }
 
 /**

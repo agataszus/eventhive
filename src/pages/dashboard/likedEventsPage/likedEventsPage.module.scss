@@ -1,0 +1,9 @@
+@import "../../../styles/variables";
+
+.likedEventsSection {
+  display: flex;
+  flex-direction: column;
+  min-height: 540px;
+  padding: $space-6;
+  gap: $space-6;
+}

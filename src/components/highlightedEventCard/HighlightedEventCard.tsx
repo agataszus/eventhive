@@ -8,7 +8,7 @@ import styles from "./highlightedEventCard.module.scss";
 import { Loader } from "../loader/Loader";
 import { Error } from "../error/Error";
 import { parseEventDate } from "../../helpers/parseEventDate";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const getDarkenBackgroundImage = (url: string) => `linear-gradient(
   to right,
@@ -21,6 +21,7 @@ url(${url})`;
 
 export const HighlightedEventCard = () => {
   const { data: events, isLoading, isError } = useEventsQuery();
+  const navigate = useNavigate();
 
   const randomNumber = useMemo(() => {
     const randomNum = Math.random();
@@ -78,9 +79,13 @@ export const HighlightedEventCard = () => {
         </Link>
         <div className={styles.buttonsContainer}>
           <div className={styles.button}>
-            <Button text="Buy Ticket" variant="narrow" />
+            <Button
+              text="Buy Ticket"
+              variant="narrow"
+              onClick={() => navigate(`/dashboard/event/${id}`)}
+            />
           </div>
-          <Like />
+          <Like id={id} />
         </div>
       </div>
       <div className={styles.dateContainer}>

@@ -10,13 +10,24 @@
   border-radius: 100%;
   border: 1px solid $font-color-light;
   opacity: 70%;
+  cursor: pointer;
 
   &:hover {
     opacity: 100%;
   }
 }
 
+.isLiked {
+  border: 1px solid $font-color-light;
+}
+
 .icon {
+  width: 22px;
+  height: auto;
+  fill: $font-color-light;
+}
+
+.iconFill {
   width: 22px;
   height: auto;
   fill: $font-color-light;

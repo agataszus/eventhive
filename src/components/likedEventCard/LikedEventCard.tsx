@@ -1,0 +1,56 @@
+import { parseEventDate } from "../../helpers/parseEventDate";
+import { Button } from "../button/Button";
+import { DateTileSmall } from "../dateTileSmall/DateTileSmall";
+import { Text } from "../text/text";
+import alternativePic from "../../assets/no-picture.png";
+import styles from "./likedEventCard.module.scss";
+import { Like } from "../like/Like";
+import { Link, useNavigate } from "react-router-dom";
+import { AllEventsEventDto } from "../../services/api/event/types";
+
+type LikedEventCardProps = {
+  event: AllEventsEventDto;
+};
+
+export const LikedEventCard = ({ event }: LikedEventCardProps) => {
+  const navigate = useNavigate();
+
+  if (!event) return null;
+  const { description, title, externalImageUrls, startDate, id } = event;
+
+  const { day, month } = parseEventDate(startDate);
+
+  return (
+    <div className={styles.eventCard}>
+      <div className={styles.imageContainer}>
+        <img
+          src={externalImageUrls[0] || alternativePic}
+          className={styles.image}
+        />
+        <div className={styles.dateTile}>
+          <DateTileSmall day={day} month={month} />
+        </div>
+      </div>
+      <div className={styles.descriptionContainer}>
+        <Link to={`/dashboard/event/${id}`}>
+          <Text tag="h3" variant="heading-5" className={styles.title}>
+            {title}
+          </Text>
+        </Link>
+        <Text tag="p" variant="caption-2" className={styles.description}>
+          {description}
+        </Text>
+        <div className={styles.buttonsContainer}>
+          <Like id={id} />
+          <div className={styles.buttonBuy}>
+            <Button
+              variant="narrow"
+              text="Buy ticket!"
+              onClick={() => navigate(`/dashboard/event/${id}`)}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
