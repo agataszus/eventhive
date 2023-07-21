@@ -1,9 +1,11 @@
 import { EventDto } from "../api-types.gen";
 
-export type AllEventsDto = (Omit<
+export type ListEventDto = Omit<
   EventDto,
   "createdBy" | "files" | "likes" | "ticketTypes"
-> & { likesNumber: number })[];
+> & { likesNumber: number };
+
+export type AllEventsDto = ListEventDto[];
 
 export type UpdateEventDto = Omit<EventDto, "files" | "likes" | "ticketTypes">;
 
@@ -18,4 +20,9 @@ export type eventStatsDto = {
     ticketTypeId: number;
   }[];
   likes: number;
+};
+
+export type GetEventOptions = {
+  token: string;
+  id: number;
 };

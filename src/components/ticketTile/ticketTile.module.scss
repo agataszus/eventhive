@@ -1,0 +1,50 @@
+@import "../../styles/variables";
+
+.ticketTile {
+  position: relative;
+  flex: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  display: flex;
+  width: 540px;
+  min-height: 240px;
+  border-radius: 14px;
+  background-image: url("../../assets/ticketImg.png");
+  background-position: center;
+  background-size: cover;
+  z-index: 10;
+}
+
+.priceContainer {
+  display: flex;
+  flex-direction: column;
+  padding: $space-8 0;
+  justify-content: space-between;
+  width: 187px;
+}
+
+.ticketDescription {
+  display: flex;
+  flex-direction: column;
+  padding: $space-3 $space-4;
+  gap: $space-3;
+  justify-content: center;
+  flex: 0;
+  width: 353px;
+  flex-grow: 1;
+}
+
+.button {
+  width: 130px;
+  align-self: center;
+}
+
+.dark {
+  color: $font-color-dark;
+  text-align: center;
+}
+
+.description {
+  color: $background-color-medium-dark;
+  text-align: center;
+}

@@ -4,22 +4,17 @@ import styles from "./eventTile.module.scss";
 import HeartLineIcon from "remixicon-react/HeartLineIcon";
 import alternativePic from "../../assets/no-picture.png";
 import { SeeMoreOverlay } from "../seeMoreOverlay/SeeMoreOverlay";
+import { parseEventDate } from "../../helpers/parseEventDate";
+import { ListEventDto } from "../../services/api/event/types";
 
 type EventTileProps = {
-  name: string;
-  picture: string;
-  description: string;
-  day: string;
-  month: string;
+  event: ListEventDto;
+  onClick: () => void;
 };
 
-export const EventTile = ({
-  name,
-  description,
-  picture,
-  day,
-  month,
-}: EventTileProps) => {
+export const EventTile = ({ event, onClick }: EventTileProps) => {
+  const { day, month } = parseEventDate(event.startDate);
+  const { title, description, externalImageUrls } = event;
   // const overlayRef = useRef<HTMLDivElement>(null);
 
   // const handleOnMouseEnter = () => {
@@ -31,7 +26,8 @@ export const EventTile = ({
   // };
 
   return (
-    <div
+    <button
+      onClick={onClick}
       className={styles.eventTile}
       // onMouseEnter={handleOnMouseEnter}
       // onMouseLeave={handleOnMouseLeave}
@@ -42,8 +38,8 @@ export const EventTile = ({
           iconClassName={styles.overlayIcon}
         />
         <img
-          src={picture || alternativePic}
-          alt={name}
+          src={externalImageUrls[0] || alternativePic}
+          alt={title}
           className={styles.image}
         />
         <div className={styles.dateTile}>
@@ -51,7 +47,7 @@ export const EventTile = ({
         </div>
       </div>
       <Text tag="h4" variant="action-2" className={styles.title}>
-        {name}
+        {title}
       </Text>
       <Text tag="p" variant="caption-2" className={styles.description}>
         {description}
@@ -62,6 +58,6 @@ export const EventTile = ({
           {Math.round(1500 + Math.random() * 500)} likes
         </Text>
       </div>
-    </div>
+    </button>
   );
 };

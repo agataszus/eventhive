@@ -1,45 +1,34 @@
-import { Text } from "../text/text";
 import styles from "./popularEventsSection.module.scss";
-import ArrowRightSLineIcon from "remixicon-react/ArrowRightSLineIcon";
-import ArrowLeftSLineIcon from "remixicon-react/ArrowLeftSLineIcon";
 import { EventTile } from "../eventTile/EventTile";
 import { useEventsQuery } from "../../queries/useEventsQuery";
 import { Loader } from "../loader/Loader";
 import { Error } from "../error/Error";
-import { parseEventDate } from "../../helpers/parseEventDate";
+import { useNavigate } from "react-router-dom";
+import { Carousel } from "../carousel/Carousel";
 
 export const PopularEventsSection = () => {
   const { data: events, isLoading, isError } = useEventsQuery();
+  const navigate = useNavigate();
+
+  const handleClick = (id: number) => {
+    navigate(`/dashboard/event/${id}`);
+  };
 
   return (
-    <div className={styles.popularEventsSection}>
-      <div className={styles.titleLabel}>
-        <Text tag="h3" variant="subtitle-2">
-          Popular Now
-        </Text>
-        <div>
-          <ArrowLeftSLineIcon className={styles.icon} />
-          <ArrowRightSLineIcon className={styles.icon} />
-        </div>
-      </div>
+    <Carousel title="Popular events section">
       <div className={styles.events}>
         {isLoading && <Loader variant="large" />}
         {isError && <Error message="Something went wrong" />}
         {events?.map((event) => {
-          const { day, month } = parseEventDate(event.startDate);
-
           return (
             <EventTile
-              name={event.title}
-              description={event.description}
-              picture={event.externalImageUrls[0]}
-              key={`${event.id}`}
-              day={day}
-              month={month}
+              event={event}
+              key={event.id}
+              onClick={() => handleClick(event.id)}
             />
           );
         })}
       </div>
-    </div>
+    </Carousel>
   );
 };

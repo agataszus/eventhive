@@ -24,6 +24,7 @@ type Variant =
   | "heading-3"
   | "heading-4"
   | "heading-5"
+  | "heading-6"
   | "num-1"
   | "error-1"
   | "success-1";

@@ -28,7 +28,11 @@ export const NavMenu = () => {
           />
         </li>
         <li className={styles.link}>
-          <NavMenuLink linkTo="/" Icon={Coupon2LineIcon} text="My tickets" />
+          <NavMenuLink
+            linkTo="/dashboard/my-tickets"
+            Icon={Coupon2LineIcon}
+            text="My tickets"
+          />
         </li>
         <li className={styles.link}>
           <NavMenuLink linkTo="/" Icon={RoadMapLineIcon} text="Map" />

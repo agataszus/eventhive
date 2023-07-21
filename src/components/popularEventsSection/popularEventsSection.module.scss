@@ -1,25 +1,5 @@
 @import "../../styles/variables";
 
-.popularEventsSection {
-  display: flex;
-  flex-direction: column;
-  padding: $space-8 $space-6;
-  gap: $space-6;
-}
-
-.titleLabel {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.icon {
-  width: 24px;
-  height: auto;
-  fill: $font-color-light-secondary;
-  cursor: pointer;
-}
-
 .events {
   height: 342px;
   width: 100%;

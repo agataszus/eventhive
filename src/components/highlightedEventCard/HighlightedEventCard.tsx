@@ -8,6 +8,16 @@ import styles from "./highlightedEventCard.module.scss";
 import { Loader } from "../loader/Loader";
 import { Error } from "../error/Error";
 import { parseEventDate } from "../../helpers/parseEventDate";
+import { Link } from "react-router-dom";
+
+const getDarkenBackgroundImage = (url: string) => `linear-gradient(
+  to right,
+  rgba(0, 0, 0, 0.8),
+  rgba(0, 0, 0, 0.65) 30%,
+  rgba(255, 255, 255, 0) 70%,
+  rgba(0, 0, 0, 0.5) 100%
+),
+url(${url})`;
 
 export const HighlightedEventCard = () => {
   const { data: events, isLoading, isError } = useEventsQuery();
@@ -32,19 +42,10 @@ export const HighlightedEventCard = () => {
     );
 
   if (!events) return null;
-  const { title, description, startDate, externalImageUrls } =
+  const { title, description, startDate, externalImageUrls, id } =
     events[Math.floor(randomNumber * events.length)];
 
   const { day, month } = parseEventDate(startDate);
-
-  const getDarkenBackgroundImage = (url: string) => `linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.8),
-    rgba(0, 0, 0, 0.65) 30%,
-    rgba(255, 255, 255, 0) 70%,
-    rgba(0, 0, 0, 0.5) 100%
-  ),
-  url(${url})`;
 
   return (
     <div
@@ -70,9 +71,11 @@ export const HighlightedEventCard = () => {
             {description}
           </Text>
         </div>
-        <Text tag="p" variant="action-4">
-          Read more
-        </Text>
+        <Link to={`/dashboard/event/${id}`}>
+          <Text tag="p" variant="action-4">
+            Read more
+          </Text>
+        </Link>
         <div className={styles.buttonsContainer}>
           <div className={styles.button}>
             <Button text="Buy Ticket" variant="narrow" />

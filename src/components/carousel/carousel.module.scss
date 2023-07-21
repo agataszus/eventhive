@@ -1,0 +1,22 @@
+@import "../../styles/variables";
+
+.carousel {
+  display: flex;
+  flex-direction: column;
+  padding: $space-8 $space-6;
+  background-color: inherit;
+  gap: $space-6;
+}
+
+.titleLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  width: 24px;
+  height: auto;
+  fill: $font-color-light-secondary;
+  cursor: pointer;
+}
