@@ -12,7 +12,7 @@
   display: flex;
   flex-shrink: 0;
   top: 0;
-  left: 320px;
+  left: $sidebar-width;
   width: calc(100vw - 320px);
   z-index: 1000;
   box-shadow: 0 12px 16px rgba(0, 0, 0, 0.15);

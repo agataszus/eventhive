@@ -10,12 +10,9 @@ type LikeProps = {
 };
 
 export const Like = ({ id }: LikeProps) => {
-  const isLiked = useEventLikedCheck(id)
+  const isLiked = useEventLikedCheck(id);
 
-  const buttonClass = classNames(
-    styles.button,
-    isLiked ? styles.isLiked : undefined
-  );
+  const buttonClass = classNames(styles.button, { [styles.isLiked]: isLiked });
 
   const { mutate } = useToggleLikeEventMutation(isLiked, id);
 

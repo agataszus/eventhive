@@ -5,10 +5,10 @@ import HeartLineIcon from "remixicon-react/HeartLineIcon";
 import alternativePic from "../../assets/no-picture.png";
 import { SeeMoreOverlay } from "../seeMoreOverlay/SeeMoreOverlay";
 import { parseEventDate } from "../../helpers/parseEventDate";
-import { AllEventsEventDto } from "../../services/api/event/types";
+import { ListEventDto } from "../../services/api/event/types";
 
 type EventTileProps = {
-  event: AllEventsEventDto;
+  event: ListEventDto;
   onClick: () => void;
 };
 
@@ -26,7 +26,7 @@ export const EventTile = ({ event, onClick }: EventTileProps) => {
   // };
 
   return (
-    <div
+    <button
       onClick={onClick}
       className={styles.eventTile}
       // onMouseEnter={handleOnMouseEnter}
@@ -58,6 +58,6 @@ export const EventTile = ({ event, onClick }: EventTileProps) => {
           {Math.round(1500 + Math.random() * 500)} likes
         </Text>
       </div>
-    </div>
+    </button>
   );
 };

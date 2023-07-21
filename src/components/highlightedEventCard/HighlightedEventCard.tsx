@@ -11,6 +11,15 @@ import { parseEventDate } from "../../helpers/parseEventDate";
 import { Link, useNavigate } from "react-router-dom";
 import { getEventPath } from "../routes/paths";
 
+const getDarkenBackgroundImage = (url: string) => `linear-gradient(
+  to right,
+  rgba(0, 0, 0, 0.8),
+  rgba(0, 0, 0, 0.65) 30%,
+  rgba(255, 255, 255, 0) 70%,
+  rgba(0, 0, 0, 0.5) 100%
+),
+url(${url})`;
+
 export const HighlightedEventCard = () => {
   const { data: events, isLoading, isError } = useEventsQuery();
   const navigate = useNavigate();
@@ -39,15 +48,6 @@ export const HighlightedEventCard = () => {
     events[Math.floor(randomNumber * events.length)];
 
   const { day, month } = parseEventDate(startDate);
-
-  const getDarkenBackgroundImage = (url: string) => `linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.8),
-    rgba(0, 0, 0, 0.65) 30%,
-    rgba(255, 255, 255, 0) 70%,
-    rgba(0, 0, 0, 0.5) 100%
-  ),
-  url(${url})`;
 
   return (
     <div

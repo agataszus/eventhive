@@ -8,32 +8,17 @@ import styles from "./likedEventsPage.module.scss";
 export const LikedEventsPage = () => {
   const { data: events, isLoading, isError } = useEventsQuery();
 
-  if (!events && isError)
-    return (
-      <div className={styles.page}>
-        <TopBar title="Liked events" />
-        <div className={styles.likedEventsSection}>
-          <Error message="Couldn't get events. Try again later!" />
-        </div>
-      </div>
-    );
-
-  if (isLoading)
-    return (
-      <div className={styles.page}>
-        <TopBar title="Liked events" />
-        <div className={styles.likedEventsSection}>
-          <Loader variant="large" />
-        </div>
-      </div>
-    );
-
   const likedEvents = events?.filter((event) => event.isLiked);
 
   return (
     <div className={styles.page}>
       <TopBar title="Liked events" />
       <div className={styles.likedEventsSection}>
+        {!events && isError && (
+          <Error message="Couldn't get events. Try again later!" />
+        )}
+        {isLoading && <Loader variant="large" />}
+
         {likedEvents?.length ? (
           likedEvents.map((event) => (
             <LikedEventCard event={event} key={event.id} />

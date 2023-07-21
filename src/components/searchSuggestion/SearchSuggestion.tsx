@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import { AllEventsEventDto } from "../../services/api/event/types";
+import { ListEventDto } from "../../services/api/event/types";
 import { Text } from "../text/text";
 import styles from "./searchSuggestion.module.scss";
 import { getEventPath } from "../routes/paths";
 import { parseEventDate } from "../../helpers/parseEventDate";
 
 type SearchSuggestionProp = {
-  event: AllEventsEventDto;
+  event: ListEventDto;
 };
 
 export const SearchSuggestion = ({ event }: SearchSuggestionProp) => {

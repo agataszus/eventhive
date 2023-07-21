@@ -14,11 +14,11 @@ export const SearchBar = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const callbackFn = useCallback(() => {
+  const handleOutsideClick = useCallback(() => {
     setAreSuggestionsVisible(false);
   }, [setAreSuggestionsVisible]);
 
-  useOutsideClick(containerRef, callbackFn);
+  useOutsideClick(containerRef, handleOutsideClick);
 
   const searchedEvents = useMemo(() => {
     return events?.filter((event) => {
