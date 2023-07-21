@@ -1,9 +1,10 @@
 import { useQuery } from "react-query";
 import { getEvent } from "../services/api/event/getEvent";
 import { useAuthToken } from "../services/authTokenStore/useAuthToken";
+import { getEventKey } from "./queryKeys";
 
 export const useEventQuery = (id: number, options?: { enabled: boolean }) => {
   const { token } = useAuthToken();
 
-  return useQuery(["events", id], () => getEvent({ id, token }), options);
+  return useQuery(getEventKey(id), () => getEvent({ id, token }), options);
 };

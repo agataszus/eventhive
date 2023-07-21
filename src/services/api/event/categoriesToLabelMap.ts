@@ -1,6 +1,8 @@
-import { EventDto } from "./../api-types.gen";
+import { EventDto } from "../api-types.gen";
 
-export const eventsCategories = {
+export const categoriesToLabelMap: Partial<
+  Record<EventDto.CategoryEnum, string>
+> = {
   [EventDto.CategoryEnum.Music]: "Varials",
   [EventDto.CategoryEnum.PopMusic]: "Pop",
   [EventDto.CategoryEnum.ElectronicMusic]: "Electronic",

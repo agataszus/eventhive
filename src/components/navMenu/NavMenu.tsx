@@ -6,8 +6,13 @@ import HeartLineIcon from "remixicon-react/HeartLineIcon";
 import Coupon2LineIcon from "remixicon-react/Coupon2LineIcon";
 import RoadMapLineIcon from "remixicon-react/RoadMapLineIcon";
 import { NavMenuLink } from "../navMenuLink/NavMenuLink";
-import { eventsCategories } from "../../services/api/event/eventsCategories";
+import { categoriesToLabelMap } from "../../services/api/event/categoriesToLabelMap";
 import { NavMenuCategory } from "../navMenuCategory/NavMenuCategory";
+import {
+  getDashboardHomePath,
+  getLikedEventsPath,
+  getRootPath,
+} from "../routes/paths";
 
 export const NavMenu = () => {
   return (
@@ -15,14 +20,14 @@ export const NavMenu = () => {
       <ul className={styles.menu}>
         <li className={styles.link}>
           <NavMenuLink
-            linkTo="/dashboard/home"
+            linkTo={getDashboardHomePath()}
             Icon={Home2LineIcon}
             text="Home"
           />
         </li>
         <li className={styles.link}>
           <NavMenuLink
-            linkTo="/dashboard/liked-events"
+            linkTo={getLikedEventsPath()}
             Icon={HeartLineIcon}
             text="Liked events"
           />
@@ -35,7 +40,11 @@ export const NavMenu = () => {
           />
         </li>
         <li className={styles.link}>
-          <NavMenuLink linkTo="/" Icon={RoadMapLineIcon} text="Map" />
+          <NavMenuLink
+            linkTo={getRootPath()}
+            Icon={RoadMapLineIcon}
+            text="Map"
+          />
         </li>
       </ul>
       <div className={styles.divider}>
@@ -48,13 +57,18 @@ export const NavMenu = () => {
           </Text>
         </div>
         <ul className={styles.categoriesMenu}>
-          {Object.values(eventsCategories).map((category) => {
-            return (
-              <li className={styles.link} key={category}>
-                <NavMenuCategory label={category} isActive={false} />
-              </li>
-            );
-          })}
+          {Object.entries(categoriesToLabelMap).map(
+            ([categoryKey, categoryName]) => {
+              return (
+                <li className={styles.link} key={categoryKey}>
+                  <NavMenuCategory
+                    label={categoryName}
+                    category={categoryKey}
+                  />
+                </li>
+              );
+            }
+          )}
         </ul>
       </div>
     </div>

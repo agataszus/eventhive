@@ -1,6 +1,6 @@
 import { CategoryTile } from "../categoryTile/CategoryTile";
 import styles from "./categoriesSection.module.scss";
-import festivals from "../../assets/categories/festivals.png";
+import varials from "../../assets/categories/festivals.png";
 import pop from "../../assets/categories/pop.png";
 import electronic from "../../assets/categories/electronic.png";
 import rock from "../../assets/categories/rock.png";
@@ -9,20 +9,42 @@ import country from "../../assets/categories/country.png";
 import alternative from "../../assets/categories/alternative.png";
 import film from "../../assets/categories/film.png";
 import { Carousel } from "../carousel/Carousel";
+import { EventDto } from "../../services/api/api-types.gen";
+import { categoriesToLabelMap } from "../../services/api/event/categoriesToLabelMap";
+
+const categoriesToPicturesSmallMap: Partial<
+  Record<EventDto.CategoryEnum, string>
+> = {
+  [EventDto.CategoryEnum.Music]: varials,
+  [EventDto.CategoryEnum.PopMusic]: pop,
+  [EventDto.CategoryEnum.ElectronicMusic]: electronic,
+  [EventDto.CategoryEnum.RockMusic]: rock,
+  [EventDto.CategoryEnum.ClassicalMusic]: classical,
+  [EventDto.CategoryEnum.CountryMusic]: country,
+  [EventDto.CategoryEnum.AlternativeMusic]: alternative,
+  [EventDto.CategoryEnum.FilmMusic]: film,
+};
 
 export const CategoriesSection = () => {
   return (
     <div className={styles.categoriesSection}>
       <Carousel title="Categories">
         <div className={styles.categories}>
-          <CategoryTile text="Festivals" picture={festivals} />
-          <CategoryTile text="Pop" picture={pop} />
-          <CategoryTile text="Electronic" picture={electronic} />
-          <CategoryTile text="Rock" picture={rock} />
-          <CategoryTile text="Classical" picture={classical} />
-          <CategoryTile text="Country" picture={country} />
-          <CategoryTile text="Alternative" picture={alternative} />
-          <CategoryTile text="Film Music" picture={film} />
+          {Object.entries(categoriesToLabelMap).map(
+            ([categoryKey, categoryName]) => (
+              <div key={categoryKey}>
+                <CategoryTile
+                  text={categoryName}
+                  picture={
+                    categoriesToPicturesSmallMap[
+                      categoryKey as EventDto.CategoryEnum
+                    ] || ""
+                  }
+                  linkTo={categoryKey}
+                />
+              </div>
+            )
+          )}
         </div>
       </Carousel>
     </div>

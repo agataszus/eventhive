@@ -1,15 +1,18 @@
+import { Link } from "react-router-dom";
 import { SeeMoreOverlay } from "../seeMoreOverlay/SeeMoreOverlay";
 import { Text } from "../text/text";
 import styles from "./categoryTile.module.scss";
+import { getCategoryPath } from "../routes/paths";
 
 type CategoryTileProps = {
   text: string;
   picture: string;
+  linkTo: string;
 };
 
-export const CategoryTile = ({ text, picture }: CategoryTileProps) => {
+export const CategoryTile = ({ text, picture, linkTo }: CategoryTileProps) => {
   return (
-    <div className={styles.categoryTile}>
+    <Link to={getCategoryPath(linkTo)} className={styles.categoryTile}>
       <div className={styles.imageBox}>
         <SeeMoreOverlay
           overlayClassName={styles.overlay}
@@ -20,6 +23,6 @@ export const CategoryTile = ({ text, picture }: CategoryTileProps) => {
       <Text tag="h4" variant="action-1">
         {text}
       </Text>
-    </div>
+    </Link>
   );
 };

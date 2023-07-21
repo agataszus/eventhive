@@ -5,6 +5,7 @@ import styles from "./profileTooltip.module.scss";
 import { TooltipElement } from "../tooltipElement/TooltipElement";
 import { useAuthToken } from "../../services/authTokenStore/useAuthToken";
 import { useNavigate } from "react-router-dom";
+import { getAccountPath, getLoginPath } from "../routes/paths";
 
 export const ProfileTooltip = () => {
   const { setToken } = useAuthToken();
@@ -16,7 +17,7 @@ export const ProfileTooltip = () => {
         <TooltipElement
           Icon={AccountCircleLineIcon}
           text="My Account"
-          onClick={() => navigate("/dashboard/account")}
+          onClick={() => navigate(getAccountPath())}
         />
         <Divider />
         <TooltipElement
@@ -24,7 +25,7 @@ export const ProfileTooltip = () => {
           text="Logout"
           onClick={() => {
             setToken("");
-            navigate("/login");
+            navigate(getLoginPath());
           }}
         />
       </ul>

@@ -5,13 +5,14 @@ import { Loader } from "../loader/Loader";
 import { Error } from "../error/Error";
 import { useNavigate } from "react-router-dom";
 import { Carousel } from "../carousel/Carousel";
+import { getEventPath } from "../routes/paths";
 
 export const PopularEventsSection = () => {
   const { data: events, isLoading, isError } = useEventsQuery();
   const navigate = useNavigate();
 
   const handleClick = (id: number) => {
-    navigate(`/dashboard/event/${id}`);
+    navigate(getEventPath(id));
   };
 
   return (
