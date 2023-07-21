@@ -7,10 +7,8 @@ import styles from "./accountPage.module.scss";
 
 export const AccountPage = () => {
   return (
-    <div>
-      <div>
-        <TopBar title="My Account" />
-      </div>
+    <div className={styles.page}>
+      <TopBar title="My Account" />
       <div className={styles.sections}>
         <AccountSection title="Personal Information">
           <PersonalInformation />

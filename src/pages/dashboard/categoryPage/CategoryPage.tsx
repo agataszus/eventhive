@@ -35,7 +35,7 @@ export const CategoryPage = () => {
 
   if (!isValidCategory)
     return (
-      <div>
+      <div className={styles.page}>
         <TopBar title="---------" />
         <div className={styles.content}>
           <Error message="Category doesn't exist" />
@@ -49,7 +49,7 @@ export const CategoryPage = () => {
   const categoryEvents = events?.filter((event) => event.category === category);
 
   return (
-    <div>
+    <div className={styles.page}>
       <TopBar title={categoriesToLabelMap[category] ?? "Unknown"} />
       <CategoryPicture category={category} />
       <div

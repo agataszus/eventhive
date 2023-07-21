@@ -6,10 +6,8 @@ import styles from "./homePage.module.scss";
 
 export const HomePage = () => {
   return (
-    <div>
-      <div>
-        <TopBar title="Events" />
-      </div>
+    <div className={styles.page}>
+      <TopBar title="Events" />
       <div>
         <div className={styles.content}>
           <HighlightedEventCard />

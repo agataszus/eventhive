@@ -1,5 +1,10 @@
 @import "../../../styles/variables";
 
+.page {
+  padding-top: 78px;
+  z-index: 10;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -10,10 +15,12 @@
   background-position: center;
   background-size: cover;
   background-size: 140%;
+  z-index: 5;
 }
 
 .eventsContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: $space-6;
+  z-index: 5;
 }

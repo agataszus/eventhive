@@ -6,11 +6,11 @@ import alternativePic from "../../assets/no-picture.png";
 import styles from "./likedEventCard.module.scss";
 import { Like } from "../like/Like";
 import { Link, useNavigate } from "react-router-dom";
-import { AllEventsEventDto } from "../../services/api/event/types";
+import { ListEventDto } from "../../services/api/event/types";
 import { getEventPath } from "../routes/paths";
 
 type LikedEventCardProps = {
-  event: AllEventsEventDto;
+  event: ListEventDto;
 };
 
 export const LikedEventCard = ({ event }: LikedEventCardProps) => {
