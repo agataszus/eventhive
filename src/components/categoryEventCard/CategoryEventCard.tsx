@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { parseEventDate } from "../../helpers/parseEventDate";
-import { AllEventsEventDto } from "../../services/api/event/types";
+import { ListEventDto } from "../../services/api/event/types";
 import { DateTileSmall } from "../dateTileSmall/DateTileSmall";
 import { Text } from "../text/text";
 import { Like } from "../like/Like";
@@ -18,7 +18,7 @@ const getDarkenBackgroundImage = (url: string) => `linear-gradient(
 url(${url})`;
 
 type CategoryEventCardProps = {
-  event: AllEventsEventDto;
+  event: ListEventDto;
 };
 
 export const CategoryEventCard = ({ event }: CategoryEventCardProps) => {
