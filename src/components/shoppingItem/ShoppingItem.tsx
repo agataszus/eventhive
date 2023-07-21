@@ -12,33 +12,35 @@ export const ShoppingItem = () => {
         <img src={festivalImg} className={styles.img} />
       </div>
       <div className={styles.itemDescription}>
-        <div className={styles.eventContainer}>
-          <Text tag="h6" variant="subtitle-2">
-            Fest festival
-          </Text>
-          <Text tag="p" variant="action-4">
-            24 JUN 2024
-          </Text>
+        <div className={styles.ticketInformationRow}>
+          <div className={styles.eventContainer}>
+            <Text tag="h6" variant="heading-6">
+              Fest festival
+            </Text>
+            <Text tag="p" variant="subtitle-5">
+              24 JUN 2024
+            </Text>
+          </div>
+          <DeleteBin6LineIcon className={styles.binIcon} />
         </div>
-        <div>
-          <div>
-            <Text tag="p" variant="action-3">
+        <div className={styles.ticketInformationContainer}>
+          <div className={styles.ticketInformationRow}>
+            <Text tag="p" variant="subtitle-3">
               VIP ticket
             </Text>
-            <DeleteBin6LineIcon />
-          </div>
-          <div>
-            <div>
-              <button>
-                <SubtractLineIcon />
+            <div className={styles.stepper}>
+              <button className={styles.stepperElement}>
+                <SubtractLineIcon className={styles.countIcon} />
               </button>
-              <input type="number">2</input>
-              <button>
-                <AddLineIcon />
+              <input placeholder="2" className={styles.input}></input>
+              <button className={styles.stepperElement}>
+                <AddLineIcon className={styles.countIcon} />
               </button>
             </div>
-            <Text tag="p" variant="action-3">
-              $ 2300,00
+          </div>
+          <div className={styles.price}>
+            <Text tag="p" variant="caption-1">
+              $2300,00
             </Text>
           </div>
         </div>

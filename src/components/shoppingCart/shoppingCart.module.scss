@@ -9,7 +9,7 @@
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 10000;
   box-shadow: -10px 0 16px rgba(0, 0, 0, 0.15);
 }
 
@@ -39,4 +39,22 @@
   justify-content: center;
   padding: 0 $space-8;
   margin-top: auto;
+}
+
+.itemsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 $space-6;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: $background-color-extra-dark;
+  opacity: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
