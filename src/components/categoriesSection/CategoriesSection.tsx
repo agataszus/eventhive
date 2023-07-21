@@ -10,32 +10,33 @@ import alternative from "../../assets/categories/alternative.png";
 import film from "../../assets/categories/film.png";
 import { Carousel } from "../carousel/Carousel";
 import { EventDto } from "../../services/api/api-types.gen";
-import { eventsCategories } from "../../services/api/event/eventsCategories";
+import { categoriesToLabelMap } from "../../services/api/event/categoriesToLabelMap";
 
-const categoriesPicturesSmall: Partial<Record<EventDto.CategoryEnum, string>> =
-  {
-    [EventDto.CategoryEnum.Music]: varials,
-    [EventDto.CategoryEnum.PopMusic]: pop,
-    [EventDto.CategoryEnum.ElectronicMusic]: electronic,
-    [EventDto.CategoryEnum.RockMusic]: rock,
-    [EventDto.CategoryEnum.ClassicalMusic]: classical,
-    [EventDto.CategoryEnum.CountryMusic]: country,
-    [EventDto.CategoryEnum.AlternativeMusic]: alternative,
-    [EventDto.CategoryEnum.FilmMusic]: film,
-  };
+const categoriesToPicturesSmallMap: Partial<
+  Record<EventDto.CategoryEnum, string>
+> = {
+  [EventDto.CategoryEnum.Music]: varials,
+  [EventDto.CategoryEnum.PopMusic]: pop,
+  [EventDto.CategoryEnum.ElectronicMusic]: electronic,
+  [EventDto.CategoryEnum.RockMusic]: rock,
+  [EventDto.CategoryEnum.ClassicalMusic]: classical,
+  [EventDto.CategoryEnum.CountryMusic]: country,
+  [EventDto.CategoryEnum.AlternativeMusic]: alternative,
+  [EventDto.CategoryEnum.FilmMusic]: film,
+};
 
 export const CategoriesSection = () => {
   return (
     <div className={styles.categoriesSection}>
       <Carousel title="Categories">
         <div className={styles.categories}>
-          {Object.entries(eventsCategories).map(
+          {Object.entries(categoriesToLabelMap).map(
             ([categoryKey, categoryName]) => (
               <div key={categoryKey}>
                 <CategoryTile
                   text={categoryName}
                   picture={
-                    categoriesPicturesSmall[
+                    categoriesToPicturesSmallMap[
                       categoryKey as EventDto.CategoryEnum
                     ] || ""
                   }

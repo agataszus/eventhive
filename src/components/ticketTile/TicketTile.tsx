@@ -18,7 +18,8 @@ type TicketTileProps = {
 
 export const TicketTile = ({ ticket, isSoldOut }: TicketTileProps) => {
   const { title, description, price } = ticket;
-  const ticketPrice = "$" + (price / 100).toFixed(2);
+  const parsePrice = (price: number) => "$" + (price / 100).toFixed(2);
+  const ticketPrice = parsePrice(price);
 
   return (
     <div className={styles.ticketTile}>

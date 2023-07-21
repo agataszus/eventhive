@@ -6,7 +6,7 @@ import HeartLineIcon from "remixicon-react/HeartLineIcon";
 import Coupon2LineIcon from "remixicon-react/Coupon2LineIcon";
 import RoadMapLineIcon from "remixicon-react/RoadMapLineIcon";
 import { NavMenuLink } from "../navMenuLink/NavMenuLink";
-import { eventsCategories } from "../../services/api/event/eventsCategories";
+import { categoriesToLabelMap } from "../../services/api/event/categoriesToLabelMap";
 import { NavMenuCategory } from "../navMenuCategory/NavMenuCategory";
 import {
   getDashboardHomePath,
@@ -57,7 +57,7 @@ export const NavMenu = () => {
           </Text>
         </div>
         <ul className={styles.categoriesMenu}>
-          {Object.entries(eventsCategories).map(
+          {Object.entries(categoriesToLabelMap).map(
             ([categoryKey, categoryName]) => {
               return (
                 <li className={styles.link} key={categoryKey}>

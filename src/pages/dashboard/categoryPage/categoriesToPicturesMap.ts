@@ -8,7 +8,7 @@ import alternative from "../../../assets/large-categories/alternative.jpg";
 import film from "../../../assets/large-categories/film.jpg";
 import { EventDto } from "../../../services/api/api-types.gen";
 
-export const categoriesPictures: Partial<
+export const categoriesToPicturesMap: Partial<
   Record<EventDto.CategoryEnum, string>
 > = {
   [EventDto.CategoryEnum.Music]: varials,
