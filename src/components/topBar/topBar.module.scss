@@ -20,13 +20,6 @@
 
 .actionContainer {
   display: flex;
-  gap: $space-6;
+  gap: $space-3;
   align-items: center;
-}
-
-.icon {
-  fill: $font-color-light;
-  height: 30px;
-  width: auto;
-  cursor: pointer;
 }

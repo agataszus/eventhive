@@ -4,26 +4,77 @@ import { Text } from "../text/text";
 import CloseLineIcon from "remixicon-react/CloseLineIcon";
 import styles from "./shoppingCart.module.scss";
 import { ShoppingItem } from "../shoppingItem/ShoppingItem";
+import { useShoppingCartStore } from "../../services/useShoppingCartStore/useShoppingCartStore";
+import { parsePrice } from "../../helpers/parsePrice";
+import ShoppingCart2LineIcon from "remixicon-react/ShoppingCart2LineIcon";
+import { useNavigate } from "react-router-dom";
+import { getDashboardHomePath } from "../routes/paths";
 
 export const ShoppingCart = () => {
+  const { closeCart, state } = useShoppingCartStore();
+  const { cartContent } = state;
+  const navigate = useNavigate();
+
+  const subtotalPrice = parsePrice(
+    cartContent.reduce(
+      (sum, { ticket: { quantity, price } }) => sum + quantity * price,
+      0
+    )
+  );
+
   return (
     <>
-      <div className={styles.overlay} />
+      <div className={styles.overlay} onClick={closeCart} />
       <div className={styles.cart}>
         <div className={styles.titleLabel}>
           <Text tag="h5" variant="heading-5">
             Cart
           </Text>
-          <CloseLineIcon className={styles.icon} />
+          <CloseLineIcon className={styles.icon} onClick={() => closeCart()} />
         </div>
         <Divider />
+        {cartContent.length === 0 && (
+          <div className={styles.emptyCartContainer}>
+            <ShoppingCart2LineIcon className={styles.emptyCartIcon} />
+            <Text tag="p" variant="action-5" className={styles.emptyCartText}>
+              Your cart is empty
+            </Text>
+            <Text tag="p" variant="caption-2">
+              Add tickets to cart to see them here
+            </Text>
+            <div className={styles.buttonExplore}>
+              <Button
+                text="Explore events"
+                variant="thick"
+                onClick={() => {
+                  navigate(getDashboardHomePath());
+                  closeCart();
+                }}
+              />
+            </div>
+          </div>
+        )}
         <div className={styles.itemsContainer}>
-          <ShoppingItem />
-          <ShoppingItem />
+          {cartContent.map((item) => (
+            <ShoppingItem item={item} key={item.ticket.id} />
+          ))}
         </div>
-        <div className={styles.buttonContainer}>
-          <Button variant="thick" text="Proceed to checkout" />
-        </div>
+        {cartContent.length !== 0 && (
+          <div className={styles.checkoutContainer}>
+            <div className={styles.subtotalPriceContainer}>
+              <Text tag="h6" variant="action-2">
+                Subtotal
+              </Text>
+              <Text tag="h6" variant="action-2">
+                {subtotalPrice}
+              </Text>
+            </div>
+            <Text tag="p" variant="caption-2">
+              Fees calculated at checkout
+            </Text>
+            <Button variant="thick" text="Proceed to checkout" />
+          </div>
+        )}
       </div>
     </>
   );

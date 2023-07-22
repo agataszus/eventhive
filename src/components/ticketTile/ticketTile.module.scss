@@ -48,3 +48,33 @@
   color: $background-color-medium-dark;
   text-align: center;
 }
+
+.stepper {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.stepperElement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+}
+
+.count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  background-color: transparent;
+  color: $font-color-dark;
+  line-height: 1;
+}
+
+.countIcon {
+  fill: $font-color-dark;
+  width: 20px;
+  height: auto;
+}

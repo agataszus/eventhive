@@ -1,7 +1,7 @@
+import { CartButton } from "../cartButton/CartButton";
 import { SearchBar } from "../searchBar/SearchBar";
 import { Title } from "../title/Title";
 import styles from "./topBar.module.scss";
-import ShoppingCartLineIcon from "remixicon-react/ShoppingCartLineIcon";
 
 type TopBarProps = {
   title: string;
@@ -13,7 +13,7 @@ export const TopBar = ({ title }: TopBarProps) => {
       <Title title={title} />
       <div className={styles.actionContainer}>
         <SearchBar />
-        <ShoppingCartLineIcon className={styles.icon} />
+        <CartButton />
       </div>
     </div>
   );
