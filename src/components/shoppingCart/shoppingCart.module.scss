@@ -1,5 +1,70 @@
 @import "../../styles/variables";
 
+@keyframes fadeIn {
+  0% {
+    visibility: hidden;
+    opacity: 0%;
+  }
+
+  1% {
+    visibility: visible;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 60%;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    visibility: visible;
+    opacity: 60%;
+  }
+
+  99% {
+    visibility: visible;
+    opacity: 0%;
+  }
+
+  100% {
+    visibility: hidden;
+    opacity: 0%;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translate(100%, 0);
+    visibility: hidden;
+  }
+
+  1% {
+    visibility: visible;
+  }
+
+  100% {
+    transform: translate(0, 0);
+    visibility: visible;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translate(0, 0);
+    visibility: visible;
+  }
+
+  99% {
+    visibility: visible;
+  }
+
+  100% {
+    transform: translate(100%, 0);
+    visibility: hidden;
+  }
+}
+
 .cart {
   display: flex;
   flex-direction: column;
@@ -11,6 +76,14 @@
   right: 0;
   z-index: 10000;
   box-shadow: -10px 0 16px rgba(0, 0, 0, 0.15);
+}
+
+.cartOpen {
+  animation: slideIn 200ms ease-out forwards;
+}
+
+.cartClose {
+  animation: slideOut 200ms ease-in forwards;
 }
 
 .titleLabel {
@@ -62,11 +135,15 @@
   position: fixed;
   inset: 0;
   background-color: $background-color-extra-dark;
-  opacity: 60%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 9999;
+  opacity: 60%;
+}
+
+.overlayOpen {
+  animation: fadeIn 200ms ease-out forwards;
+}
+.overlayClose {
+  animation: fadeOut 200ms ease-in forwards;
 }
 
 .emptyCartContainer {

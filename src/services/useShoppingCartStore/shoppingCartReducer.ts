@@ -42,7 +42,9 @@ export const shoppingCartReducer = (
                 ticket: {
                   ...item.ticket,
                   quantity:
-                    item.ticket.quantity + action.payload.ticket.quantity,
+                    item.ticket.quantity + action.payload.ticket.quantity > 6
+                      ? 6
+                      : item.ticket.quantity + action.payload.ticket.quantity,
                 },
               };
             }

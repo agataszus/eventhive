@@ -109,6 +109,11 @@
   height: auto;
 }
 
+.buttonDisable {
+  opacity: 30%;
+  cursor: not-allowed;
+}
+
 .price {
   border-top: 2px solid rgba(135, 91, 205, 0.369);
   display: flex;

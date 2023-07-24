@@ -3,14 +3,12 @@ import DeleteBin6LineIcon from "remixicon-react/DeleteBin6LineIcon";
 import SubtractLineIcon from "remixicon-react/SubtractLineIcon";
 import AddLineIcon from "remixicon-react/AddLineIcon";
 import styles from "./shoppingItem.module.scss";
-import festivalImg from "../../assets/orangeWarsaw.jpeg";
 import { ShoppingCartItem } from "../../services/useShoppingCartStore/types";
 import { parsePrice } from "../../helpers/parsePrice";
-import { useEffect, useState } from "react";
-import { handleChangeCount } from "../../helpers/handleChangeCount";
 import { useShoppingCartStore } from "../../services/useShoppingCartStore/useShoppingCartStore";
 import { Link } from "react-router-dom";
 import { getEventPath } from "../routes/paths";
+import classNames from "classnames";
 
 type ShoppingItemProps = {
   item: ShoppingCartItem;
@@ -24,13 +22,31 @@ const countPrice = (ticketPrice: number, ticketQuantity: number) => {
 
 export const ShoppingItem = ({ item }: ShoppingItemProps) => {
   const { event, ticket } = item;
+  const { quantity } = ticket;
   const summaryPrice = countPrice(ticket.price, ticket.quantity);
-  const [count, setCount] = useState(ticket.quantity);
   const { updateItemCount, removeItem, closeCart } = useShoppingCartStore();
 
-  useEffect(() => {
-    updateItemCount({ id: ticket.id, count });
-  }, [ticket.id, count, updateItemCount]);
+  const decreaseButtonClassName = classNames(styles.stepperElement, {
+    [styles.buttonDisable]: quantity <= 1,
+  });
+
+  const increaseButtonClassName = classNames(styles.stepperElement, {
+    [styles.buttonDisable]: quantity >= 6,
+  });
+
+  const handleChangeCount = (variant: "decrease" | "increase") => {
+    if (variant === "decrease") {
+      if (quantity === 1) return;
+
+      updateItemCount({ id: ticket.id, count: quantity - 1 });
+    }
+
+    if (variant === "increase") {
+      if (quantity === 6) return;
+
+      updateItemCount({ id: ticket.id, count: quantity + 1 });
+    }
+  };
 
   return (
     <div className={styles.item}>
@@ -61,17 +77,17 @@ export const ShoppingItem = ({ item }: ShoppingItemProps) => {
             </Text>
             <div className={styles.stepper}>
               <button
-                className={styles.stepperElement}
-                onClick={() => handleChangeCount("decrease", count, setCount)}
+                className={decreaseButtonClassName}
+                onClick={() => handleChangeCount("decrease")}
               >
                 <SubtractLineIcon className={styles.countIcon} />
               </button>
               <Text tag="div" variant="action-2" className={styles.count}>
-                {count}
+                {ticket.quantity}
               </Text>
               <button
-                className={styles.stepperElement}
-                onClick={() => handleChangeCount("increase", count, setCount)}
+                className={increaseButtonClassName}
+                onClick={() => handleChangeCount("increase")}
               >
                 <AddLineIcon className={styles.countIcon} />
               </button>

@@ -9,10 +9,11 @@ import { parsePrice } from "../../helpers/parsePrice";
 import ShoppingCart2LineIcon from "remixicon-react/ShoppingCart2LineIcon";
 import { useNavigate } from "react-router-dom";
 import { getDashboardHomePath } from "../routes/paths";
+import classNames from "classnames";
 
 export const ShoppingCart = () => {
   const { closeCart, state } = useShoppingCartStore();
-  const { cartContent } = state;
+  const { cartContent, isShoppingCartOpen } = state;
   const navigate = useNavigate();
 
   const subtotalPrice = parsePrice(
@@ -22,10 +23,20 @@ export const ShoppingCart = () => {
     )
   );
 
+  const overlayClassName = classNames(styles.overlay, {
+    [styles.overlayOpen]: isShoppingCartOpen,
+    [styles.overlayClose]: !isShoppingCartOpen,
+  });
+
+  const cartClassName = classNames(styles.cart, {
+    [styles.cartOpen]: isShoppingCartOpen,
+    [styles.cartClose]: !isShoppingCartOpen,
+  });
+
   return (
     <>
-      <div className={styles.overlay} onClick={closeCart} />
-      <div className={styles.cart}>
+      <div className={overlayClassName} onClick={closeCart} />
+      <div className={cartClassName}>
         <div className={styles.titleLabel}>
           <Text tag="h5" variant="heading-5">
             Cart
