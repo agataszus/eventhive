@@ -8,7 +8,13 @@ export enum ShoppingCartActionType {
 }
 
 export type ShoppingCartItem = {
-  ticket: { title: string; quantity: number; price: number; id: number };
+  ticket: {
+    title: string;
+    quantity: number;
+    price: number;
+    id: number;
+    description: string;
+  };
   event: {
     title: string;
     date: string;

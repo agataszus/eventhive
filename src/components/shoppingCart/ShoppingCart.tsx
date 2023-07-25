@@ -8,13 +8,22 @@ import { useShoppingCartStore } from "../../services/useShoppingCartStore/useSho
 import { parsePrice } from "../../helpers/parsePrice";
 import ShoppingCart2LineIcon from "remixicon-react/ShoppingCart2LineIcon";
 import { useNavigate } from "react-router-dom";
-import { getDashboardHomePath } from "../routes/paths";
+import { getCheckoutPath, getDashboardHomePath } from "../routes/paths";
 import classNames from "classnames";
+import { useEffect, useState } from "react";
 
 export const ShoppingCart = () => {
   const { closeCart, state } = useShoppingCartStore();
   const { cartContent, isShoppingCartOpen } = state;
   const navigate = useNavigate();
+  const [wasShoppingCartOpen, setWasShoppingCartOpen] = useState(false);
+
+  useEffect(() => {
+    if (isShoppingCartOpen && !wasShoppingCartOpen)
+      setWasShoppingCartOpen(true);
+  }, [isShoppingCartOpen, wasShoppingCartOpen]);
+
+  if (!wasShoppingCartOpen) return null;
 
   const subtotalPrice = parsePrice(
     cartContent.reduce(
@@ -83,7 +92,14 @@ export const ShoppingCart = () => {
             <Text tag="p" variant="caption-2">
               Fees calculated at checkout
             </Text>
-            <Button variant="thick" text="Proceed to checkout" />
+            <Button
+              variant="thick"
+              text="Proceed to checkout"
+              onClick={() => {
+                navigate(getCheckoutPath());
+                closeCart();
+              }}
+            />
           </div>
         )}
       </div>

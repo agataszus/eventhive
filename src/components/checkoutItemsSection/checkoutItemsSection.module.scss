@@ -1,0 +1,11 @@
+@import "../../styles//variables";
+
+.section {
+  display: flex;
+  padding: $space-6;
+}
+
+.itemsContainer {
+  display: flex;
+  flex-direction: column;
+}

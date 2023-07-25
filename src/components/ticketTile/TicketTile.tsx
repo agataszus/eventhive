@@ -37,7 +37,7 @@ export const TicketTile = ({ event, ticket, isSoldOut }: TicketTileProps) => {
     const dateToString = `${day} ${month} ${year}`;
 
     const item: ShoppingCartItem = {
-      ticket: { title, price, id, quantity: count },
+      ticket: { title, price, id, quantity: count, description },
       event: {
         title: event.title,
         date: dateToString,

@@ -1,0 +1,125 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.item {
+  display: flex;
+  width: 100%;
+  height: 200px;
+  align-items: center;
+  padding: 0 $space-6 0 0;
+  border-bottom: 2px solid $font-color-light-alpha20;
+}
+
+.imgContainer {
+  display: flex;
+  width: 15%;
+  justify-content: center;
+}
+
+.img {
+  width: 70px;
+  height: 70px;
+  border-radius: 6px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.itemDescription {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  flex-grow: 0;
+  gap: $space-7;
+}
+
+.title {
+  @include overflow-ellipsis(2);
+}
+
+.ticketName {
+  @include overflow-ellipsis(2);
+}
+
+.eventContainer {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  width: 100%;
+}
+
+.ticketInformationContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: $space-3;
+}
+
+.ticketDescription {
+  @include overflow-ellipsis(1);
+}
+
+.stepperContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+}
+
+.stepper {
+  display: flex;
+  width: auto;
+  background-color: $color-primary;
+  border-radius: 14px;
+}
+
+.stepperElement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+
+.count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  background-color: transparent;
+  color: $font-color-light;
+  line-height: 1;
+}
+
+.binContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5%;
+}
+
+.binIcon {
+  fill: $font-color-light;
+  width: 24px;
+  height: auto;
+  margin-bottom: auto;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.countIcon {
+  fill: $font-color-light;
+  width: 20px;
+  height: auto;
+}
+
+.buttonDisable {
+  opacity: 30%;
+  cursor: not-allowed;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+}
