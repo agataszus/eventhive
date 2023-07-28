@@ -48,6 +48,10 @@ const router = createBrowserRouter([
         path: "checkout",
         element: <CheckoutPage />,
       },
+      {
+        path: "my-tickets",
+        element: <HomePage />,
+      },
     ],
   },
 ]);

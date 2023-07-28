@@ -2,7 +2,10 @@
 
 .section {
   display: flex;
+  flex-direction: column;
   padding: $space-6;
+  height: calc(100vh - $topbar-height);
+  overflow-y: scroll;
 }
 
 .itemsContainer {

@@ -1,0 +1,26 @@
+@import "../../styles/variables";
+
+.emptyCartContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $space-3;
+  width: 100%;
+  height: 100%;
+}
+
+.emptyCartIcon {
+  width: 100px;
+  height: auto;
+  fill: $font-color-light-alpha20;
+}
+
+.emptyCartText {
+  font-size: $font-size-5;
+}
+
+.buttonExplore {
+  width: 180px;
+  margin-top: $space-6;
+}

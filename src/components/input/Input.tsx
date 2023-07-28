@@ -7,6 +7,8 @@ type InputProps = {
   type: "text" | "password" | "number";
   placeholder: string;
   defaultValue?: string;
+  minLength?: number;
+  maxLength?: number;
 };
 
 export const Input = ({
@@ -15,6 +17,8 @@ export const Input = ({
   placeholder,
   defaultValue,
   labelText,
+  minLength,
+  maxLength,
 }: InputProps) => {
   return (
     <div className={styles.inputContainer}>
@@ -32,6 +36,8 @@ export const Input = ({
         name={name}
         placeholder={placeholder}
         defaultValue={defaultValue}
+        minLength={minLength}
+        maxLength={maxLength}
       ></input>
     </div>
   );

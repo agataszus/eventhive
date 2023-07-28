@@ -8,3 +8,4 @@ export const getAccountPath = () => `${getDashboardPath()}/account`;
 export const getCategoryPath = (category: string) =>
   `${getDashboardPath()}/categories/${category}`;
 export const getCheckoutPath = () => `${getDashboardPath()}/checkout`;
+export const getMyTicketsPath = () => `${getDashboardPath()}/my-tickets`;

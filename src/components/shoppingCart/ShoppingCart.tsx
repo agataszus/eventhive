@@ -6,11 +6,11 @@ import styles from "./shoppingCart.module.scss";
 import { ShoppingItem } from "../shoppingItem/ShoppingItem";
 import { useShoppingCartStore } from "../../services/useShoppingCartStore/useShoppingCartStore";
 import { parsePrice } from "../../helpers/parsePrice";
-import ShoppingCart2LineIcon from "remixicon-react/ShoppingCart2LineIcon";
 import { useNavigate } from "react-router-dom";
-import { getCheckoutPath, getDashboardHomePath } from "../routes/paths";
+import { getCheckoutPath } from "../routes/paths";
 import classNames from "classnames";
 import { useEffect, useState } from "react";
+import { EmptyCart } from "../emptyCart/EmptyCart";
 
 export const ShoppingCart = () => {
   const { closeCart, state } = useShoppingCartStore();
@@ -53,27 +53,7 @@ export const ShoppingCart = () => {
           <CloseLineIcon className={styles.icon} onClick={() => closeCart()} />
         </div>
         <Divider />
-        {cartContent.length === 0 && (
-          <div className={styles.emptyCartContainer}>
-            <ShoppingCart2LineIcon className={styles.emptyCartIcon} />
-            <Text tag="p" variant="action-5" className={styles.emptyCartText}>
-              Your cart is empty
-            </Text>
-            <Text tag="p" variant="caption-2">
-              Add tickets to cart to see them here
-            </Text>
-            <div className={styles.buttonExplore}>
-              <Button
-                text="Explore events"
-                variant="thick"
-                onClick={() => {
-                  navigate(getDashboardHomePath());
-                  closeCart();
-                }}
-              />
-            </div>
-          </div>
-        )}
+        {cartContent.length === 0 && <EmptyCart />}
         <div className={styles.itemsContainer}>
           {cartContent.map((item) => (
             <ShoppingItem item={item} key={item.ticket.id} />

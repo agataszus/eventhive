@@ -1,6 +1,23 @@
 @import "../../../styles/variables";
 
 .page {
-  padding-top: 78px;
+  padding-top: $topbar-height;
   z-index: 10;
+}
+
+.content {
+  display: flex;
+}
+
+.itemsSection {
+  width: calc(100% - $checkout-summary-width);
+  flex-shrink: 0;
+}
+
+.checkoutSummary {
+  position: fixed;
+  display: flex;
+  top: $topbar-height;
+  bottom: 0;
+  right: 0;
 }

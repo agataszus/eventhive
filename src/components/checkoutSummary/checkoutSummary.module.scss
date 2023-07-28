@@ -1,0 +1,73 @@
+@import "../../styles/variables";
+
+.checkoutContainer {
+  display: flex;
+  flex-direction: column;
+  padding: $space-6 $space-7;
+  background-color: $background-color-dark;
+  width: $checkout-summary-width;
+  flex-shrink: 0;
+}
+
+.title {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.pricesContainer {
+  min-height: 153px;
+  display: flex;
+  flex-direction: column;
+  padding: $space-7 0;
+  gap: $space-3;
+  border-bottom: 2px solid $font-color-light-alpha20;
+}
+
+.priceRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.paymentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+  padding: $space-8 0;
+}
+
+.paymentHidden {
+  pointer-events: none;
+  opacity: 30%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.totalPriceRow {
+  height: 76px;
+  flex-grow: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: $space-5 0 $space-7;
+}
+
+.paymentTitle {
+  color: $font-color-light;
+}
+
+.buttonContainer {
+  margin-top: $space-6;
+}
+
+.loader {
+  margin-left: auto;
+}
+
+.error {
+  padding-bottom: $space-8;
+}
