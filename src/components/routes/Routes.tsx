@@ -10,6 +10,7 @@ import { AccountPage } from "../../pages/dashboard/accountPage/AccountPage";
 import { EventPage } from "../../pages/dashboard/eventPage/EventPage";
 import { CategoryPage } from "../../pages/dashboard/categoryPage/CategoryPage";
 import { CheckoutPage } from "../../pages/dashboard/checkoutPage/CheckoutPage";
+import { MyTicketsPage } from "../../pages/dashboard/myTicketsPage/MyTicketsPage";
 
 const router = createBrowserRouter([
   {
@@ -50,7 +51,7 @@ const router = createBrowserRouter([
       },
       {
         path: "my-tickets",
-        element: <HomePage />,
+        element: <MyTicketsPage />,
       },
     ],
   },

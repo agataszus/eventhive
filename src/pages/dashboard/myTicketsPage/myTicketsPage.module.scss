@@ -1,0 +1,26 @@
+@import "../../../styles/variables";
+
+.page {
+  padding-top: $topbar-height;
+  z-index: 10;
+}
+
+.ticketsSection {
+  display: flex;
+  flex-direction: column;
+  // min-height: 540px;
+  padding: $space-8;
+  gap: $space-9;
+}
+
+.EventTickets {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+}
+
+.eventSection {
+  display: flex;
+  flex-direction: column;
+  gap: $space-8;
+}
