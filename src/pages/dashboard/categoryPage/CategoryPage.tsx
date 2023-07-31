@@ -10,6 +10,8 @@ import { CategoriesSection } from "../../../components/categoriesSection/Categor
 import { categoriesToPicturesMap } from "./categoriesToPicturesMap";
 import { Error } from "../../../components/error/Error";
 import { Loader } from "../../../components/loader/Loader";
+import { useTopbarVisibleCheck } from "../../../hooks/useTopbarVisibleCheck";
+import { useEffect, useState } from "react";
 
 const getGradientOnImage = (
   url: string
@@ -27,6 +29,13 @@ const checkIsCategoryEnum = (
 export const CategoryPage = () => {
   const { pathname } = useLocation();
   const { data: events, isLoading, isError, isSuccess } = useEventsQuery();
+
+  const isTopbar = useTopbarVisibleCheck();
+  const [isTopbarVisible, setIsTopbarVisible] = useState(true);
+
+  useEffect(() => {
+    setIsTopbarVisible(isTopbar);
+  }, [isTopbar]);
 
   const pathnameArray = pathname.split("/");
   const category = pathnameArray[pathnameArray.length - 1];
@@ -50,7 +59,9 @@ export const CategoryPage = () => {
 
   return (
     <div className={styles.page}>
-      <TopBar title={categoriesToLabelMap[category] ?? "Unknown"} />
+      {isTopbarVisible && (
+        <TopBar title={categoriesToLabelMap[category] ?? "Unknown"} />
+      )}
       <CategoryPicture category={category} />
       <div
         className={styles.content}

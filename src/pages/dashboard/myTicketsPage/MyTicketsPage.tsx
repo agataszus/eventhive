@@ -1,12 +1,21 @@
+import { useEffect, useState } from "react";
 import { Text } from "../../../components/text/text";
 import { TopBar } from "../../../components/topBar/TopBar";
 import { UserTicketCard } from "../../../components/userTicketCard/UserTicketCard";
+import { useTopbarVisibleCheck } from "../../../hooks/useTopbarVisibleCheck";
 import { useUserTicketsQuery } from "../../../queries/useUserTicketsQuery";
 import { UserTicketsDto } from "../../../services/api/tickets/types";
 import styles from "./myTicketsPage.module.scss";
 
 export const MyTicketsPage = () => {
   const { data: tickets } = useUserTicketsQuery();
+
+  const isTopbar = useTopbarVisibleCheck();
+  const [isTopbarVisible, setIsTopbarVisible] = useState(true);
+
+  useEffect(() => {
+    setIsTopbarVisible(isTopbar);
+  }, [isTopbar]);
 
   if (!tickets) return null;
 
@@ -24,7 +33,7 @@ export const MyTicketsPage = () => {
 
   return (
     <div className={styles.page}>
-      <TopBar title="My tickets" />
+      {isTopbarVisible && <TopBar title="My tickets" />}
       <div className={styles.ticketsSection}>
         {Object.entries(ticketsMap).map(([title, tickets]) => (
           <div key={title} className={styles.eventSection}>

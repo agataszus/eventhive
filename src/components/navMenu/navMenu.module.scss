@@ -1,4 +1,5 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .menu {
   display: flex;
@@ -11,12 +12,16 @@
   display: flex;
   flex-direction: column;
   gap: $space-7;
-  padding: 0 $space-6;
+  padding: 0 $space-5;
+
+  @include desktop-small {
+    gap: $space-6;
+  }
 }
 
 .link {
   display: block;
-  padding: 0 $space-8;
+  padding: 0 $space-7;
   position: relative;
 }
 

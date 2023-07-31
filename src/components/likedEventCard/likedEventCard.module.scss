@@ -35,6 +35,10 @@
     border-bottom-left-radius: 18px;
     border-top-left-radius: 18px;
   }
+
+  @include desktop-small {
+    min-width: 260px;
+  }
 }
 
 .image {

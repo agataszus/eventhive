@@ -46,6 +46,11 @@
   justify-content: center;
   text-align: justify;
   background-color: #000000b9;
+
+  @include desktop-small {
+    width: 75%;
+    padding: $space-7 $space-4;
+  }
 }
 
 .buttonsContainer {
@@ -57,4 +62,8 @@
 
 .buttonBuy {
   min-width: 180px;
+
+  @include desktop-small {
+    min-width: 170px;
+  }
 }

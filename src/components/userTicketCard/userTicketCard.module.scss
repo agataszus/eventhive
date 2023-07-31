@@ -7,6 +7,10 @@
   height: 260px;
   background-color: $background-color-medium-dark;
   border-radius: 18px;
+
+  @include desktop-small {
+    height: 200px;
+  }
 }
 
 .imageContainer {
@@ -35,6 +39,10 @@
     border-bottom-left-radius: 18px;
     border-top-left-radius: 18px;
   }
+
+  @include desktop-small {
+    min-width: 160px;
+  }
 }
 
 .image {
@@ -53,7 +61,7 @@
 
 .eventTitle {
   cursor: pointer;
-  padding-bottom: $space-6;
+  padding-bottom: $space-3;
 }
 
 .ticketTitle {
@@ -71,6 +79,11 @@
   gap: $space-4;
   padding: $space-7;
   text-align: justify;
+
+  @include desktop-small {
+    gap: $space-2;
+    padding: $space-5 $space-4;
+  }
 }
 
 .qrCode {
@@ -81,4 +94,9 @@
   align-self: flex-end;
   justify-content: center;
   align-items: center;
+
+  @include desktop-small {
+    width: 200px;
+    height: 200px;
+  }
 }

@@ -40,6 +40,10 @@
   margin: auto 0;
   gap: $space-5;
   padding: $space-8;
+
+  @include desktop-small {
+    width: 70%;
+  }
 }
 
 .title {

@@ -1,7 +1,27 @@
+@import "./variables";
+
 @mixin overflow-ellipsis($linesNumber) {
   display: -webkit-box;
   -webkit-line-clamp: $linesNumber;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+
+@mixin desktop-small {
+  @media screen and (max-width: $desktop-small-breakpoint) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: $mobile-breakpoint) {
+    @content;
+  }
 }

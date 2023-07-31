@@ -7,9 +7,18 @@ import { Outlet, useNavigate } from "react-router-dom";
 import { useScrollOnRouteChange } from "../../hooks/useScrollOnRouteChange";
 import { getLoginPath } from "../routes/paths";
 import { ShoppingCart } from "../shoppingCart/ShoppingCart";
+import {
+  DESKTOP,
+  DESKTOP_SMALL,
+  MOBILE,
+  TABLET,
+  useMediaQueries,
+} from "../../hooks/useMediaQueries";
+import { SidebarMobile } from "../sidebarMobile/SidebarMobile";
 
 export const Layout = () => {
   const { token } = useAuthToken();
+  const mediaQuery = useMediaQueries();
 
   const navigate = useNavigate();
   const contentRef = useRef<HTMLDivElement>(null);
@@ -25,8 +34,11 @@ export const Layout = () => {
   return (
     <div className={styles.layout}>
       <CreateProfileModal />
-      <div className={styles.sidebar}>
-        <Sidebar />
+      <div>
+        {(mediaQuery === DESKTOP || mediaQuery === DESKTOP_SMALL) && (
+          <Sidebar />
+        )}
+        {(mediaQuery === TABLET || mediaQuery === MOBILE) && <SidebarMobile />}
       </div>
       <div className={styles.content} ref={contentRef}>
         <Outlet />

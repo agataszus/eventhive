@@ -1,10 +1,24 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .sidebar {
   display: flex;
   flex-direction: column;
-  width: $sidebar-width;
-  height: 100%;
+  width: $sidebar-width-desktop;
+  height: 100vh;
+
+  @include desktop-small {
+    width: $sidebar-width-desktop-small;
+    overflow-y: scroll;
+  }
+
+  @include tablet {
+    width: $sidebar-width-desktop;
+  }
+
+  @include mobile {
+    width: 100vw;
+  }
 }
 
 .logo {
@@ -16,6 +30,6 @@
 }
 
 .profile {
-  padding: 0 $space-7 $space-6;
+  padding: $space-7 $space-6;
   margin-top: auto;
 }
