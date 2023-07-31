@@ -39,6 +39,7 @@ export const TicketModal = ({
   return (
     <Modal
       isOpen={isOpen}
+      setIsOpen={setIsOpen}
       isLoading={isLoading}
       isError={isError}
       errorMessage="Couldn't load ticket details. Try again later!"
@@ -51,7 +52,7 @@ export const TicketModal = ({
         />
         <TicketQRCode variant="large" id={ticketId} />
         <div className={styles.description}>
-          <Text tag="h3" variant="heading-5">
+          <Text tag="h3" variant="heading-5" className={styles.title}>
             {title}
           </Text>
           <Text tag="h4" variant="subtitle-2" className={styles.ticketTitle}>

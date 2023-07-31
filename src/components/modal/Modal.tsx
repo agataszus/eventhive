@@ -6,6 +6,7 @@ import classNames from "classnames";
 
 type ModalProps = {
   isOpen: boolean;
+  setIsOpen?: (newState: boolean) => void;
   isLoading: boolean;
   isError: boolean;
   errorMessage: string;
@@ -15,6 +16,7 @@ type ModalProps = {
 export const Modal = ({
   children,
   isOpen,
+  setIsOpen,
   isLoading,
   isError,
   errorMessage,
@@ -27,7 +29,14 @@ export const Modal = ({
 
   return (
     <>
-      {(isOpen || isLoading || isError) && <div className={styles.overlay} />}
+      {(isOpen || isLoading || isError) && (
+        <div
+          className={styles.overlay}
+          onClick={() => {
+            if (setIsOpen) setIsOpen(false);
+          }}
+        />
+      )}
       {isLoading && (
         <div className={styles.loader}>
           <Loader variant="large" />
