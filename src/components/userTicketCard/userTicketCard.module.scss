@@ -61,7 +61,7 @@
 }
 
 .description {
-  @include overflow-ellipsis(5);
+  @include overflow-ellipsis(4);
 }
 
 .descriptionContainer {

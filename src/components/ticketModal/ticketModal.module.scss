@@ -1,0 +1,33 @@
+@import "../../styles/variables";
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.closeIcon {
+  align-self: flex-end;
+  justify-self: flex-start;
+  width: 24px;
+  height: auto;
+  fill: $font-color-light;
+  cursor: pointer;
+}
+
+.ticketTitle {
+  color: $color-secondary;
+  margin-bottom: $space-3;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  width: 340px;
+}
+
+.date {
+  color: $font-color-light-secondary;
+}
