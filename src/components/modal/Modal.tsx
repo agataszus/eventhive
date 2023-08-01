@@ -1,7 +1,7 @@
 import { Loader } from "../loader/Loader";
 import styles from "./modal.module.scss";
 import { Error } from "../error/Error";
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useEffect, useState } from "react";
 import classNames from "classnames";
 
 type ModalProps = {
@@ -22,31 +22,44 @@ export const Modal = ({
   errorMessage,
   variant,
 }: ModalProps) => {
+  const [wasModalOpen, setWasModalOpen] = useState(false);
+
+  useEffect(() => {
+    if (isOpen && !wasModalOpen) setWasModalOpen(true);
+  }, [isOpen, wasModalOpen]);
+
+  if (!wasModalOpen) return null;
+
+  const isModalVisible = isOpen || isError;
   const modalClassName = classNames(styles.modal, {
     [styles.modalThick]: variant === "thick",
     [styles.modalNarrow]: variant === "narrow",
+    [styles.modalOpen]: isModalVisible,
+    [styles.modalClose]: !isModalVisible,
+  });
+
+  const isOverlayVisible = isOpen || isLoading || isError;
+  const overlayClassName = classNames(styles.overlay, {
+    [styles.overlayOpen]: isOverlayVisible,
+    [styles.overlayClose]: !isOverlayVisible,
   });
 
   return (
     <>
-      {(isOpen || isLoading || isError) && (
-        <div
-          className={styles.overlay}
-          onClick={() => {
-            if (setIsOpen) setIsOpen(false);
-          }}
-        />
-      )}
+      <div
+        className={overlayClassName}
+        onClick={() => {
+          if (setIsOpen) setIsOpen(false);
+        }}
+      />
       {isLoading && (
         <div className={styles.loader}>
           <Loader variant="large" />
         </div>
       )}
-      {(isOpen || isError) && (
-        <div className={modalClassName}>
-          {isError ? <Error message={errorMessage} /> : children}
-        </div>
-      )}
+      <div className={modalClassName}>
+        {isError ? <Error message={errorMessage} /> : children}
+      </div>
     </>
   );
 };

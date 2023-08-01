@@ -4,10 +4,20 @@ import { TopbarMobile } from "../topbarMobile/TopbarMobile";
 import styles from "./sidebarMobile.module.scss";
 import CloseLineIcon from "remixicon-react/CloseLineIcon";
 import classNames from "classnames";
+import { useLocation } from "react-router-dom";
 
 export const SidebarMobile = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [wasSidebarOpen, setWasSidebarOpen] = useState(false);
+  const location = useLocation();
+  const [pathname, setPathname] = useState(location.pathname);
+
+  useEffect(() => {
+    if (location.pathname !== pathname && isSidebarOpen) {
+      setIsSidebarOpen(false);
+      setPathname(location.pathname);
+    }
+  }, [location.pathname, isSidebarOpen, pathname]);
 
   useEffect(() => {
     if (isSidebarOpen && !wasSidebarOpen) setWasSidebarOpen(true);

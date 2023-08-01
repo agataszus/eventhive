@@ -13,6 +13,7 @@
   &:hover .icon {
     fill: $font-color-light;
     cursor: pointer;
+    transition: fill 0.15s;
   }
 }
 
@@ -23,6 +24,7 @@
   &:hover {
     color: $font-color-light;
     cursor: pointer;
+    transition: fill 0.15s;
   }
 }
 

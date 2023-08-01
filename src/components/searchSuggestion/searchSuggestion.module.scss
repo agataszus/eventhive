@@ -13,6 +13,7 @@
 
   &:hover {
     background-color: $background-color-medium-light;
+    transition: background-color 0.15s;
   }
 }
 

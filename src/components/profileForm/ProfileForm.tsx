@@ -53,7 +53,7 @@ export const ProfileForm = () => {
       { userData, token },
       {
         onSuccess: () => {
-          queryClient.invalidateQueries(getAccountKey());
+          queryClient.invalidateQueries();
         },
       }
     );
