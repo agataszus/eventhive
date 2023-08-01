@@ -13,7 +13,7 @@ export const SidebarMobile = () => {
   const [pathname, setPathname] = useState(location.pathname);
 
   useEffect(() => {
-    if (location.pathname !== pathname && isSidebarOpen) {
+    if (location.pathname !== pathname) {
       setIsSidebarOpen(false);
       setPathname(location.pathname);
     }
