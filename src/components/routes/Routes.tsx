@@ -11,11 +11,12 @@ import { EventPage } from "../../pages/dashboard/eventPage/EventPage";
 import { CategoryPage } from "../../pages/dashboard/categoryPage/CategoryPage";
 import { CheckoutPage } from "../../pages/dashboard/checkoutPage/CheckoutPage";
 import { MyTicketsPage } from "../../pages/dashboard/myTicketsPage/MyTicketsPage";
+import { RootPage } from "../../pages";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <></>,
+    element: <RootPage />,
   },
   {
     path: "/login",
