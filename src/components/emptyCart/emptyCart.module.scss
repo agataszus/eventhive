@@ -1,4 +1,5 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .emptyCartContainer {
   display: flex;
@@ -8,12 +9,20 @@
   gap: $space-3;
   width: 100%;
   height: 100%;
+
+  @include desktop-small {
+    border-radius: 16px;
+  }
 }
 
 .emptyCartIcon {
   width: 100px;
   height: auto;
   fill: $font-color-light-alpha20;
+}
+
+.emptyCartSubtitle {
+  text-align: center;
 }
 
 .emptyCartText {

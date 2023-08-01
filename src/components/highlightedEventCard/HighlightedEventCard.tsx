@@ -10,6 +10,8 @@ import { Error } from "../error/Error";
 import { parseEventDate } from "../../helpers/parseEventDate";
 import { Link, useNavigate } from "react-router-dom";
 import { getEventPath } from "../routes/paths";
+import { MOBILE, useMediaQueries } from "../../hooks/useMediaQueries";
+import { DateTileSmall } from "../dateTileSmall/DateTileSmall";
 
 const getDarkenBackgroundImage = (url: string) => `linear-gradient(
   to right,
@@ -23,6 +25,8 @@ url(${url})`;
 export const HighlightedEventCard = () => {
   const { data: events, isLoading, isError } = useEventsQuery();
   const navigate = useNavigate();
+
+  const mediaQuery = useMediaQueries();
 
   const randomNumber = useMemo(() => {
     const randomNum = Math.random();
@@ -90,7 +94,11 @@ export const HighlightedEventCard = () => {
         </div>
       </div>
       <div className={styles.dateContainer}>
-        <DateTile day={day} month={month} />
+        {mediaQuery === MOBILE ? (
+          <DateTileSmall day={day} month={month} />
+        ) : (
+          <DateTile day={day} month={month} />
+        )}
       </div>
     </div>
   );

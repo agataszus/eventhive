@@ -1,4 +1,5 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .form {
   display: flex;
@@ -18,4 +19,8 @@
 .button {
   width: 340px;
   margin: auto;
+
+  @include mobile {
+    width: 280px;
+  }
 }

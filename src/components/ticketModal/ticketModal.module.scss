@@ -27,6 +27,10 @@
   flex-direction: column;
   gap: $space-2;
   width: 340px;
+
+  @include mobile {
+    width: 240px;
+  }
 }
 
 .date {

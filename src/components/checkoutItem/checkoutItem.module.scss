@@ -7,13 +7,47 @@
   height: 200px;
   align-items: center;
   border-bottom: 2px solid $font-color-light-alpha20;
+
+  @include mobile {
+    flex-direction: column;
+    height: auto;
+    gap: $space-3;
+  }
+}
+
+.informationContainer {
+  display: flex;
+  width: 55%;
+
+  @include mobile {
+    width: 100%;
+    gap: $space-4;
+    padding-top: $space-4;
+  }
+}
+
+.actionContainer {
+  display: flex;
+  width: 45%;
+
+  @include mobile {
+    width: 100%;
+    padding: $space-4 0;
+    justify-content: space-between;
+  }
 }
 
 .imgContainer {
   display: flex;
   min-width: 130px;
-  width: 15%;
+  width: 30%;
   justify-content: center;
+  align-items: center;
+
+  @include mobile {
+    min-width: 100px;
+    width: 20%;
+  }
 }
 
 .img {
@@ -22,14 +56,23 @@
   border-radius: 6px;
   object-fit: cover;
   object-position: center;
+
+  @include mobile {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .itemDescription {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 70%;
   flex-grow: 0;
   gap: $space-7;
+
+  @include mobile {
+    width: 100%;
+  }
 }
 
 .title {
@@ -62,7 +105,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20%;
+  width: 45%;
+
+  @include mobile {
+    width: auto;
+  }
 }
 
 .stepper {
@@ -94,7 +141,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 5%;
+  width: 10%;
+
+  @include mobile {
+    width: auto;
+  }
 }
 
 .binIcon {
@@ -121,5 +172,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20%;
+  width: 45%;
+
+  @include mobile {
+    width: auto;
+  }
 }

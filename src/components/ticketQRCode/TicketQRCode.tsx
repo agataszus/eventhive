@@ -2,7 +2,12 @@ import { useTicketQuery } from "../../queries/useTicketQuery";
 import { QRCodeSVG } from "qrcode.react";
 import { Loader } from "../loader/Loader";
 import { Text } from "../text/text";
-import { DESKTOP_SMALL, useMediaQueries } from "../../hooks/useMediaQueries";
+import {
+  DESKTOP_SMALL,
+  MOBILE,
+  TABLET,
+  useMediaQueries,
+} from "../../hooks/useMediaQueries";
 
 type TicketQRCodeProps = {
   id: number;
@@ -21,8 +26,16 @@ export const TicketQRCode = ({ id, variant }: TicketQRCodeProps) => {
     size = 340;
   }
 
-  if (mediaQuery === DESKTOP_SMALL) {
-    size = 150;
+  if (mediaQuery === DESKTOP_SMALL || mediaQuery === TABLET) {
+    if (variant === "small") {
+      size = 150;
+    }
+  }
+
+  if (mediaQuery === MOBILE) {
+    if (variant === "large") {
+      size = 240;
+    }
   }
 
   if (!ticket) return null;

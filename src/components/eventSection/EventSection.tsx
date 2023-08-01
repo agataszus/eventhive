@@ -71,7 +71,7 @@ export const EventSection = ({
           <Text tag="h4" variant="subtitle-2">
             About
           </Text>
-          <Text tag="p" variant="caption-3">
+          <Text tag="p" variant="caption-3" className={styles.descriptionText}>
             {description}
           </Text>
         </div>

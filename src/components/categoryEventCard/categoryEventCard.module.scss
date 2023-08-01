@@ -19,6 +19,12 @@
   background-position: center;
   border-radius: 14px;
   overflow: hidden;
+
+  @include mobile {
+    flex-direction: column;
+    height: 500px;
+    justify-content: flex-start;
+  }
 }
 
 .dateTile {
@@ -35,6 +41,10 @@
 
 .description {
   @include overflow-ellipsis(9);
+
+  @include mobile {
+    @include overflow-ellipsis(3);
+  }
 }
 
 .descriptionContainer {
@@ -50,6 +60,11 @@
   @include desktop-small {
     width: 75%;
     padding: $space-7 $space-4;
+  }
+
+  @include mobile {
+    width: 100%;
+    height: 240px;
   }
 }
 

@@ -16,4 +16,8 @@
   @include desktop-small {
     padding: $space-9 $space-11;
   }
+
+  @include mobile {
+    padding: $space-7 $space-5;
+  }
 }

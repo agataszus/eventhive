@@ -19,44 +19,48 @@ export const CheckoutItem = ({ item }: CheckoutItemProps) => {
 
   return (
     <div className={styles.item}>
-      <div className={styles.imgContainer}>
-        <img src={event.externalImageUrls[0]} className={styles.img} />
-      </div>
-      <div className={styles.itemDescription}>
-        <div className={styles.eventContainer}>
-          <Link to={getEventPath(event.id)}>
-            <Text tag="h6" variant="heading-6" className={styles.title}>
-              {event.title}
+      <div className={styles.informationContainer}>
+        <div className={styles.imgContainer}>
+          <img src={event.externalImageUrls[0]} className={styles.img} />
+        </div>
+        <div className={styles.itemDescription}>
+          <div className={styles.eventContainer}>
+            <Link to={getEventPath(event.id)}>
+              <Text tag="h6" variant="heading-6" className={styles.title}>
+                {event.title}
+              </Text>
+            </Link>
+            <Text tag="p" variant="subtitle-5">
+              {event.date}
             </Text>
-          </Link>
-          <Text tag="p" variant="subtitle-5">
-            {event.date}
-          </Text>
-        </div>
-        <div className={styles.ticketInformationContainer}>
-          <Text tag="p" variant="subtitle-3" className={styles.ticketName}>
-            {ticket.title}
-          </Text>
-          <Text
-            tag="p"
-            variant="caption-2"
-            className={styles.ticketDescription}
-          >
-            {ticket.description}
-          </Text>
+          </div>
+          <div className={styles.ticketInformationContainer}>
+            <Text tag="p" variant="subtitle-3" className={styles.ticketName}>
+              {ticket.title}
+            </Text>
+            <Text
+              tag="p"
+              variant="caption-2"
+              className={styles.ticketDescription}
+            >
+              {ticket.description}
+            </Text>
+          </div>
         </div>
       </div>
-      <Text tag="div" variant="heading-6" className={styles.priceContainer}>
-        {summaryPrice}
-      </Text>
-      <div className={styles.stepperContainer}>
-        <Stepper ticket={ticket} />
-      </div>
-      <div className={styles.binContainer}>
-        <DeleteBin6LineIcon
-          className={styles.binIcon}
-          onClick={() => removeItem(item)}
-        />
+      <div className={styles.actionContainer}>
+        <Text tag="div" variant="heading-6" className={styles.priceContainer}>
+          {summaryPrice}
+        </Text>
+        <div className={styles.stepperContainer}>
+          <Stepper ticket={ticket} />
+        </div>
+        <div className={styles.binContainer}>
+          <DeleteBin6LineIcon
+            className={styles.binIcon}
+            onClick={() => removeItem(item)}
+          />
+        </div>
       </div>
     </div>
   );

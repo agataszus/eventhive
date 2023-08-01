@@ -16,7 +16,7 @@ export const EmptyCart = () => {
       <Text tag="p" variant="action-5" className={styles.emptyCartText}>
         Your cart is empty
       </Text>
-      <Text tag="p" variant="caption-2">
+      <Text tag="p" variant="caption-2" className={styles.emptyCartSubtitle}>
         Add tickets to cart to see them here
       </Text>
       <div className={styles.buttonExplore}>

@@ -1,4 +1,5 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .imageContainer {
   position: relative;
@@ -16,19 +17,23 @@
   );
   background-position: center;
   background-size: cover;
+
+  @include mobile {
+    height: 200px;
+  }
 }
 
 .title {
-  padding: $space-8 $space-9;
+  padding: $space-8 $space-7;
   text-transform: uppercase;
-  font-size: $font-size-13;
+  font-size: $font-size-12;
 }
 
 .backgroundTitle {
   position: absolute;
   top: $space-9;
   left: $space-9;
-  font-size: $font-size-15;
+  font-size: $font-size-14;
   font-weight: $font-weight-bold;
   color: $font-color-light;
   opacity: 25%;

@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getMyTicketsPath } from "../routes/paths";
 import { useShoppingCartStore } from "../../services/useShoppingCartStore/useShoppingCartStore";
+import { MOBILE, useMediaQueries } from "../../hooks/useMediaQueries";
 
 type PaymentSuccessModalProps = {
   isOpen: boolean;
@@ -16,6 +17,7 @@ export const PaymentSuccessModal = ({ isOpen }: PaymentSuccessModalProps) => {
   const { clearCart } = useShoppingCartStore();
   const [count, setCount] = useState(10);
   const navigate = useNavigate();
+  const mediaQuery = useMediaQueries();
 
   useEffect(() => {
     if (!isOpen) return;
@@ -34,7 +36,7 @@ export const PaymentSuccessModal = ({ isOpen }: PaymentSuccessModalProps) => {
       isLoading={false}
       isError={false}
       errorMessage=""
-      variant="thick"
+      variant={mediaQuery === MOBILE ? "narrow" : "thick"}
     >
       <div className={styles.content}>
         <Coupon2LineIcon className={styles.icon} />

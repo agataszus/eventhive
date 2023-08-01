@@ -6,6 +6,10 @@
   flex-direction: column;
   gap: $space-7;
   padding: $space-7 0;
+
+  @include mobile {
+    gap: $space-6;
+  }
 }
 
 .categoriesMenu {
@@ -16,6 +20,9 @@
 
   @include desktop-small {
     gap: $space-6;
+  }
+  @include mobile {
+    gap: $space-5;
   }
 }
 

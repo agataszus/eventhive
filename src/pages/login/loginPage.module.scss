@@ -1,9 +1,10 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .loginPage {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   background-color: $background-color-extra-dark;
   padding-left: $space-11;
   padding-top: $space-3;
@@ -13,6 +14,12 @@
   display: flex;
   justify-content: space-between;
   height: 100%;
+
+  @include tablet {
+    flex-direction: column;
+    padding-top: $space-10;
+    padding-right: $space-11;
+  }
 }
 
 .welcomeSection {
