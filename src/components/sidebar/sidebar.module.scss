@@ -14,6 +14,7 @@
 
   @include tablet {
     width: $sidebar-width-desktop;
+    overflow-y: unset;
   }
 
   @include mobile {
@@ -34,6 +35,6 @@
   margin-top: auto;
 
   @include tablet {
-    padding-bottom: $space-10;
+    padding-bottom: calc($space-7 + 80px);
   }
 }

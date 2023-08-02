@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Sidebar } from "../sidebar/Sidebar";
 import { TopbarMobile } from "../topbarMobile/TopbarMobile";
 import styles from "./sidebarMobile.module.scss";
@@ -6,12 +6,14 @@ import CloseLineIcon from "remixicon-react/CloseLineIcon";
 import classNames from "classnames";
 import { useLocation } from "react-router-dom";
 import { useScrollLock } from "../../hooks/useScrollLock";
+import { useScrollOnRouteChange } from "../../hooks/useScrollOnRouteChange";
 
 export const SidebarMobile = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [wasSidebarOpen, setWasSidebarOpen] = useState(false);
   const location = useLocation();
   const [pathname, setPathname] = useState(location.pathname);
+  const sidebarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (location.pathname !== pathname) {
@@ -36,6 +38,8 @@ export const SidebarMobile = () => {
 
   useScrollLock(isSidebarOpen);
 
+  useScrollOnRouteChange(sidebarRef, 200);
+
   return (
     <>
       <TopbarMobile setIsSidebarOpen={setIsSidebarOpen} />
@@ -45,7 +49,7 @@ export const SidebarMobile = () => {
             className={overlayClassName}
             onClick={() => setIsSidebarOpen(false)}
           />
-          <div className={sidebarClassName}>
+          <div className={sidebarClassName} ref={sidebarRef}>
             <CloseLineIcon
               className={styles.closeIcon}
               onClick={() => setIsSidebarOpen(false)}
