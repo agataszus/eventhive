@@ -1,4 +1,4 @@
-export const handleChangeCount = (
+export const setNewTicketCount = (
   variant: "decrease" | "increase",
   count: number,
   setCount: (newCount: number) => void

@@ -8,6 +8,7 @@ import {
   TABLET,
   useMediaQueries,
 } from "../../hooks/useMediaQueries";
+import { useMemo } from "react";
 
 type TicketQRCodeProps = {
   id: number;
@@ -19,24 +20,19 @@ export const TicketQRCode = ({ id, variant }: TicketQRCodeProps) => {
 
   const mediaQuery = useMediaQueries();
 
-  let size;
-  if (variant === "small") {
-    size = 200;
-  } else if (variant === "large") {
-    size = 340;
-  }
-
-  if (mediaQuery === DESKTOP_SMALL || mediaQuery === TABLET) {
+  const size = useMemo(() => {
     if (variant === "small") {
-      size = 150;
-    }
-  }
+      if (mediaQuery === DESKTOP_SMALL || mediaQuery === TABLET) return 150;
 
-  if (mediaQuery === MOBILE) {
-    if (variant === "large") {
-      size = 240;
+      return 200;
     }
-  }
+
+    if (variant === "large") {
+      if (mediaQuery === MOBILE) return 240;
+
+      return 340;
+    }
+  }, [mediaQuery, variant]);
 
   if (!ticket) return null;
   const {

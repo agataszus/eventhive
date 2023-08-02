@@ -11,7 +11,7 @@ import { ShoppingCartItem } from "../../services/useShoppingCartStore/types";
 import { IdEventDto } from "../../services/api/event/types";
 import { useShoppingCartStore } from "../../services/useShoppingCartStore/useShoppingCartStore";
 import { parseEventDate } from "../../helpers/parseEventDate";
-import { handleChangeCount } from "../../helpers/handleChangeCount";
+import { setNewTicketCount } from "../../helpers/setNewTicketCount";
 
 type DefaultTicket = {
   title: string;
@@ -67,7 +67,7 @@ export const TicketTile = ({ event, ticket, isSoldOut }: TicketTileProps) => {
         <div className={styles.stepper}>
           <button
             className={styles.stepperElement}
-            onClick={() => handleChangeCount("decrease", count, setCount)}
+            onClick={() => setNewTicketCount("decrease", count, setCount)}
           >
             <SubtractLineIcon className={styles.countIcon} />
           </button>
@@ -76,7 +76,7 @@ export const TicketTile = ({ event, ticket, isSoldOut }: TicketTileProps) => {
           </Text>
           <button
             className={styles.stepperElement}
-            onClick={() => handleChangeCount("increase", count, setCount)}
+            onClick={() => setNewTicketCount("increase", count, setCount)}
           >
             <AddLineIcon className={styles.countIcon} />
           </button>
