@@ -3,6 +3,7 @@ import styles from "./modal.module.scss";
 import { Error } from "../error/Error";
 import { PropsWithChildren, useEffect, useState } from "react";
 import classNames from "classnames";
+import { useScrollLock } from "../../hooks/useScrollLock";
 
 type ModalProps = {
   isOpen: boolean;
@@ -23,6 +24,8 @@ export const Modal = ({
   variant,
 }: ModalProps) => {
   const [wasModalOpen, setWasModalOpen] = useState(false);
+
+  useScrollLock(isOpen);
 
   useEffect(() => {
     if (isOpen && !wasModalOpen) setWasModalOpen(true);

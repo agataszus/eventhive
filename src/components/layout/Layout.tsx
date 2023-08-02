@@ -29,7 +29,9 @@ export const Layout = () => {
     }
   }, [token, navigate]);
 
-  useScrollOnRouteChange(contentRef);
+  useScrollOnRouteChange(
+    [DESKTOP, DESKTOP_SMALL].includes(mediaQuery) ? contentRef : undefined
+  );
 
   return (
     <div className={styles.layout}>

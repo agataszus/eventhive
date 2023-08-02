@@ -11,6 +11,7 @@ import { getCheckoutPath } from "../routes/paths";
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { EmptyCart } from "../emptyCart/EmptyCart";
+import { useScrollLock } from "../../hooks/useScrollLock";
 
 export const ShoppingCart = () => {
   const { closeCart, state } = useShoppingCartStore();
@@ -22,6 +23,8 @@ export const ShoppingCart = () => {
     if (isShoppingCartOpen && !wasShoppingCartOpen)
       setWasShoppingCartOpen(true);
   }, [isShoppingCartOpen, wasShoppingCartOpen]);
+
+  useScrollLock(isShoppingCartOpen);
 
   if (!wasShoppingCartOpen) return null;
 

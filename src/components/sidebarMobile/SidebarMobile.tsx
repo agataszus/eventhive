@@ -5,6 +5,7 @@ import styles from "./sidebarMobile.module.scss";
 import CloseLineIcon from "remixicon-react/CloseLineIcon";
 import classNames from "classnames";
 import { useLocation } from "react-router-dom";
+import { useScrollLock } from "../../hooks/useScrollLock";
 
 export const SidebarMobile = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -32,6 +33,8 @@ export const SidebarMobile = () => {
     [styles.sidebarOpen]: isSidebarOpen,
     [styles.sidebarClose]: !isSidebarOpen,
   });
+
+  useScrollLock(isSidebarOpen);
 
   return (
     <>
