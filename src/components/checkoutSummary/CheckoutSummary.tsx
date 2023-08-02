@@ -20,21 +20,26 @@ export const CheckoutSummary = () => {
   const {
     state: { cartContent },
   } = useShoppingCartStore();
-  const [isCardInputANumber, setIsCardInputANumber] = useState(true);
-  const [areAllInputs, setAreAllInputs] = useState(true);
-
-  const { mutate, data, isLoading, isError } =
-    usePotentialPaymentDetailsMutation();
+  const [isCardInputNumber, setIsCardInputNumber] = useState(true);
+  const [areInputsValid, setAreInputsValid] = useState(true);
 
   const {
-    mutate: mutateMakePayment,
+    mutate: getPotentialDetails,
+    data: potentialDetailsData,
+    isLoading: isLoadingPotentialDetails,
+    isError: isPotentialDetailsError,
+  } = usePotentialPaymentDetailsMutation();
+
+  const {
+    mutate: makePayment,
     isLoading: isLoadingMakePayment,
     isError: isErrorMakePayment,
     isSuccess,
   } = useMakePaymentMutation();
 
   const paymentContainerClass = classNames(styles.paymentContainer, {
-    [styles.paymentHidden]: isLoading || isError,
+    [styles.paymentHidden]:
+      isLoadingPotentialDetails || isPotentialDetailsError,
   });
 
   const tickets = useMemo(
@@ -51,10 +56,10 @@ export const CheckoutSummary = () => {
       paymentMethod: CreatePaymentDto.PaymentMethodEnum.Card,
     };
 
-    mutate(potentialPaymentData);
-  }, [mutate, tickets]);
+    getPotentialDetails(potentialPaymentData);
+  }, [getPotentialDetails, tickets]);
 
-  const { netPrice, fees, vat, totalPrice } = data ?? {};
+  const { netPrice, fees, vat, totalPrice } = potentialDetailsData ?? {};
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -64,15 +69,15 @@ export const CheckoutSummary = () => {
     const cardNumberValue = loginFormData.get(CARD_NUMBER) as string;
 
     if (Number.isNaN(Number(cardNumberValue))) {
-      return setIsCardInputANumber(false);
+      return setIsCardInputNumber(false);
     }
-    setIsCardInputANumber(true);
+    setIsCardInputNumber(true);
 
     if (!bankNameValue || !cardNumberValue) {
-      return setAreAllInputs(false);
+      return setAreInputsValid(false);
     }
 
-    setAreAllInputs(true);
+    setAreInputsValid(true);
 
     const createPaymentData = {
       tickets,
@@ -81,7 +86,7 @@ export const CheckoutSummary = () => {
       lastFourDigits: cardNumberValue,
     };
 
-    mutateMakePayment(createPaymentData);
+    makePayment(createPaymentData);
   };
 
   return (
@@ -92,11 +97,11 @@ export const CheckoutSummary = () => {
           Checkout summary
         </Text>
         <div className={styles.pricesContainer}>
-          {isLoading && <Loader variant="medium" />}
-          {isError && (
+          {isLoadingPotentialDetails && <Loader variant="medium" />}
+          {isPotentialDetailsError && (
             <Error message="Something went wrong. Try again later!" />
           )}
-          {!isLoading && !isError && (
+          {!isLoadingPotentialDetails && !isPotentialDetailsError && (
             <>
               {isErrorMakePayment && (
                 <div className={styles.error}>
@@ -134,7 +139,7 @@ export const CheckoutSummary = () => {
           <Text tag="p" variant="action-2">
             Total
           </Text>
-          {isLoading ? (
+          {isLoadingPotentialDetails ? (
             <div className={styles.loader}>
               <Loader variant="extraSmall" />
             </div>
@@ -149,7 +154,7 @@ export const CheckoutSummary = () => {
             Payment details
           </Text>
           <form className={styles.form} onSubmit={handleSubmit}>
-            {!areAllInputs && (
+            {!areInputsValid && (
               <Text tag="p" variant="error-1">
                 All input required
               </Text>
@@ -168,7 +173,7 @@ export const CheckoutSummary = () => {
               minLength={4}
               maxLength={4}
             />
-            {!isCardInputANumber && (
+            {!isCardInputNumber && (
               <Text tag="p" variant="error-1">
                 Card number has to be a 4 digits number
               </Text>
