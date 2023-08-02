@@ -7,9 +7,10 @@ import { useUserTicketsQuery } from "../../../queries/useUserTicketsQuery";
 import { UserTicketsDto } from "../../../services/api/tickets/types";
 import styles from "./myTicketsPage.module.scss";
 import { Error } from "../../../components/error/Error";
+import { Loader } from "../../../components/loader/Loader";
 
 export const MyTicketsPage = () => {
-  const { data: tickets } = useUserTicketsQuery();
+  const { data: tickets, isLoading, isError } = useUserTicketsQuery();
 
   const isTopbar = useTopbarVisibleCheck();
   const [isTopbarVisible, setIsTopbarVisible] = useState(true);
@@ -17,8 +18,6 @@ export const MyTicketsPage = () => {
   useEffect(() => {
     setIsTopbarVisible(isTopbar);
   }, [isTopbar]);
-
-  // if (!tickets) return null;
 
   const ticketsMap =
     tickets?.reduce<Record<string, UserTicketsDto>>((accumulator, ticket) => {
@@ -33,6 +32,16 @@ export const MyTicketsPage = () => {
   return (
     <div className={styles.page}>
       {isTopbarVisible && <TopBar title="My tickets" />}
+      {isLoading && (
+        <div className={styles.message}>
+          <Loader variant="large" />
+        </div>
+      )}
+      {isError && (
+        <div className={styles.message}>
+          <Error message="Couldn't load tickets! Try again later!" />
+        </div>
+      )}
       <div className={styles.ticketsSection}>
         {tickets?.length === 0 && (
           <div className={styles.message}>

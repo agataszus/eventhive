@@ -8,6 +8,14 @@
   overflow: hidden;
 }
 
+@mixin scrollbar-none {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 @mixin desktop-small {
   @media screen and (max-width: $desktop-small-breakpoint) {
     @content;
