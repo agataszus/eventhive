@@ -6,9 +6,11 @@ import styles from "./layout.module.scss";
 import { Outlet, useNavigate } from "react-router-dom";
 import { useScrollOnRouteChange } from "../../hooks/useScrollOnRouteChange";
 import { getLoginPath } from "../routes/paths";
+import { ShoppingCart } from "../shoppingCart/ShoppingCart";
 
 export const Layout = () => {
   const { token } = useAuthToken();
+
   const navigate = useNavigate();
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -29,6 +31,7 @@ export const Layout = () => {
       <div className={styles.content} ref={contentRef}>
         <Outlet />
       </div>
+      <ShoppingCart />
     </div>
   );
 };

@@ -3,6 +3,7 @@ import ArrowLeftFillIcon from "remixicon-react/ArrowLeftFillIcon";
 import styles from "./eventTopBar.module.scss";
 import { Link } from "react-router-dom";
 import { getDashboardHomePath } from "../routes/paths";
+import { CartButton } from "../cartButton/CartButton";
 
 export const EventTopBar = () => {
   return (
@@ -13,6 +14,7 @@ export const EventTopBar = () => {
           Events
         </Text>
       </Link>
+      <CartButton />
     </div>
   );
 };

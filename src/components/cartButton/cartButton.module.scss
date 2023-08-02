@@ -1,0 +1,18 @@
+@import "../../styles/variables";
+
+.icon {
+  fill: $font-color-light;
+  height: 16px;
+  width: auto;
+}
+
+.button {
+  cursor: pointer;
+  background-color: $color-primary;
+  width: 34px;
+  height: 34px;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}

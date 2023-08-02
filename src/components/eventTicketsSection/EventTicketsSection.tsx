@@ -47,7 +47,11 @@ export const EventTicketsSection = ({ event }: EventTicketsSectionProps) => {
           {(ticketTypes?.length ? ticketTypes : DEFAULT_TICKETS).map(
             (ticket) => (
               <div key={ticket.id}>
-                <TicketTile ticket={ticket} isSoldOut={isSoldOut} />
+                <TicketTile
+                  event={event}
+                  ticket={ticket}
+                  isSoldOut={isSoldOut}
+                />
               </div>
             )
           )}

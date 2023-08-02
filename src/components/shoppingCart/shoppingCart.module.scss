@@ -1,0 +1,172 @@
+@import "../../styles/variables";
+
+@keyframes fadeIn {
+  0% {
+    visibility: hidden;
+    opacity: 0%;
+  }
+
+  1% {
+    visibility: visible;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 60%;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    visibility: visible;
+    opacity: 60%;
+  }
+
+  99% {
+    visibility: visible;
+    opacity: 0%;
+  }
+
+  100% {
+    visibility: hidden;
+    opacity: 0%;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translate(100%, 0);
+    visibility: hidden;
+  }
+
+  1% {
+    visibility: visible;
+  }
+
+  100% {
+    transform: translate(0, 0);
+    visibility: visible;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translate(0, 0);
+    visibility: visible;
+  }
+
+  99% {
+    visibility: visible;
+  }
+
+  100% {
+    transform: translate(100%, 0);
+    visibility: hidden;
+  }
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 420px;
+  background-color: $background-color-medium;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10000;
+  box-shadow: -10px 0 16px rgba(0, 0, 0, 0.15);
+}
+
+.cartOpen {
+  animation: slideIn 200ms ease-out forwards;
+}
+
+.cartClose {
+  animation: slideOut 200ms ease-in forwards;
+}
+
+.titleLabel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $space-6;
+  height: 100px;
+}
+
+.icon {
+  fill: $font-color-light;
+  width: 24px;
+  height: auto;
+  cursor: pointer;
+}
+
+.divider {
+  padding: 0 $space-6;
+}
+
+.checkoutContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 180px;
+  flex-shrink: 0;
+  padding: $space-6;
+  background-color: $background-color-medium-light;
+  box-shadow: 0px -10px 16px rgba(0, 0, 0, 0.1);
+  margin-top: auto;
+}
+
+.subtotalPriceContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.itemsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 $space-6;
+  overflow-y: scroll;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: $background-color-extra-dark;
+  z-index: 9999;
+  opacity: 60%;
+}
+
+.overlayOpen {
+  animation: fadeIn 200ms ease-out forwards;
+}
+.overlayClose {
+  animation: fadeOut 200ms ease-in forwards;
+}
+
+.emptyCartContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $space-3;
+  width: 100%;
+  height: 100%;
+}
+
+.emptyCartIcon {
+  width: 100px;
+  height: auto;
+  fill: $font-color-light-alpha20;
+}
+
+.emptyCartText {
+  font-size: $font-size-5;
+}
+
+.buttonExplore {
+  width: 180px;
+  margin-top: $space-6;
+}

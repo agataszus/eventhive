@@ -1,0 +1,124 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.item {
+  width: 100%;
+  height: auto;
+  display: flex;
+  padding: $space-6 0;
+  background-color: inherit;
+  flex-shrink: 0;
+  border-bottom: 2px solid rgba(183, 183, 183, 0.2);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.imgContainer {
+  display: flex;
+  justify-content: flex-start;
+  width: 50px;
+  height: 100%;
+}
+
+.img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 6px;
+}
+
+.itemDescription {
+  display: flex;
+  flex-direction: column;
+  padding: $space-1 0 0 $space-4;
+  width: 100%;
+  flex-grow: 0;
+  gap: $space-4;
+}
+
+.title {
+  @include overflow-ellipsis(1);
+}
+
+.ticketName {
+  @include overflow-ellipsis(2);
+}
+
+.eventContainer {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  height: 50px;
+}
+
+.ticketInformationContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: $space-5;
+}
+
+.ticketInformationRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-grow: 0;
+}
+
+.stepper {
+  display: flex;
+  width: auto;
+  background-color: $color-primary;
+  border-radius: 14px;
+}
+
+.stepperElement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+
+.count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  background-color: transparent;
+  color: $font-color-light;
+  line-height: 1;
+}
+
+.binIcon {
+  fill: $font-color-light;
+  width: 24px;
+  height: auto;
+  margin-bottom: auto;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.countIcon {
+  fill: $font-color-light;
+  width: 20px;
+  height: auto;
+}
+
+.buttonDisable {
+  opacity: 30%;
+  cursor: not-allowed;
+}
+
+.price {
+  border-top: 2px solid rgba(135, 91, 205, 0.369);
+  display: flex;
+  width: 100%;
+  height: 48px;
+  justify-content: flex-end;
+  align-items: center;
+}
