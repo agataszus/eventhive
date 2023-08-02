@@ -27,13 +27,15 @@ export const Modal = ({
     [styles.modalNarrow]: variant === "narrow",
   });
 
+  const isOverlayVisible = isOpen || isLoading || isError;
+
   return (
     <>
-      {(isOpen || isLoading || isError) && (
+      {isOverlayVisible && (
         <div
           className={styles.overlay}
           onClick={() => {
-            if (setIsOpen) setIsOpen(false);
+            setIsOpen?.(false);
           }}
         />
       )}

@@ -19,6 +19,9 @@ export const TicketQRCode = ({ id, variant }: TicketQRCodeProps) => {
   }
 
   if (!ticket) return null;
+
+  if (isLoading) return <Loader variant="medium" />;
+
   const {
     secret,
     type: { id: typeId },
@@ -29,8 +32,6 @@ export const TicketQRCode = ({ id, variant }: TicketQRCodeProps) => {
     typeId,
     secret,
   });
-
-  if (isLoading) return <Loader variant="medium" />;
 
   if (isError)
     return (
