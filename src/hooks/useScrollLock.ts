@@ -8,5 +8,5 @@ export const useScrollLock = (isScrollLocked: boolean) => {
     }
 
     document.body.style.overflowY = "scroll";
-  });
+  }, [isScrollLocked]);
 };

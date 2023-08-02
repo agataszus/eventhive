@@ -32,4 +32,8 @@
 .profile {
   padding: $space-7 $space-6;
   margin-top: auto;
+
+  @include tablet {
+    padding-bottom: $space-10;
+  }
 }

@@ -122,6 +122,11 @@
   background-color: $background-color-medium-light;
   box-shadow: 0px -10px 16px rgba(0, 0, 0, 0.1);
   margin-top: auto;
+
+  @include tablet {
+    padding-bottom: $space-10;
+    height: calc(180px + $space-10 - $space-7);
+  }
 }
 
 .subtotalPriceContainer {
