@@ -9,6 +9,7 @@ import { ListTicketDto } from "../../services/api/tickets/types";
 import { TicketQRCode } from "../ticketQRCode/TicketQRCode";
 import { TicketModal } from "../ticketModal/TicketModal";
 import { useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 type UserTicketCardProps = {
   ticket: ListTicketDto;
@@ -38,7 +39,7 @@ export const UserTicketCard = ({ ticket }: UserTicketCardProps) => {
       />
       <div className={styles.ticketCard}>
         <div className={styles.imageContainer}>
-          <img
+          <LazyLoadImage
             src={externalImageUrls[0] || alternativePic}
             className={styles.image}
           />

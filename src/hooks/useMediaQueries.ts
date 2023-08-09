@@ -20,14 +20,16 @@ export const useMediaQueries = () => {
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
-  });
+  }, []);
 
   if (width <= 767) {
     return MOBILE;
   }
+
   if (width <= 1023) {
     return TABLET;
   }
+
   if (width <= 1365) {
     return DESKTOP_SMALL;
   } else return DESKTOP;

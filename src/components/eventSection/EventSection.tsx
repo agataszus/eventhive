@@ -5,6 +5,7 @@ import { parseEventDate } from "../../helpers/parseEventDate";
 import { Button } from "../button/Button";
 import { Like } from "../like/Like";
 import { IdEventDto } from "../../services/api/event/types";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 type EventSectionProps = {
   event: IdEventDto;
@@ -45,10 +46,12 @@ export const EventSection = ({
   return (
     <div className={styles.eventCard}>
       <div className={styles.imageContainer}>
-        <img
+        <LazyLoadImage
           src={externalImageUrls[0]}
           alt="Event image"
           className={styles.image}
+          // Added key to force image reload on event change - probably a bug in LazyLoadImage
+          key={`${id}-image`}
         />
       </div>
       <div className={styles.informationContainer}>

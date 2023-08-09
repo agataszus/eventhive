@@ -4,12 +4,16 @@
 .page {
   padding-top: $topbar-height;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   min-height: 448px;
+  flex-grow: 1;
   gap: $space-8;
   padding: $space-6;
   background-image: linear-gradient(to right, #191919ef, #191919ef);

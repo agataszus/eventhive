@@ -56,6 +56,7 @@
   border-radius: 6px;
   object-fit: cover;
   object-position: center;
+  background-color: $background-color-medium-dark;
 
   @include mobile {
     width: 100%;

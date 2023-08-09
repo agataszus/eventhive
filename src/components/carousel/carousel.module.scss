@@ -1,4 +1,5 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .carousel {
   display: flex;
@@ -6,6 +7,15 @@
   padding: $space-8 $space-6;
   background-color: inherit;
   gap: $space-6;
+}
+
+.childrenContainer {
+  width: 100%;
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  @include scrollbar-none;
 }
 
 .titleLabel {
@@ -19,4 +29,9 @@
   height: auto;
   fill: $font-color-light-secondary;
   cursor: pointer;
+}
+
+.buttonDisable {
+  opacity: 30%;
+  cursor: not-allowed;
 }

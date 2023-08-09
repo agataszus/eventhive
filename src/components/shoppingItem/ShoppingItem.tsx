@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { getEventPath } from "../routes/paths";
 import { Stepper } from "../stepper/Stepper";
 import { countAndParsePrice } from "../../helpers/countAndParsePrice";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 type ShoppingItemProps = {
   item: ShoppingCartItem;
@@ -19,7 +20,10 @@ export const ShoppingItem = ({ item }: ShoppingItemProps) => {
   return (
     <div className={styles.item}>
       <div className={styles.imgContainer}>
-        <img src={event.externalImageUrls[0]} className={styles.img} />
+        <LazyLoadImage
+          src={event.externalImageUrls[0]}
+          className={styles.img}
+        />
       </div>
       <div className={styles.itemDescription}>
         <div className={styles.ticketInformationRow}>

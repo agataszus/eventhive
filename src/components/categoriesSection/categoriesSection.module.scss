@@ -9,8 +9,4 @@
   width: 100%;
   display: flex;
   gap: $space-7;
-  overflow-x: scroll;
-  overflow-y: hidden;
-
-  @include scrollbar-none;
 }

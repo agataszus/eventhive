@@ -12,6 +12,7 @@ import { IdEventDto } from "../../services/api/event/types";
 import { useShoppingCartStore } from "../../services/useShoppingCartStore/useShoppingCartStore";
 import { parseEventDate } from "../../helpers/parseEventDate";
 import { setNewTicketCount } from "../../helpers/setNewTicketCount";
+import classNames from "classnames";
 
 type DefaultTicket = {
   title: string;
@@ -31,6 +32,14 @@ export const TicketTile = ({ event, ticket, isSoldOut }: TicketTileProps) => {
   const ticketPrice = parsePrice(price);
   const [count, setCount] = useState(1);
   const { addItem, openCart } = useShoppingCartStore();
+
+  const decreaseButtonClassName = classNames(styles.stepperElement, {
+    [styles.buttonDisable]: count <= 1,
+  });
+
+  const increaseButtonClassName = classNames(styles.stepperElement, {
+    [styles.buttonDisable]: count >= 6,
+  });
 
   const handleButtonBuyClick = () => {
     const { day, month, year } = parseEventDate(event.startDate);
@@ -66,7 +75,7 @@ export const TicketTile = ({ event, ticket, isSoldOut }: TicketTileProps) => {
         </Text>
         <div className={styles.stepper}>
           <button
-            className={styles.stepperElement}
+            className={decreaseButtonClassName}
             onClick={() => setNewTicketCount("decrease", count, setCount)}
           >
             <SubtractLineIcon className={styles.countIcon} />
@@ -75,7 +84,7 @@ export const TicketTile = ({ event, ticket, isSoldOut }: TicketTileProps) => {
             {count}
           </Text>
           <button
-            className={styles.stepperElement}
+            className={increaseButtonClassName}
             onClick={() => setNewTicketCount("increase", count, setCount)}
           >
             <AddLineIcon className={styles.countIcon} />

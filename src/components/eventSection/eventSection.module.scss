@@ -15,6 +15,7 @@
   height: 560px;
   overflow: hidden;
   border-radius: 14px;
+  background-color: $background-color-extra-dark;
 
   @include mobile {
     width: 100%;

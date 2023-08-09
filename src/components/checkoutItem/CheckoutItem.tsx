@@ -7,6 +7,7 @@ import { useShoppingCartStore } from "../../services/useShoppingCartStore/useSho
 import DeleteBin6LineIcon from "remixicon-react/DeleteBin6LineIcon";
 import { Stepper } from "../stepper/Stepper";
 import { countAndParsePrice } from "../../helpers/countAndParsePrice";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 type CheckoutItemProps = {
   item: ShoppingCartItem;
@@ -21,7 +22,10 @@ export const CheckoutItem = ({ item }: CheckoutItemProps) => {
     <div className={styles.item}>
       <div className={styles.informationContainer}>
         <div className={styles.imgContainer}>
-          <img src={event.externalImageUrls[0]} className={styles.img} />
+          <LazyLoadImage
+            src={event.externalImageUrls[0]}
+            className={styles.img}
+          />
         </div>
         <div className={styles.itemDescription}>
           <div className={styles.eventContainer}>

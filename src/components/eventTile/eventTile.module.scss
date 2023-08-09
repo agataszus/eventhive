@@ -24,6 +24,8 @@
   width: 190px;
   height: 190px;
   position: relative;
+  background-color: $background-color-medium;
+  border-radius: 18px;
 
   &::after {
     content: "";
