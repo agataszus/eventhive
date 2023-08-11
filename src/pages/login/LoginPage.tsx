@@ -9,7 +9,9 @@ export const LoginPage = () => {
 
   return (
     <div className={styles.loginPage}>
-      <Logo />
+      <div className={styles.logoContainer}>
+        <Logo />
+      </div>
       <div className={styles.loginContent}>
         <div className={styles.welcomeSection}>
           <LoginWelcome handleClick={() => setIsLogin(true)} />

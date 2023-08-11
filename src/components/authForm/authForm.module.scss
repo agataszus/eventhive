@@ -1,4 +1,5 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .formNav {
   display: flex;
@@ -6,6 +7,20 @@
   gap: $space-10;
   align-items: center;
   margin: auto 0;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  justify-content: center;
+  background-color: $background-color-extra-dark;
+
+  @include tablet {
+    position: relative;
+    padding-top: $space-8;
+    height: 715px;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
 }
 
 .loginView {
@@ -14,6 +29,10 @@
   align-items: center;
   justify-content: center;
   padding: 0 $space-6;
+
+  @include mobile {
+    padding: 0;
+  }
 }
 
 .form {

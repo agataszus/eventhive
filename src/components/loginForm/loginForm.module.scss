@@ -1,10 +1,10 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .loginForm {
   display: flex;
   flex-direction: column;
   gap: $space-8;
-  background-color: $background-color-extra-dark;
 }
 
 .title {
@@ -16,6 +16,10 @@
   flex-direction: column;
   width: 320px;
   gap: $space-3;
+
+  @include mobile {
+    width: 300px;
+  }
 }
 
 .register {

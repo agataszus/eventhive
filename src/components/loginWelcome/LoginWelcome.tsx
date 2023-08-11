@@ -13,7 +13,7 @@ export const LoginWelcome = ({ handleClick }: LoginWelcomeProps) => {
         Best events website
       </Text>
       <Text tag="h1" variant="heading-2" className={styles.title}>
-        <Text tag="span" variant="heading-1">
+        <Text tag="span" variant="heading-1" className={styles.titleText}>
           Welcome{" "}
         </Text>
         to EventHive
