@@ -5,15 +5,25 @@ export const useScrollLock = (isScrollLocked: boolean) => {
   const mediaQuery = useMediaQueries();
 
   useEffect(() => {
+    const unlockScroll = () => {
+      document.body.style.overflowY = "scroll";
+      document.body.style.touchAction = "unset";
+    };
+
+    const lockScroll = () => {
+      document.body.style.overflowY = "hidden";
+      document.body.style.touchAction = "none";
+    };
+
     if ([MOBILE, TABLET].includes(mediaQuery)) {
       if (isScrollLocked) {
-        document.body.style.overflowY = "hidden";
-        document.body.style.touchAction = "none";
+        lockScroll();
         return;
       }
 
-      document.body.style.overflowY = "scroll";
-      document.body.style.touchAction = "unset";
+      unlockScroll();
+
+      return unlockScroll;
     }
   }, [isScrollLocked, mediaQuery]);
 };
