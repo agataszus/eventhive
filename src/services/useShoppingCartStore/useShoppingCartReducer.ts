@@ -1,4 +1,4 @@
-import { useCallback, useReducer } from "react";
+import { useCallback, useEffect, useReducer } from "react";
 import {
   ActionWithCountOptions,
   ShoppingCartActionType,
@@ -7,9 +7,17 @@ import {
 } from "./types";
 import { shoppingCartReducer } from "./shoppingCartReducer";
 
+export const LOCAL_STORAGE_SHOPPING_CART_KEY = "shopping-cart";
+const LOCAL_STORAGE_SHOPPING_CART_STRING = localStorage.getItem(
+  LOCAL_STORAGE_SHOPPING_CART_KEY
+);
+const LOCAL_STORAGE_SHOPPING_CART = LOCAL_STORAGE_SHOPPING_CART_STRING
+  ? JSON.parse(LOCAL_STORAGE_SHOPPING_CART_STRING)
+  : [];
+
 export const INITIAL_SHOPPING_CART_STATE: ShoppingCartState = {
   isShoppingCartOpen: false,
-  cartContent: [],
+  cartContent: LOCAL_STORAGE_SHOPPING_CART,
 };
 
 export const useShoppingCartReducer = () => {
@@ -17,6 +25,13 @@ export const useShoppingCartReducer = () => {
     shoppingCartReducer,
     INITIAL_SHOPPING_CART_STATE
   );
+
+  useEffect(() => {
+    localStorage.setItem(
+      LOCAL_STORAGE_SHOPPING_CART_KEY,
+      JSON.stringify(state.cartContent)
+    );
+  }, [state.cartContent]);
 
   const openCart = useCallback(() => {
     dispatch({ type: ShoppingCartActionType.OpenCart, payload: undefined });
