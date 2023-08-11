@@ -3,7 +3,6 @@ import {
   ShoppingCartActions,
   ShoppingCartState,
 } from "./types";
-import { INITIAL_SHOPPING_CART_STATE } from "./useShoppingCartReducer";
 
 export const shoppingCartReducer = (
   state: ShoppingCartState,
@@ -24,7 +23,8 @@ export const shoppingCartReducer = (
     }
     case ShoppingCartActionType.ClearCart: {
       return {
-        ...INITIAL_SHOPPING_CART_STATE,
+        isShoppingCartOpen: false,
+        cartContent: [],
       };
     }
     case ShoppingCartActionType.AddItem: {
