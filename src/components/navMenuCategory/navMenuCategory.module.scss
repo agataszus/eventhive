@@ -3,6 +3,7 @@
 .label {
   position: relative;
   z-index: 10;
+  transition: color 0.15s;
 
   &:hover {
     color: $font-color-light;

@@ -5,11 +5,11 @@
   border-radius: 8px;
   width: 100%;
   letter-spacing: 1.2px;
+  transition: background-color 0.15s;
 
   &:hover {
     background-color: $color-secondary;
     cursor: pointer;
-    transition: background-color 0.15s;
   }
 }
 

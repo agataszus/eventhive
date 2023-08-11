@@ -3,6 +3,7 @@
 .icon {
   fill: $font-color-light-secondary;
   z-index: 10;
+  transition: fill 0.15s;
 }
 
 .linkLabel {
@@ -13,18 +14,22 @@
   &:hover .icon {
     fill: $font-color-light;
     cursor: pointer;
-    transition: fill 0.15s;
+  }
+
+  &:hover .label {
+    color: $font-color-light;
+    cursor: pointer;
   }
 }
 
 .label {
   position: relative;
   z-index: 10;
+  transition: color 0.15s;
 
   &:hover {
     color: $font-color-light;
     cursor: pointer;
-    transition: fill 0.15s;
   }
 }
 
