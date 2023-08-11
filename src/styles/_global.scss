@@ -159,5 +159,7 @@ body {
 
   @include tablet {
     overflow-y: initial;
+
+    @include scrollbar-none;
   }
 }

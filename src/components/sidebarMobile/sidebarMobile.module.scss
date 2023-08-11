@@ -11,6 +11,8 @@
   background-color: $background-color-dark;
   box-shadow: -10px 0 16px rgba(0, 0, 0, 0.15);
 
+  @include scrollbar-none;
+
   @include mobile {
     inset: 0;
   }

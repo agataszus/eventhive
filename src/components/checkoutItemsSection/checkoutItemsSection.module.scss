@@ -8,6 +8,8 @@
   height: calc(100vh - $topbar-height);
   overflow-y: scroll;
 
+  @include scrollbar-none;
+
   @include desktop-small {
     height: auto;
   }

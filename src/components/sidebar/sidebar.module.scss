@@ -10,6 +10,8 @@
   @include desktop-small {
     width: $sidebar-width-desktop-small;
     overflow-y: scroll;
+
+    @include scrollbar-none;
   }
 
   @include tablet {
