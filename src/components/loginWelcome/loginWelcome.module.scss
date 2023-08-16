@@ -32,6 +32,17 @@
 }
 
 .button {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
   margin-top: $space-6;
   width: 220px;
+}
+
+.buttonDemo {
+  width: 320px;
+}
+
+.errorText {
+  text-align: center;
 }
