@@ -4,14 +4,14 @@ import MenuLineIcon from "remixicon-react/MenuLineIcon";
 import styles from "./topbarMobile.module.scss";
 
 type TopbarMobileProps = {
-  setIsSidebarOpen: (newState: boolean) => void;
+  onMenuIconClick: () => void;
 };
 
-export const TopbarMobile = ({ setIsSidebarOpen }: TopbarMobileProps) => {
+export const TopbarMobile = ({ onMenuIconClick }: TopbarMobileProps) => {
   return (
     <div className={styles.topBar}>
       <div className={styles.menuContainer}>
-        <MenuLineIcon onClick={() => setIsSidebarOpen(true)} />
+        <MenuLineIcon onClick={onMenuIconClick} />
         <Logo />
       </div>
       <CartButton />

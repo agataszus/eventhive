@@ -1,4 +1,4 @@
-import { useShoppingCartStore } from "../../services/useShoppingCartStore/useShoppingCartStore";
+import { useShoppingCartStore } from "../../services/shoppingCartStore/useShoppingCartStore";
 import { CheckoutSummary } from "../checkoutSummary/CheckoutSummary";
 import { EmptyCart } from "../emptyCart/EmptyCart";
 import { Text } from "../text/text";

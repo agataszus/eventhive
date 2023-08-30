@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { usePotentialPaymentDetailsMutation } from "../../queries/usePotentialPaymentDetailsMutation";
 import { CreatePaymentDto } from "../../services/api/api-types.gen";
-import { useShoppingCartStore } from "../../services/useShoppingCartStore/useShoppingCartStore";
+import { useShoppingCartStore } from "../../services/shoppingCartStore/useShoppingCartStore";
 import { Button } from "../button/Button";
 import { Input } from "../input/Input";
 import { Text } from "../text/text";
@@ -103,30 +103,22 @@ export const CheckoutSummary = () => {
                   <Error message="Couldn't process the payment. Try again later!" />
                 </div>
               )}
-              <div className={styles.priceRow}>
-                <Text tag="p" variant="caption-2">
-                  Subtotal
-                </Text>
-                <Text tag="p" variant="caption-2">
-                  {netPrice ? parsePrice(netPrice) : "-"}
-                </Text>
-              </div>
-              <div className={styles.priceRow}>
-                <Text tag="p" variant="caption-2">
-                  Fees
-                </Text>
-                <Text tag="p" variant="caption-2">
-                  {fees ? parsePrice(fees) : "-"}
-                </Text>
-              </div>
-              <div className={styles.priceRow}>
-                <Text tag="p" variant="caption-2">
-                  Vat
-                </Text>
-                <Text tag="p" variant="caption-2">
-                  {vat ? parsePrice(vat) : "-"}
-                </Text>
-              </div>
+              {[
+                { label: "Subtotal", value: netPrice },
+                { label: "Fees", value: fees },
+                { label: "Vat", value: vat },
+              ].map(({ label, value }) => {
+                return (
+                  <div className={styles.priceRow} key={label}>
+                    <Text tag="p" variant="caption-2">
+                      {label}
+                    </Text>
+                    <Text tag="p" variant="caption-2">
+                      {value ? parsePrice(value) : "-"}
+                    </Text>
+                  </div>
+                );
+              })}
             </>
           )}
         </div>

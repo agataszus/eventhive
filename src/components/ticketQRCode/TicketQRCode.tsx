@@ -35,6 +35,7 @@ export const TicketQRCode = ({ id, variant }: TicketQRCodeProps) => {
   }, [mediaQuery, variant]);
 
   if (!ticket) return null;
+
   const {
     secret,
     type: { id: typeId },

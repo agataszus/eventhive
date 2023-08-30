@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { useShoppingCartStore } from "../../services/useShoppingCartStore/useShoppingCartStore";
+import { useShoppingCartStore } from "../../services/shoppingCartStore/useShoppingCartStore";
 import { Text } from "../text/text";
 import SubtractLineIcon from "remixicon-react/SubtractLineIcon";
 import AddLineIcon from "remixicon-react/AddLineIcon";

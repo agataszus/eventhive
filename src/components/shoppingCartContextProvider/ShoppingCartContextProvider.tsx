@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
-import { ShoppingCartContext } from "../../services/useShoppingCartStore/useShoppingCartStore";
-import { useShoppingCartReducer } from "../../services/useShoppingCartStore/useShoppingCartReducer";
+import { ShoppingCartContext } from "../../services/shoppingCartStore/useShoppingCartStore";
+import { useShoppingCartReducer } from "../../services/shoppingCartStore/useShoppingCartReducer";
 
 export const ShoppingCartContextProvider = ({
   children,

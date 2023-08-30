@@ -42,7 +42,7 @@ export const SidebarMobile = () => {
 
   return (
     <>
-      <TopbarMobile setIsSidebarOpen={setIsSidebarOpen} />
+      <TopbarMobile onMenuIconClick={() => setIsSidebarOpen(true)} />
       {wasSidebarOpen && (
         <>
           <div

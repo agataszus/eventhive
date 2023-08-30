@@ -4,7 +4,7 @@ import { Text } from "../text/text";
 import CloseLineIcon from "remixicon-react/CloseLineIcon";
 import styles from "./shoppingCart.module.scss";
 import { ShoppingItem } from "../shoppingItem/ShoppingItem";
-import { useShoppingCartStore } from "../../services/useShoppingCartStore/useShoppingCartStore";
+import { useShoppingCartStore } from "../../services/shoppingCartStore/useShoppingCartStore";
 import { parsePrice } from "../../helpers/parsePrice";
 import { useNavigate } from "react-router-dom";
 import { getCheckoutPath } from "../routes/paths";

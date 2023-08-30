@@ -18,7 +18,9 @@ export const TicketModal = ({
   setIsOpen,
 }: TicketModalProps) => {
   const { data: ticket, isLoading, isError } = useTicketQuery(ticketId);
+
   if (!ticket) return null;
+
   const {
     type: {
       event: { title, startDate, endDate },

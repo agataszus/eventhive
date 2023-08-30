@@ -3,7 +3,7 @@ import { Text } from "../text/text";
 import { Button } from "../button/Button";
 import { useNavigate } from "react-router-dom";
 import { getDashboardHomePath } from "../routes/paths";
-import { useShoppingCartStore } from "../../services/useShoppingCartStore/useShoppingCartStore";
+import { useShoppingCartStore } from "../../services/shoppingCartStore/useShoppingCartStore";
 import styles from "./emptyCart.module.scss";
 
 export const EmptyCart = () => {

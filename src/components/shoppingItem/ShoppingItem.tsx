@@ -1,8 +1,8 @@
 import { Text } from "../text/text";
 import DeleteBin6LineIcon from "remixicon-react/DeleteBin6LineIcon";
 import styles from "./shoppingItem.module.scss";
-import { ShoppingCartItem } from "../../services/useShoppingCartStore/types";
-import { useShoppingCartStore } from "../../services/useShoppingCartStore/useShoppingCartStore";
+import { ShoppingCartItem } from "../../services/shoppingCartStore/types";
+import { useShoppingCartStore } from "../../services/shoppingCartStore/useShoppingCartStore";
 import { Link } from "react-router-dom";
 import { getEventPath } from "../routes/paths";
 import { Stepper } from "../stepper/Stepper";

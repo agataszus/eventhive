@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { ShoppingCartItem } from "../../services/useShoppingCartStore/types";
+import { ShoppingCartItem } from "../../services/shoppingCartStore/types";
 import { getEventPath } from "../routes/paths";
 import { Text } from "../text/text";
 import styles from "./checkoutItem.module.scss";
-import { useShoppingCartStore } from "../../services/useShoppingCartStore/useShoppingCartStore";
+import { useShoppingCartStore } from "../../services/shoppingCartStore/useShoppingCartStore";
 import DeleteBin6LineIcon from "remixicon-react/DeleteBin6LineIcon";
 import { Stepper } from "../stepper/Stepper";
 import { countAndParsePrice } from "../../helpers/countAndParsePrice";

@@ -9,8 +9,6 @@ export const PersonalInformation = () => {
   const { data, isLoading } = useAccountQuery();
   const mediaQuery = useMediaQueries();
 
-  console.log(data);
-
   const { firstName, lastName, email, tickets, likedEventsNumber } =
     data?.profile ?? {};
 

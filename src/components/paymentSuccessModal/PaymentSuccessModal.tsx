@@ -6,7 +6,7 @@ import styles from "./paymentSuccessModal.module.scss";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getMyTicketsPath } from "../routes/paths";
-import { useShoppingCartStore } from "../../services/useShoppingCartStore/useShoppingCartStore";
+import { useShoppingCartStore } from "../../services/shoppingCartStore/useShoppingCartStore";
 import { MOBILE, useMediaQueries } from "../../hooks/useMediaQueries";
 
 type PaymentSuccessModalProps = {

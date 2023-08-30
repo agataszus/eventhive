@@ -1,4 +1,4 @@
-import { useShoppingCartStore } from "../../services/useShoppingCartStore/useShoppingCartStore";
+import { useShoppingCartStore } from "../../services/shoppingCartStore/useShoppingCartStore";
 import { CheckoutItem } from "../checkoutItem/CheckoutItem";
 import styles from "./checkoutItemsSection.module.scss";
 

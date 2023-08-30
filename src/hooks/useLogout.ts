@@ -1,6 +1,6 @@
 import { useQueryClient } from "react-query";
 import { useAuthToken } from "../services/authTokenStore/useAuthToken";
-import { useShoppingCartStore } from "../services/useShoppingCartStore/useShoppingCartStore";
+import { useShoppingCartStore } from "../services/shoppingCartStore/useShoppingCartStore";
 import { useNavigate } from "react-router-dom";
 import { getLoginPath } from "../components/routes/paths";
 

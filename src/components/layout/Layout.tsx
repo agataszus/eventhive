@@ -37,10 +37,8 @@ export const Layout = () => {
     <div className={styles.layout}>
       <CreateProfileModal />
       <div>
-        {(mediaQuery === DESKTOP || mediaQuery === DESKTOP_SMALL) && (
-          <Sidebar />
-        )}
-        {(mediaQuery === TABLET || mediaQuery === MOBILE) && <SidebarMobile />}
+        {[DESKTOP, DESKTOP_SMALL].includes(mediaQuery) && <Sidebar />}
+        {[TABLET, MOBILE].includes(mediaQuery) && <SidebarMobile />}
       </div>
       <div className={styles.content} ref={contentRef}>
         <Outlet />
