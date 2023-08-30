@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import styles from "./eventProperty.module.scss";
 
 type EventPropertyProps = {

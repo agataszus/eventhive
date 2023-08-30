@@ -2,7 +2,7 @@ import { useCallback, useRef, useState } from "react";
 import { useAccountQuery } from "../../queries/useAccountQuery";
 import { Loader } from "../loader/Loader";
 import { ProfileTooltip } from "../profileTooltip/ProfileTooltip";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import styles from "./profileAvatar.module.scss";
 import Gravatar from "react-gravatar";
 import { useOutsideClick } from "../../hooks/useOutsideClick";

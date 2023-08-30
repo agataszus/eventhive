@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { NavActive } from "../navActive/NavActive";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import styles from "./navMenuCategory.module.scss";
 import classNames from "classnames";
 import { getCategoryPath } from "../routes/paths";

@@ -1,7 +1,7 @@
 import { parseEventDate } from "../../helpers/parseEventDate";
 import { Button } from "../button/Button";
 import { DateTileSmall } from "../dateTileSmall/DateTileSmall";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import alternativePic from "../../assets/no-picture.png";
 import styles from "./likedEventCard.module.scss";
 import { Like } from "../like/Like";

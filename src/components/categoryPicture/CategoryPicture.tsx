@@ -1,6 +1,6 @@
 import { EventDto } from "../../services/api/api-types.gen";
 import styles from "./categoryPicture.module.scss";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import { categoriesToLabelMap } from "../../services/api/event/categoriesToLabelMap";
 import { categoriesToPicturesMap } from "../../pages/dashboard/categoryPage/categoriesToPicturesMap";
 

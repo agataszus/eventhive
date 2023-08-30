@@ -1,6 +1,6 @@
 import { Button } from "../button/Button";
 import { Divider } from "../divider/Divider";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import CloseLineIcon from "remixicon-react/CloseLineIcon";
 import styles from "./shoppingCart.module.scss";
 import { ShoppingItem } from "../shoppingItem/ShoppingItem";

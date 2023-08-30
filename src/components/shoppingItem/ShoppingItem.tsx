@@ -1,4 +1,4 @@
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import DeleteBin6LineIcon from "remixicon-react/DeleteBin6LineIcon";
 import styles from "./shoppingItem.module.scss";
 import { ShoppingCartItem } from "../../services/shoppingCartStore/types";

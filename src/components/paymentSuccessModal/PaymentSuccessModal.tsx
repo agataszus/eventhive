@@ -1,6 +1,6 @@
 import { Modal } from "../modal/Modal";
 import Coupon2LineIcon from "remixicon-react/Coupon2LineIcon";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import { Button } from "../button/Button";
 import styles from "./paymentSuccessModal.module.scss";
 import { useEffect, useState } from "react";

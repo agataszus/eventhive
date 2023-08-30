@@ -1,5 +1,5 @@
 import styles from "./eventSection.module.scss";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import { EventProperty } from "../eventProperty/EventProperty";
 import { parseEventDate } from "../../helpers/parseEventDate";
 import { Button } from "../button/Button";

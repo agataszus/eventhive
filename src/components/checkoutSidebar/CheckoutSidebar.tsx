@@ -1,7 +1,7 @@
 import { useShoppingCartStore } from "../../services/shoppingCartStore/useShoppingCartStore";
 import { CheckoutSummary } from "../checkoutSummary/CheckoutSummary";
 import { EmptyCart } from "../emptyCart/EmptyCart";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import styles from "./checkoutSidebar.module.scss";
 
 export const CheckOutSidebar = () => {

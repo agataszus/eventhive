@@ -1,4 +1,4 @@
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import styles from "./switchLogin.module.scss";
 
 type SwitchToLoginProps = {

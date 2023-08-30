@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { useShoppingCartStore } from "../../services/shoppingCartStore/useShoppingCartStore";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import SubtractLineIcon from "remixicon-react/SubtractLineIcon";
 import AddLineIcon from "remixicon-react/AddLineIcon";
 import styles from "./stepper.module.scss";

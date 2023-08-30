@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { SeeMoreOverlay } from "../seeMoreOverlay/SeeMoreOverlay";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import styles from "./categoryTile.module.scss";
 import { getCategoryPath } from "../routes/paths";
 import { LazyLoadImage } from "react-lazy-load-image-component";

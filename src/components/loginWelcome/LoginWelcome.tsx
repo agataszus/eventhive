@@ -6,7 +6,7 @@ import {
 } from "../../hooks/useMediaQueries";
 import { useAuthToken } from "../../services/authTokenStore/useAuthToken";
 import { Button } from "../button/Button";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import styles from "./loginWelcome.module.scss";
 import { useLoginMutation } from "../../queries/useLoginMutation";
 import { useQueryClient } from "react-query";

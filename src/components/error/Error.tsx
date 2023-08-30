@@ -1,4 +1,4 @@
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import ErrorWarningLineIcon from "remixicon-react/ErrorWarningLineIcon";
 
 import styles from "./error.module.scss";

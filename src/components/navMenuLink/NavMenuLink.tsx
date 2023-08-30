@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import styles from "./navMenuLink.module.scss";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import Home2LineIcon from "remixicon-react/Home2LineIcon";
 import { NavActive } from "../navActive/NavActive";
 import classNames from "classnames";

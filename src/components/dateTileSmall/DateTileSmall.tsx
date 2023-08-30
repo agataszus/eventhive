@@ -1,4 +1,4 @@
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import styles from "./dateTileSmall.module.scss";
 
 type DateTileProps = {

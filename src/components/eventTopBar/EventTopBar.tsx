@@ -1,4 +1,4 @@
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import ArrowLeftFillIcon from "remixicon-react/ArrowLeftFillIcon";
 import styles from "./eventTopBar.module.scss";
 import { Link } from "react-router-dom";

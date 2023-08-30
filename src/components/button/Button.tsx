@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { Loader } from "../loader/Loader";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import styles from "./button.module.scss";
 
 type Props = {

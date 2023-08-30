@@ -1,6 +1,6 @@
 import { GetTicketsTypesDto } from "../../services/api/tickets/types";
 import { Button } from "../button/Button";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import styles from "./ticketTile.module.scss";
 import { TicketSoldOut } from "../ticketSoldOut/TicketSoldOut";
 import { parsePrice } from "../../helpers/parsePrice";

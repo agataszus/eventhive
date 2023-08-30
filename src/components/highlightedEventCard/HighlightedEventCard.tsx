@@ -3,7 +3,7 @@ import { useEventsQuery } from "../../queries/useEventsQuery";
 import { Button } from "../button/Button";
 import { DateTile } from "../dateTile/DateTile";
 import { Like } from "../like/Like";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import styles from "./highlightedEventCard.module.scss";
 import { Loader } from "../loader/Loader";
 import { Error } from "../error/Error";

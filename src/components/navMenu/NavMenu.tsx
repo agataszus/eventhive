@@ -1,5 +1,5 @@
 import styles from "./navMenu.module.scss";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import { Divider } from "../divider/Divider";
 import Home2LineIcon from "remixicon-react/Home2LineIcon";
 import HeartLineIcon from "remixicon-react/HeartLineIcon";

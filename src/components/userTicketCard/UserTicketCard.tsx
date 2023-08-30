@@ -1,6 +1,6 @@
 import { parseEventDate } from "../../helpers/parseEventDate";
 import { DateTileSmall } from "../dateTileSmall/DateTileSmall";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import alternativePic from "../../assets/no-picture.png";
 import styles from "./userTicketCard.module.scss";
 import { Link } from "react-router-dom";

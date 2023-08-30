@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ShoppingCartItem } from "../../services/shoppingCartStore/types";
 import { getEventPath } from "../routes/paths";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import styles from "./checkoutItem.module.scss";
 import { useShoppingCartStore } from "../../services/shoppingCartStore/useShoppingCartStore";
 import DeleteBin6LineIcon from "remixicon-react/DeleteBin6LineIcon";

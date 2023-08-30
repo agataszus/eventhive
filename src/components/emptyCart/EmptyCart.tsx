@@ -1,5 +1,5 @@
 import ShoppingCart2LineIcon from "remixicon-react/ShoppingCart2LineIcon";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import { Button } from "../button/Button";
 import { useNavigate } from "react-router-dom";
 import { getDashboardHomePath } from "../routes/paths";

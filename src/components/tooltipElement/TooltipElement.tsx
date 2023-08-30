@@ -1,5 +1,5 @@
 import AccountCircleLineIcon from "remixicon-react/AccountCircleLineIcon";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import styles from "./tooltipElement.module.scss";
 
 type TooltipLabelProps = {

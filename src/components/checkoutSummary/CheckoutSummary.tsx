@@ -4,7 +4,7 @@ import { CreatePaymentDto } from "../../services/api/api-types.gen";
 import { useShoppingCartStore } from "../../services/shoppingCartStore/useShoppingCartStore";
 import { Button } from "../button/Button";
 import { Input } from "../input/Input";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import styles from "./checkoutSummary.module.scss";
 import { parsePrice } from "../../helpers/parsePrice";
 import { Loader } from "../loader/Loader";

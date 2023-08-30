@@ -5,7 +5,7 @@ import { useEventsQuery } from "../../queries/useEventsQuery";
 import { useCallback, useMemo, useRef, useState } from "react";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
 import { Loader } from "../loader/Loader";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 
 export const SearchBar = () => {
   const [searchValue, setSearchValue] = useState("");

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ListEventDto } from "../../services/api/event/types";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import styles from "./searchSuggestion.module.scss";
 import { getEventPath } from "../routes/paths";
 import { parseEventDate } from "../../helpers/parseEventDate";
