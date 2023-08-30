@@ -1,3 +1,12 @@
+export class RequestError extends Error {
+  public statusCode: number;
+
+  constructor(message: string, code: number) {
+    super(message);
+    this.statusCode = code;
+  }
+}
+
 type ApiClientProps<Payload> = {
   method: "GET" | "POST" | "PATCH" | "DELETE";
   route: string;
@@ -33,7 +42,8 @@ export const apiClient = async <Payload, ResponseData>({
   const response = await fetch(route, options);
   const data = await response.json();
 
-  if (!response.ok) throw new Error(data?.message ?? "Unknown error");
+  if (!response.ok)
+    throw new RequestError(data?.message ?? "Unknown error", response.status);
 
   return data as ResponseData;
 };

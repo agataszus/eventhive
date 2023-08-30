@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import { useQuery } from "./useQuery";
 import { getAccount } from "../services/api/profile/getAccount";
 import { useAuthToken } from "../services/authTokenStore/useAuthToken";
 import { getAccountKey } from "./queryKeys";
