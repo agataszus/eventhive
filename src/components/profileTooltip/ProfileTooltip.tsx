@@ -3,13 +3,13 @@ import AccountCircleLineIcon from "remixicon-react/AccountCircleLineIcon";
 import { Divider } from "../divider/Divider";
 import styles from "./profileTooltip.module.scss";
 import { TooltipElement } from "../tooltipElement/TooltipElement";
-import { useAuthToken } from "../../services/authTokenStore/useAuthToken";
 import { useNavigate } from "react-router-dom";
-import { getAccountPath, getLoginPath } from "../routes/paths";
+import { getAccountPath } from "../routes/paths";
+import { useLogout } from "../../hooks/useLogout";
 
 export const ProfileTooltip = () => {
-  const { setToken } = useAuthToken();
   const navigate = useNavigate();
+  const logout = useLogout();
 
   return (
     <div>
@@ -23,10 +23,7 @@ export const ProfileTooltip = () => {
         <TooltipElement
           Icon={LogoutCircleLineIcon}
           text="Logout"
-          onClick={() => {
-            setToken("");
-            navigate(getLoginPath());
-          }}
+          onClick={logout}
         />
       </ul>
     </div>

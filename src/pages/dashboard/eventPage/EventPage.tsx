@@ -6,8 +6,9 @@ import { EventSection } from "../../../components/eventSection/EventSection";
 import { Loader } from "../../../components/loader/Loader";
 import { EventTicketsSection } from "../../../components/eventTicketsSection/EventTicketsSection";
 import { PopularEventsSection } from "../../../components/popularEventsSection/PopularEventsSection";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Error } from "../../../components/error/Error";
+import { useTopbarVisibleCheck } from "../../../hooks/useTopbarVisibleCheck";
 
 const getGradientOnImage = (
   url: string
@@ -18,6 +19,13 @@ export const EventPage = () => {
   const { id } = useParams();
   const { data: event, isLoading } = useEventQuery(Number(id));
   const ticketsSectionRef = useRef<HTMLDivElement>(null);
+
+  const isTopbar = useTopbarVisibleCheck();
+  const [isTopbarVisible, setIsTopbarVisible] = useState(true);
+
+  useEffect(() => {
+    setIsTopbarVisible(isTopbar);
+  }, [isTopbar]);
 
   const handleBuyTicketsClick = () => {
     ticketsSectionRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -34,7 +42,7 @@ export const EventPage = () => {
   if (!event) {
     return (
       <div className={styles.eventPage}>
-        <EventTopBar />
+        {isTopbarVisible && <EventTopBar />}
         <div className={styles.content}>
           <Error message="Something went wrong. Try again later!" />
         </div>
@@ -54,7 +62,7 @@ export const EventPage = () => {
           : undefined
       }
     >
-      <EventTopBar />
+      {isTopbarVisible && <EventTopBar />}
       <div className={styles.content}>
         <EventSection event={event} onBuyTicketsClick={handleBuyTicketsClick} />
       </div>

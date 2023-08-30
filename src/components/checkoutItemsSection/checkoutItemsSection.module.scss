@@ -1,0 +1,21 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.section {
+  display: flex;
+  flex-direction: column;
+  padding: $space-6;
+  height: calc(100vh - $topbar-height);
+  overflow-y: scroll;
+
+  @include scrollbar-none;
+
+  @include desktop-small {
+    height: auto;
+  }
+}
+
+.itemsContainer {
+  display: flex;
+  flex-direction: column;
+}

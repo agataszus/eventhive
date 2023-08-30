@@ -4,17 +4,29 @@ import { Text } from "../text/text";
 import CloseLineIcon from "remixicon-react/CloseLineIcon";
 import styles from "./shoppingCart.module.scss";
 import { ShoppingItem } from "../shoppingItem/ShoppingItem";
-import { useShoppingCartStore } from "../../services/useShoppingCartStore/useShoppingCartStore";
+import { useShoppingCartStore } from "../../services/shoppingCartStore/useShoppingCartStore";
 import { parsePrice } from "../../helpers/parsePrice";
-import ShoppingCart2LineIcon from "remixicon-react/ShoppingCart2LineIcon";
 import { useNavigate } from "react-router-dom";
-import { getDashboardHomePath } from "../routes/paths";
+import { getCheckoutPath } from "../routes/paths";
 import classNames from "classnames";
+import { useEffect, useState } from "react";
+import { EmptyCart } from "../emptyCart/EmptyCart";
+import { useScrollLock } from "../../hooks/useScrollLock";
 
 export const ShoppingCart = () => {
   const { closeCart, state } = useShoppingCartStore();
   const { cartContent, isShoppingCartOpen } = state;
   const navigate = useNavigate();
+  const [wasShoppingCartOpen, setWasShoppingCartOpen] = useState(false);
+
+  useEffect(() => {
+    if (isShoppingCartOpen && !wasShoppingCartOpen)
+      setWasShoppingCartOpen(true);
+  }, [isShoppingCartOpen, wasShoppingCartOpen]);
+
+  useScrollLock(isShoppingCartOpen);
+
+  if (!wasShoppingCartOpen) return null;
 
   const subtotalPrice = parsePrice(
     cartContent.reduce(
@@ -44,27 +56,7 @@ export const ShoppingCart = () => {
           <CloseLineIcon className={styles.icon} onClick={() => closeCart()} />
         </div>
         <Divider />
-        {cartContent.length === 0 && (
-          <div className={styles.emptyCartContainer}>
-            <ShoppingCart2LineIcon className={styles.emptyCartIcon} />
-            <Text tag="p" variant="action-5" className={styles.emptyCartText}>
-              Your cart is empty
-            </Text>
-            <Text tag="p" variant="caption-2">
-              Add tickets to cart to see them here
-            </Text>
-            <div className={styles.buttonExplore}>
-              <Button
-                text="Explore events"
-                variant="thick"
-                onClick={() => {
-                  navigate(getDashboardHomePath());
-                  closeCart();
-                }}
-              />
-            </div>
-          </div>
-        )}
+        {cartContent.length === 0 && <EmptyCart />}
         <div className={styles.itemsContainer}>
           {cartContent.map((item) => (
             <ShoppingItem item={item} key={item.ticket.id} />
@@ -83,7 +75,14 @@ export const ShoppingCart = () => {
             <Text tag="p" variant="caption-2">
               Fees calculated at checkout
             </Text>
-            <Button variant="thick" text="Proceed to checkout" />
+            <Button
+              variant="thick"
+              text="Proceed to checkout"
+              onClick={() => {
+                navigate(getCheckoutPath());
+                closeCart();
+              }}
+            />
           </div>
         )}
       </div>

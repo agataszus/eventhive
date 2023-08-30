@@ -1,6 +1,6 @@
 import ShoppingCartLineIcon from "remixicon-react/ShoppingCartLineIcon";
 import styles from "./cartButton.module.scss";
-import { useShoppingCartStore } from "../../services/useShoppingCartStore/useShoppingCartStore";
+import { useShoppingCartStore } from "../../services/shoppingCartStore/useShoppingCartStore";
 
 export const CartButton = () => {
   const { openCart } = useShoppingCartStore();

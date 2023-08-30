@@ -17,6 +17,11 @@
   background-size: cover;
   background-position: center;
   border-radius: 14px;
+
+  @include mobile {
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .cardLoading {
@@ -40,6 +45,15 @@
   margin: auto 0;
   gap: $space-5;
   padding: $space-8;
+
+  @include desktop-small {
+    width: 70%;
+  }
+
+  @include mobile {
+    padding: $space-4;
+    width: 100%;
+  }
 }
 
 .title {
@@ -73,4 +87,9 @@
 .dateContainer {
   padding: $space-8;
   margin-top: auto;
+
+  @include mobile {
+    padding: $space-4;
+    align-self: flex-end;
+  }
 }

@@ -1,21 +1,30 @@
 @import "../../../styles/variables";
+@import "../../../styles/mixins";
 
 .page {
-  padding-top: 78px;
+  padding-top: $topbar-height;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   min-height: 448px;
+  flex-grow: 1;
   gap: $space-8;
   padding: $space-6;
   background-image: linear-gradient(to right, #191919ef, #191919ef);
   background-position: center;
-  background-size: cover;
   background-size: 140%;
   z-index: 5;
+
+  @include mobile {
+    height: 100%;
+    background-size: cover;
+  }
 }
 
 .eventsContainer {
@@ -23,4 +32,9 @@
   grid-template-columns: 1fr 1fr;
   gap: $space-6;
   z-index: 5;
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+  }
 }

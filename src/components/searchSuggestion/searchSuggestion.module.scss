@@ -10,6 +10,7 @@
   align-items: center;
   padding: $space-1 $space-4;
   flex-shrink: 0;
+  transition: background-color 0.15s;
 
   &:hover {
     background-color: $background-color-medium-light;
@@ -20,6 +21,7 @@
   width: 40px;
   height: 40px;
   border-radius: 100%;
+  background-color: $background-color-extra-dark;
   object-fit: cover;
   object-position: center;
 }

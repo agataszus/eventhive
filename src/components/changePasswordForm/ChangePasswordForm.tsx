@@ -119,7 +119,7 @@ export const ChangePasswordForm = () => {
         )}
       </div>
       <div className={styles.button}>
-        <Button variant="thick" text="Log in" isLoading={isLoading} />
+        <Button variant="thick" text="Save changes" isLoading={isLoading} />
       </div>
     </form>
   );

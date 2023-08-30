@@ -1,7 +1,8 @@
 @import "../../../styles/variables";
+@import "../../../styles/mixins";
 
 .page {
-  padding-top: 78px;
+  padding-top: $topbar-height;
   z-index: 10;
 }
 
@@ -11,4 +12,12 @@
   padding: $space-10 $space-13;
   gap: $space-11;
   z-index: 5;
+
+  @include desktop-small {
+    padding: $space-9 $space-11;
+  }
+
+  @include mobile {
+    padding: $space-7 $space-5;
+  }
 }

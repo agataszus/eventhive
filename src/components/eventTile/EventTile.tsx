@@ -6,6 +6,7 @@ import alternativePic from "../../assets/no-picture.png";
 import { SeeMoreOverlay } from "../seeMoreOverlay/SeeMoreOverlay";
 import { parseEventDate } from "../../helpers/parseEventDate";
 import { ListEventDto } from "../../services/api/event/types";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 type EventTileProps = {
   event: ListEventDto;
@@ -15,29 +16,14 @@ type EventTileProps = {
 export const EventTile = ({ event, onClick }: EventTileProps) => {
   const { day, month } = parseEventDate(event.startDate);
   const { title, description, externalImageUrls } = event;
-  // const overlayRef = useRef<HTMLDivElement>(null);
-
-  // const handleOnMouseEnter = () => {
-  //   overlayRef.current?.classList.add(styles.overlayShow);
-  // };
-
-  // const handleOnMouseLeave = () => {
-  //   overlayRef.current?.classList.remove(styles.overlayShow);
-  // };
-
   return (
-    <button
-      onClick={onClick}
-      className={styles.eventTile}
-      // onMouseEnter={handleOnMouseEnter}
-      // onMouseLeave={handleOnMouseLeave}
-    >
+    <button onClick={onClick} className={styles.eventTile}>
       <div className={styles.imageBox}>
         <SeeMoreOverlay
           overlayClassName={styles.overlay}
           iconClassName={styles.overlayIcon}
         />
-        <img
+        <LazyLoadImage
           src={externalImageUrls[0] || alternativePic}
           alt={title}
           className={styles.image}

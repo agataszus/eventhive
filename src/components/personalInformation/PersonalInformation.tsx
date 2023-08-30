@@ -3,9 +3,11 @@ import { useAccountQuery } from "../../queries/useAccountQuery";
 import { Loader } from "../loader/Loader";
 import styles from "./personalInformation.module.scss";
 import { Text } from "../text/text";
+import { MOBILE, useMediaQueries } from "../../hooks/useMediaQueries";
 
 export const PersonalInformation = () => {
   const { data, isLoading } = useAccountQuery();
+  const mediaQuery = useMediaQueries();
 
   const { firstName, lastName, email, tickets, likedEventsNumber } =
     data?.profile ?? {};
@@ -18,7 +20,7 @@ export const PersonalInformation = () => {
         ) : (
           <Gravatar
             email={email?.toLowerCase()}
-            size={150}
+            size={mediaQuery === MOBILE ? 120 : 180}
             rating="pg"
             default="identicon"
             className={styles.image}

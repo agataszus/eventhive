@@ -1,13 +1,33 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .sidebar {
   display: flex;
   flex-direction: column;
-  width: $sidebar-width;
-  height: 100%;
+  width: $sidebar-width-desktop;
+  height: 100vh;
+
+  @include desktop-small {
+    width: $sidebar-width-desktop-small;
+    overflow-y: scroll;
+
+    @include scrollbar-none;
+  }
+
+  @include tablet {
+    width: $sidebar-width-desktop;
+    overflow-y: unset;
+  }
+
+  @include mobile {
+    width: 100vw;
+  }
 }
 
 .logo {
+  display: flex;
+  flex-shrink: 0;
+  height: 100px;
   padding: 0 $space-6;
 }
 
@@ -16,6 +36,10 @@
 }
 
 .profile {
-  padding: 0 $space-7 $space-6;
+  padding: $space-7 $space-6;
   margin-top: auto;
+
+  @include tablet {
+    padding-bottom: calc($space-7 + 80px);
+  }
 }

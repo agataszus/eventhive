@@ -1,4 +1,5 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .overlay {
   position: absolute;
@@ -10,7 +11,13 @@
   left: 0;
   top: 0;
   z-index: 5;
+
+  @include mobile {
+    height: 540px;
+    width: 240px;
+  }
 }
+
 .soldOut {
   display: flex;
   position: absolute;
@@ -28,4 +35,11 @@
   z-index: 10;
   font-size: $font-size-9;
   font-weight: $font-weight-semibold;
+
+  @include mobile {
+    width: 200px;
+    height: 60px;
+    top: 45%;
+    left: 52%;
+  }
 }

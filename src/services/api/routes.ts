@@ -38,4 +38,4 @@ export const getPaymentRoute = () => `${getMainUrl()}/payment`;
 export const getPaymentDetailsRoute = (id: number) =>
   `${getPaymentRoute()}/${id}`;
 export const getPotentialPaymentDetailsRoute = () =>
-  `${getMainUrl()}/calculate`;
+  `${getPaymentRoute()}/calculate`;

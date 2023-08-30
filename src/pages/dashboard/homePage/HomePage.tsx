@@ -3,11 +3,20 @@ import { PopularEventsSection } from "../../../components/popularEventsSection/P
 import { HighlightedEventCard } from "../../../components/highlightedEventCard/HighlightedEventCard";
 import { TopBar } from "../../../components/topBar/TopBar";
 import styles from "./homePage.module.scss";
+import { useTopbarVisibleCheck } from "../../../hooks/useTopbarVisibleCheck";
+import { useEffect, useState } from "react";
 
 export const HomePage = () => {
+  const isTopbar = useTopbarVisibleCheck();
+  const [isTopbarVisible, setIsTopbarVisible] = useState(true);
+
+  useEffect(() => {
+    setIsTopbarVisible(isTopbar);
+  }, [isTopbar]);
+
   return (
     <div className={styles.page}>
-      <TopBar title="Events" />
+      {isTopbarVisible && <TopBar title="Events" />}
       <div>
         <div className={styles.content}>
           <HighlightedEventCard />

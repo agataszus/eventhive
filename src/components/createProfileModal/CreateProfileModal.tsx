@@ -15,7 +15,13 @@ export const CreateProfileModal = () => {
   }, [data, isSuccess]);
 
   return (
-    <Modal isOpen={isOpen} isLoading={isLoading} isError={isError}>
+    <Modal
+      isOpen={isOpen}
+      isLoading={isLoading}
+      isError={isError}
+      errorMessage="Could not load the profile form."
+      variant="narrow"
+    >
       <ProfileForm />
     </Modal>
   );

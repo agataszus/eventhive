@@ -1,18 +1,64 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .loginPage {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   background-color: $background-color-extra-dark;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.7) 40%,
+      rgba(0, 0, 0, 0.5) 50%,
+      rgba(0, 0, 0, 0.4)
+    ),
+    url("/src/assets/loginImg.png");
+  background-position: center;
+  background-size: cover;
   padding-left: $space-11;
   padding-top: $space-3;
+
+  @include tablet {
+    background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7) 25%,
+        rgba(0, 0, 0, 0.6) 35%,
+        rgba(0, 0, 0, 0.7) 40%,
+        rgba(0, 0, 0, 0.9) 50%,
+        rgba(0, 0, 0, 0.9)
+      ),
+      url("/src/assets/loginImg.png");
+    padding-left: 0;
+  }
+}
+
+.logoContainer {
+  display: flex;
+  width: 100%;
+  padding: $space-4 0;
+
+  @include tablet {
+    justify-content: center;
+  }
 }
 
 .loginContent {
   display: flex;
   justify-content: space-between;
   height: 100%;
+  margin: auto 0;
+
+  @include tablet {
+    flex-direction: column;
+    padding: $space-12 0 0;
+    align-items: center;
+  }
+
+  @include mobile {
+    padding-right: 0;
+  }
 }
 
 .welcomeSection {

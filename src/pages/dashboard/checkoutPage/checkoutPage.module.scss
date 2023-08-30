@@ -1,0 +1,33 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.page {
+  padding-top: $topbar-height;
+  z-index: 10;
+}
+
+.content {
+  display: flex;
+
+  @include desktop-small {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.itemsSection {
+  width: calc(100% - $checkout-summary-width);
+  flex-shrink: 0;
+
+  @include desktop-small {
+    width: 100%;
+  }
+}
+
+.checkoutSummary {
+  position: fixed;
+  display: flex;
+  top: $topbar-height;
+  bottom: 0;
+  right: 0;
+}

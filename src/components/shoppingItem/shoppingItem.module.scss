@@ -28,6 +28,7 @@
   object-fit: cover;
   object-position: center;
   border-radius: 6px;
+  background-color: $background-color-dark;
 }
 
 .itemDescription {
@@ -67,31 +68,6 @@
   align-items: center;
   width: 100%;
   flex-grow: 0;
-}
-
-.stepper {
-  display: flex;
-  width: auto;
-  background-color: $color-primary;
-  border-radius: 14px;
-}
-
-.stepperElement {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-}
-
-.count {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 25px;
-  background-color: transparent;
-  color: $font-color-light;
-  line-height: 1;
 }
 
 .binIcon {

@@ -3,6 +3,7 @@ import { IdEventDto } from "../../services/api/event/types";
 import { Carousel } from "../carousel/Carousel";
 import { TicketTile } from "../ticketTile/TicketTile";
 import styles from "./eventTicketsSection.module.scss";
+import { MOBILE, useMediaQueries } from "../../hooks/useMediaQueries";
 
 const DEFAULT_TICKETS = [
   {
@@ -35,6 +36,7 @@ type EventTicketsSectionProps = {
 export const EventTicketsSection = ({ event }: EventTicketsSectionProps) => {
   const [isSoldOut, setIsSoldOut] = useState(false);
   const { ticketTypes } = event;
+  const mediaQuery = useMediaQueries();
 
   useEffect(() => {
     setIsSoldOut(!ticketTypes?.length);
@@ -42,7 +44,11 @@ export const EventTicketsSection = ({ event }: EventTicketsSectionProps) => {
 
   return (
     <div className={styles.ticketsSection}>
-      <Carousel title="Tickets">
+      <Carousel
+        title="Tickets"
+        elementWidth={mediaQuery === MOBILE ? 240 : 540}
+        gap={32}
+      >
         <div className={styles.tickets}>
           {(ticketTypes?.length ? ticketTypes : DEFAULT_TICKETS).map(
             (ticket) => (

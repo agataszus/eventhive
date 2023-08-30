@@ -1,8 +1,13 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .eventCard {
   display: flex;
   gap: $space-8;
+
+  @include mobile {
+    flex-direction: column;
+  }
 }
 
 .imageContainer {
@@ -10,6 +15,12 @@
   height: 560px;
   overflow: hidden;
   border-radius: 14px;
+  background-color: $background-color-extra-dark;
+
+  @include mobile {
+    width: 100%;
+    height: 240px;
+  }
 }
 
 .image {
@@ -25,6 +36,10 @@
   flex-direction: column;
   width: 50%;
   gap: $space-8;
+
+  @include mobile {
+    width: 100%;
+  }
 }
 
 .description {
@@ -32,6 +47,12 @@
   flex-direction: column;
   width: auto;
   gap: $space-2;
+}
+
+.descriptionText {
+  @include mobile {
+    text-align: justify;
+  }
 }
 
 .about {

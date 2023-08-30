@@ -28,7 +28,7 @@ const categoriesToPicturesSmallMap: Partial<
 export const CategoriesSection = () => {
   return (
     <div className={styles.categoriesSection}>
-      <Carousel title="Categories">
+      <Carousel title="Categories" elementWidth={190} gap={32}>
         <div className={styles.categories}>
           {Object.entries(categoriesToLabelMap).map(
             ([categoryKey, categoryName]) => (

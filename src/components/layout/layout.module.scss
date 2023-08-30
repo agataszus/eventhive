@@ -1,17 +1,22 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .layout {
   display: flex;
   height: 100vh;
-}
 
-.sidebar {
-  width: 320px;
-  background-color: $background-color-dark;
+  @include tablet {
+    min-height: 100vh;
+    height: unset;
+  }
 }
 
 .content {
   width: 100%;
   background-color: $background-color-medium-light;
   overflow-y: scroll;
+
+  @include tablet {
+    overflow-y: unset;
+  }
 }

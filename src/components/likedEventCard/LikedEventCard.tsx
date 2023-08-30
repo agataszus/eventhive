@@ -8,6 +8,7 @@ import { Like } from "../like/Like";
 import { Link, useNavigate } from "react-router-dom";
 import { ListEventDto } from "../../services/api/event/types";
 import { getEventPath } from "../routes/paths";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 type LikedEventCardProps = {
   event: ListEventDto;
@@ -24,7 +25,7 @@ export const LikedEventCard = ({ event }: LikedEventCardProps) => {
   return (
     <div className={styles.eventCard}>
       <div className={styles.imageContainer}>
-        <img
+        <LazyLoadImage
           src={externalImageUrls[0] || alternativePic}
           className={styles.image}
         />

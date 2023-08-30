@@ -16,7 +16,7 @@ export const PopularEventsSection = () => {
   };
 
   return (
-    <Carousel title="Popular events section">
+    <Carousel title="Popular events section" elementWidth={190} gap={32}>
       <div className={styles.events}>
         {isLoading && <Loader variant="large" />}
         {isError && <Error message="Something went wrong" />}

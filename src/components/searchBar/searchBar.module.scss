@@ -20,6 +20,7 @@
   color: $font-color-light-secondary;
   border: 1px solid $font-color-light-secondary;
   opacity: 50%;
+  transition: opacity 0.15s;
 
   &::placeholder {
     color: $font-color-light-secondary;

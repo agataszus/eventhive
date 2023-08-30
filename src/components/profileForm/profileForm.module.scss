@@ -1,4 +1,5 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .profileForm {
   display: flex;
@@ -6,6 +7,11 @@
   gap: $space-9;
   width: 320px;
   margin: auto;
+
+  @include mobile {
+    width: 240px;
+    gap: $space-8;
+  }
 }
 
 .title {
@@ -17,4 +23,8 @@
   flex-direction: column;
   width: 320px;
   gap: $space-4;
+
+  @include mobile {
+    width: 240px;
+  }
 }

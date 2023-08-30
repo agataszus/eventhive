@@ -1,0 +1,32 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 78px;
+  flex-shrink: 0;
+  padding: 0 $space-6;
+  background-color: $background-color-medium;
+  position: fixed;
+  display: flex;
+  flex-shrink: 0;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.15);
+}
+
+.menuContainer {
+  display: flex;
+  gap: $space-3;
+  align-items: center;
+}
+
+.menuIcon {
+  width: 32px;
+  height: auto;
+  fill: $font-color-light;
+}

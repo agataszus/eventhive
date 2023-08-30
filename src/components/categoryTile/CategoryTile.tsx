@@ -3,6 +3,7 @@ import { SeeMoreOverlay } from "../seeMoreOverlay/SeeMoreOverlay";
 import { Text } from "../text/text";
 import styles from "./categoryTile.module.scss";
 import { getCategoryPath } from "../routes/paths";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 type CategoryTileProps = {
   text: string;
@@ -18,7 +19,7 @@ export const CategoryTile = ({ text, picture, linkTo }: CategoryTileProps) => {
           overlayClassName={styles.overlay}
           iconClassName={styles.overlayIcon}
         />
-        <img src={picture} alt={text} className={styles.image} />
+        <LazyLoadImage alt={text} src={picture} className={styles.image} />
       </div>
       <Text tag="h4" variant="action-1">
         {text}

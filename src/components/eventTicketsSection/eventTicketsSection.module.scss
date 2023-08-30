@@ -1,14 +1,17 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .ticketsSection {
   background-color: $background-color-medium-light;
   height: 387px;
+
+  @include mobile {
+    height: auto;
+  }
 }
 
 .tickets {
   width: auto;
   display: flex;
   gap: $space-7;
-  overflow-x: scroll;
-  overflow-y: hidden;
 }

@@ -4,15 +4,10 @@ import { Divider } from "../divider/Divider";
 import Home2LineIcon from "remixicon-react/Home2LineIcon";
 import HeartLineIcon from "remixicon-react/HeartLineIcon";
 import Coupon2LineIcon from "remixicon-react/Coupon2LineIcon";
-import RoadMapLineIcon from "remixicon-react/RoadMapLineIcon";
 import { NavMenuLink } from "../navMenuLink/NavMenuLink";
 import { categoriesToLabelMap } from "../../services/api/event/categoriesToLabelMap";
 import { NavMenuCategory } from "../navMenuCategory/NavMenuCategory";
-import {
-  getDashboardHomePath,
-  getLikedEventsPath,
-  getRootPath,
-} from "../routes/paths";
+import { getDashboardHomePath, getLikedEventsPath } from "../routes/paths";
 
 export const NavMenu = () => {
   return (
@@ -37,13 +32,6 @@ export const NavMenu = () => {
             linkTo="/dashboard/my-tickets"
             Icon={Coupon2LineIcon}
             text="My tickets"
-          />
-        </li>
-        <li className={styles.link}>
-          <NavMenuLink
-            linkTo={getRootPath()}
-            Icon={RoadMapLineIcon}
-            text="Map"
           />
         </li>
       </ul>

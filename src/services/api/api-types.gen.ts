@@ -953,7 +953,7 @@ export interface TicketTypeDto {
    * @type {EventDto}
    * @memberof TicketTypeDto
    */
-  event?: EventDto;
+  event: EventDto;
   /**
    *
    * @type {Array<TicketDto>}

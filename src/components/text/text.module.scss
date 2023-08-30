@@ -1,9 +1,14 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .action-1 {
   font-size: $font-size-4;
   font-weight: $font-weight-medium;
   color: $font-color-light-secondary;
+
+  @include mobile {
+    font-size: $font-size-3;
+  }
 }
 
 .action-2 {
@@ -40,6 +45,10 @@
   font-weight: $font-weight-semibold;
   line-height: 1.2;
   color: $font-color-light-secondary;
+
+  @include mobile {
+    font-size: $font-size-3;
+  }
 }
 
 .subtitle-2 {
@@ -47,6 +56,10 @@
   font-weight: $font-weight-medium;
   color: $font-color-light-secondary;
   text-transform: uppercase;
+
+  @include desktop-small {
+    font-size: $font-size-3;
+  }
 }
 
 .subtitle-3 {
@@ -54,6 +67,10 @@
   font-weight: $font-weight-medium;
   color: $font-color-light;
   text-transform: uppercase;
+
+  @include mobile {
+    font-size: $font-size-2;
+  }
 }
 
 .subtitle-4 {
@@ -74,6 +91,10 @@
   font-size: $font-size-4;
   font-weight: $font-weight-medium;
   color: $font-color-light-secondary;
+
+  @include mobile {
+    font-size: $font-size-3;
+  }
 }
 
 .caption-2 {
@@ -102,6 +123,14 @@
   font-weight: $font-weight-semibold;
   letter-spacing: 0.2px;
   color: $color-primary;
+
+  @include desktop-small {
+    font-size: $font-size-11;
+  }
+
+  @include mobile {
+    font-size: $font-size-9;
+  }
 }
 
 .heading-2 {
@@ -109,12 +138,24 @@
   font-weight: $font-weight-semibold;
   letter-spacing: 0.2px;
   color: $font-color-light;
+
+  @include desktop-small {
+    font-size: $font-size-11;
+  }
+
+  @include mobile {
+    font-size: $font-size-9;
+  }
 }
 
 .heading-3 {
   font-size: $font-size-7;
   font-weight: $font-weight-semibold;
   color: $font-color-light;
+
+  @include mobile {
+    font-size: $font-size-6;
+  }
 }
 
 .heading-4 {
@@ -131,6 +172,10 @@
   letter-spacing: 1.1;
   color: $font-color-light;
   text-transform: uppercase;
+
+  @include desktop-small {
+    font-size: $font-size-4;
+  }
 }
 
 .heading-6 {
@@ -139,6 +184,10 @@
   letter-spacing: 1.1px;
   color: $font-color-light-secondary;
   text-transform: uppercase;
+
+  @include mobile {
+    font-size: $font-size-4;
+  }
 }
 
 .num-1 {

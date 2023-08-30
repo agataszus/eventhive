@@ -11,6 +11,7 @@
   border: 1px solid $font-color-light;
   opacity: 70%;
   cursor: pointer;
+  transition: opacity 0.15s;
 
   &:hover {
     opacity: 100%;

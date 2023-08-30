@@ -1,5 +1,5 @@
 import styles from "./logo.module.scss";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/eventhive-logo.svg";
 
 export const Logo = () => {
   return (

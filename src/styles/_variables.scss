@@ -3,6 +3,7 @@ $color-primary: #875bcd;
 $color-secondary: #a476f0;
 $font-color-light: #f4f4f4;
 $font-color-light-alpha20: rgb(244, 244, 244, 0.2);
+$font-color-light-alpha40: rgb(244, 244, 244, 0.4);
 $font-color-light-secondary: #b7b7b7;
 $font-color-dark: #1e1e1e;
 $background-color-extra-dark: #0b0b0b;
@@ -59,4 +60,13 @@ $font-size-14: 92px;
 $font-size-15: 144px;
 
 // Layout constants
-$sidebar-width: 320px;
+$sidebar-width-desktop: 320px;
+$sidebar-width-desktop-small: 280px;
+
+$topbar-height: 78px;
+$checkout-summary-width: 420px;
+
+// Breakpoints
+$desktop-small-breakpoint: 1365px;
+$tablet-breakpoint: 1023px;
+$mobile-breakpoint: 767px;

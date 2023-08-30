@@ -7,11 +7,12 @@ import { parsePrice } from "../../helpers/parsePrice";
 import SubtractLineIcon from "remixicon-react/SubtractLineIcon";
 import AddLineIcon from "remixicon-react/AddLineIcon";
 import { useState } from "react";
-import { ShoppingCartItem } from "../../services/useShoppingCartStore/types";
+import { ShoppingCartItem } from "../../services/shoppingCartStore/types";
 import { IdEventDto } from "../../services/api/event/types";
-import { useShoppingCartStore } from "../../services/useShoppingCartStore/useShoppingCartStore";
+import { useShoppingCartStore } from "../../services/shoppingCartStore/useShoppingCartStore";
 import { parseEventDate } from "../../helpers/parseEventDate";
-import { handleChangeCount } from "../../helpers/handleChangeCount";
+import { setNewTicketCount } from "../../helpers/setNewTicketCount";
+import classNames from "classnames";
 
 type DefaultTicket = {
   title: string;
@@ -32,12 +33,20 @@ export const TicketTile = ({ event, ticket, isSoldOut }: TicketTileProps) => {
   const [count, setCount] = useState(1);
   const { addItem, openCart } = useShoppingCartStore();
 
+  const decreaseButtonClassName = classNames(styles.stepperElement, {
+    [styles.buttonDisable]: count <= 1,
+  });
+
+  const increaseButtonClassName = classNames(styles.stepperElement, {
+    [styles.buttonDisable]: count >= 6,
+  });
+
   const handleButtonBuyClick = () => {
     const { day, month, year } = parseEventDate(event.startDate);
     const dateToString = `${day} ${month} ${year}`;
 
     const item: ShoppingCartItem = {
-      ticket: { title, price, id, quantity: count },
+      ticket: { title, price, id, quantity: count, description },
       event: {
         title: event.title,
         date: dateToString,
@@ -66,8 +75,8 @@ export const TicketTile = ({ event, ticket, isSoldOut }: TicketTileProps) => {
         </Text>
         <div className={styles.stepper}>
           <button
-            className={styles.stepperElement}
-            onClick={() => handleChangeCount("decrease", count, setCount)}
+            className={decreaseButtonClassName}
+            onClick={() => setNewTicketCount("decrease", count, setCount)}
           >
             <SubtractLineIcon className={styles.countIcon} />
           </button>
@@ -75,8 +84,8 @@ export const TicketTile = ({ event, ticket, isSoldOut }: TicketTileProps) => {
             {count}
           </Text>
           <button
-            className={styles.stepperElement}
-            onClick={() => handleChangeCount("increase", count, setCount)}
+            className={increaseButtonClassName}
+            onClick={() => setNewTicketCount("increase", count, setCount)}
           >
             <AddLineIcon className={styles.countIcon} />
           </button>
