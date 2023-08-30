@@ -21,7 +21,7 @@ export const CategoryTile = ({ text, picture, linkTo }: CategoryTileProps) => {
         />
         <LazyLoadImage alt={text} src={picture} className={styles.image} />
       </div>
-      <Text tag="h4" variant="action-1">
+      <Text tag="h4" variant="caption-1">
         {text}
       </Text>
     </Link>

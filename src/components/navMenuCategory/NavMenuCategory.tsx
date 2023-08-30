@@ -18,7 +18,7 @@ export const NavMenuCategory = ({ label, category }: NavMenuCategoryProps) => {
 
   return (
     <Link to={getCategoryPath(category)}>
-      <Text tag="p" variant="action-1" className={className}>
+      <Text tag="p" variant="caption-1" className={className}>
         {label}
       </Text>
       {isActive && <NavActive />}

@@ -23,7 +23,7 @@ export const NavMenuLink = ({ linkTo, Icon, text }: NavMenuLinkProps) => {
       {isActive && <NavActive />}
       <div className={styles.linkLabel}>
         <Icon className={iconClass} />
-        <Text tag="p" variant="action-1" className={className}>
+        <Text tag="p" variant="caption-1" className={className}>
           {text}
         </Text>
       </div>

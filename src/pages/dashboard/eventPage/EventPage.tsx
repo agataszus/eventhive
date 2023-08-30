@@ -50,7 +50,6 @@ export const EventPage = () => {
     );
   }
 
-  // if (!event) return null;
   const { externalImageUrls } = event || {};
 
   return (

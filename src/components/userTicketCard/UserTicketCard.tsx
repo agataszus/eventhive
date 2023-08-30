@@ -50,7 +50,7 @@ export const UserTicketCard = ({ ticket }: UserTicketCardProps) => {
         <div className={styles.descriptionContainer}>
           <Link to={getEventPath(eventId)}>
             <Text tag="h3" variant="heading-5" className={styles.eventTitle}>
-              {eventTitle}
+              {`${eventTitle} - #${id}`}
             </Text>
           </Link>
           <Text tag="h4" variant="subtitle-2" className={styles.ticketTitle}>

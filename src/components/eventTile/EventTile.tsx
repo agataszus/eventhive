@@ -32,7 +32,7 @@ export const EventTile = ({ event, onClick }: EventTileProps) => {
           <DateTileSmall day={day} month={month} />
         </div>
       </div>
-      <Text tag="h4" variant="action-2" className={styles.title}>
+      <Text tag="h4" variant="action-1" className={styles.title}>
         {title}
       </Text>
       <Text tag="p" variant="caption-2" className={styles.description}>

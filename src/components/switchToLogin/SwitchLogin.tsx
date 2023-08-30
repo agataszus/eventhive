@@ -10,7 +10,7 @@ export const SwitchLogin = ({ text, linkText }: SwitchToLoginProps) => {
   return (
     <Text tag="p" variant="caption-2" className={styles.signUp}>
       {text}{" "}
-      <Text tag="span" variant="action-4">
+      <Text tag="span" variant="action-2">
         {linkText}
       </Text>
     </Text>

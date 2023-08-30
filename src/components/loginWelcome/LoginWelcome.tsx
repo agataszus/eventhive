@@ -48,16 +48,17 @@ export const LoginWelcome = ({ handleClick }: LoginWelcomeProps) => {
   return (
     <div className={styles.container}>
       <Text tag="h2" variant="subtitle-2">
-        Best events website
+        Best events in one place
       </Text>
       <Text tag="h1" variant="heading-2" className={styles.title}>
+        Welcome to Event
         <Text tag="span" variant="heading-1" className={styles.titleText}>
-          Welcome{" "}
+          Hive
         </Text>
-        to EventHive
       </Text>
-      <Text tag="p" variant="subtitle-1">
-        All events in one application!
+      <Text tag="p" variant="caption-1" className={styles.description}>
+        Browse and buy tickets for the best concerts, festivals and all kind of
+        musical performances!
       </Text>
       <div className={buttonClassName}>
         {isError && (
@@ -83,7 +84,7 @@ export const LoginWelcome = ({ handleClick }: LoginWelcomeProps) => {
               </Text>
             )}
             <button onClick={handleDemoButtonClick}>
-              <Text tag="p" variant="action-4">
+              <Text tag="p" variant="action-2">
                 Or Sign In to Demo Account
               </Text>
             </button>

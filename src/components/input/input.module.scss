@@ -17,6 +17,7 @@
   color: $font-color-light;
   font-size: $font-size-2;
   font-weight: $font-weight-regular;
+  transition: border 0.15s;
 
   &::placeholder {
     font-size: $font-size-2;

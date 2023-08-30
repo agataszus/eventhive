@@ -7,7 +7,7 @@ import { useScrollLock } from "../../hooks/useScrollLock";
 
 type ModalProps = {
   isOpen: boolean;
-  setIsOpen?: (newState: boolean) => void;
+  closeModal?: () => void;
   isLoading: boolean;
   isError: boolean;
   errorMessage: string;
@@ -17,7 +17,7 @@ type ModalProps = {
 export const Modal = ({
   children,
   isOpen,
-  setIsOpen,
+  closeModal,
   isLoading,
   isError,
   errorMessage,
@@ -52,7 +52,7 @@ export const Modal = ({
       <div
         className={overlayClassName}
         onClick={() => {
-          if (setIsOpen) setIsOpen(false);
+          if (closeModal) closeModal();
         }}
       />
       {isLoading && (

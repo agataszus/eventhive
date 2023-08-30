@@ -4,27 +4,11 @@
 .action-1 {
   font-size: $font-size-4;
   font-weight: $font-weight-medium;
-  color: $font-color-light-secondary;
-
-  @include mobile {
-    font-size: $font-size-3;
-  }
-}
-
-.action-2 {
-  font-size: $font-size-4;
-  font-weight: $font-weight-medium;
   line-height: 1.2;
   color: $font-color-light;
 }
 
-.action-3 {
-  font-size: $font-size-3;
-  font-weight: $font-weight-medium;
-  color: $font-color-light-secondary;
-}
-
-.action-4 {
+.action-2 {
   font-size: $font-size-2;
   font-weight: $font-weight-medium;
   color: $font-color-light;
@@ -32,7 +16,7 @@
   cursor: pointer;
 }
 
-.action-5 {
+.action-3 {
   font-size: $font-size-4;
   font-weight: $font-weight-light;
   line-height: 1.5;

@@ -49,7 +49,7 @@ export const Stepper = ({ ticket }: StepperProps) => {
       >
         <SubtractLineIcon className={styles.countIcon} />
       </button>
-      <Text tag="div" variant="action-2" className={styles.count}>
+      <Text tag="div" variant="action-1" className={styles.count}>
         {quantity}
       </Text>
       <button

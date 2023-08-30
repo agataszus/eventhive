@@ -41,7 +41,7 @@ export const TicketModal = ({
   return (
     <Modal
       isOpen={isOpen}
-      setIsOpen={setIsOpen}
+      closeModal={() => setIsOpen(false)}
       isLoading={isLoading}
       isError={isError}
       errorMessage="Couldn't load ticket details. Try again later!"

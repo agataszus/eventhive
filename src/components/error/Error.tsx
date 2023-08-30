@@ -11,7 +11,7 @@ export const Error = ({ message }: ErrorProps) => {
   return (
     <div className={styles.errorContainer}>
       <ErrorWarningLineIcon className={styles.errorIcon} />
-      <Text tag="div" variant="action-2">
+      <Text tag="div" variant="action-1">
         {message}
       </Text>
     </div>

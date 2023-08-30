@@ -9,7 +9,7 @@
   border-radius: 18px;
 
   @include desktop-small {
-    height: 200px;
+    height: 210px;
   }
 
   @include mobile {
@@ -79,6 +79,7 @@
   cursor: pointer;
   padding-bottom: $space-3;
   text-align: left;
+  line-height: 1.1;
 }
 
 .ticketTitle {
@@ -113,8 +114,8 @@
   align-items: center;
 
   @include desktop-small {
-    width: 200px;
-    height: 200px;
+    width: 210px;
+    height: 210px;
   }
 
   @include mobile {

@@ -123,7 +123,7 @@ export const CheckoutSummary = () => {
           )}
         </div>
         <div className={styles.totalPriceRow}>
-          <Text tag="p" variant="action-2">
+          <Text tag="p" variant="action-1">
             Total
           </Text>
           {isLoading ? (
@@ -143,7 +143,7 @@ export const CheckoutSummary = () => {
           <form className={styles.form} onSubmit={handleSubmit}>
             {!areAllInputs && (
               <Text tag="p" variant="error-1">
-                All input required
+                All input are required
               </Text>
             )}
             <Input

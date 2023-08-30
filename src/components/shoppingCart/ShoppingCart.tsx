@@ -65,10 +65,10 @@ export const ShoppingCart = () => {
         {cartContent.length !== 0 && (
           <div className={styles.checkoutContainer}>
             <div className={styles.subtotalPriceContainer}>
-              <Text tag="h6" variant="action-2">
+              <Text tag="h6" variant="action-1">
                 Subtotal
               </Text>
-              <Text tag="h6" variant="action-2">
+              <Text tag="h6" variant="action-1">
                 {subtotalPrice}
               </Text>
             </div>
