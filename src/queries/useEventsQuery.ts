@@ -14,7 +14,7 @@ export const useEventsQuery = () => {
     RequestError,
     AllEventsDto,
     string
-  >(getEventsKey(), () => getEvents("123"), {
+  >(getEventsKey(), () => getEvents(token), {
     enabled: Boolean(token), // start query only after token is extracted from local storage
   });
 
