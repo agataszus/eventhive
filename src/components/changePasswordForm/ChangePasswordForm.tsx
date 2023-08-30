@@ -3,7 +3,7 @@ import { ChangePasswordDto } from "../../services/api/api-types.gen";
 import { useAuthToken } from "../../services/authTokenStore/useAuthToken";
 import { Button } from "../button/Button";
 import { Input } from "../input/Input";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import styles from "./changePasswordForm.module.scss";
 import { useAccountQuery } from "../../queries/useAccountQuery";
 import { useChangePasswordMutation } from "../../queries/useChangePasswordMutation";

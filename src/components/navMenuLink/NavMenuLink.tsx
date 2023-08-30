@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import styles from "./navMenuLink.module.scss";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import Home2LineIcon from "remixicon-react/Home2LineIcon";
 import { NavActive } from "../navActive/NavActive";
 import classNames from "classnames";
@@ -23,7 +23,7 @@ export const NavMenuLink = ({ linkTo, Icon, text }: NavMenuLinkProps) => {
       {isActive && <NavActive />}
       <div className={styles.linkLabel}>
         <Icon className={iconClass} />
-        <Text tag="p" variant="action-1" className={className}>
+        <Text tag="p" variant="caption-1" className={className}>
           {text}
         </Text>
       </div>

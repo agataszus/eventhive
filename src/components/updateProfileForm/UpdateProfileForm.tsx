@@ -6,7 +6,7 @@ import { useAuthToken } from "../../services/authTokenStore/useAuthToken";
 import { Button } from "../button/Button";
 import { Input } from "../input/Input";
 import { SelectOptionRegion } from "../selectOptionRegion/SelectRegion";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import styles from "./updateProfileForm.module.scss";
 import { useUpdateProfileMutation } from "../../queries/useUpdateProfileMutation";
 import { useQueryClient } from "react-query";

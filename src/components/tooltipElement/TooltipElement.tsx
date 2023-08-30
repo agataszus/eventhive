@@ -1,5 +1,5 @@
 import AccountCircleLineIcon from "remixicon-react/AccountCircleLineIcon";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import styles from "./tooltipElement.module.scss";
 
 type TooltipLabelProps = {
@@ -13,7 +13,7 @@ export const TooltipElement = ({ Icon, text, onClick }: TooltipLabelProps) => {
     <li>
       <button className={styles.option} onClick={onClick}>
         <Icon className={styles.icon} />
-        <Text tag="p" variant="action-5">
+        <Text tag="p" variant="action-3">
           {text}
         </Text>
       </button>

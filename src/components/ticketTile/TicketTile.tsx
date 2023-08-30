@@ -1,6 +1,6 @@
 import { GetTicketsTypesDto } from "../../services/api/tickets/types";
 import { Button } from "../button/Button";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import styles from "./ticketTile.module.scss";
 import { TicketSoldOut } from "../ticketSoldOut/TicketSoldOut";
 import { parsePrice } from "../../helpers/parsePrice";
@@ -80,7 +80,7 @@ export const TicketTile = ({ event, ticket, isSoldOut }: TicketTileProps) => {
           >
             <SubtractLineIcon className={styles.countIcon} />
           </button>
-          <Text tag="div" variant="action-2" className={styles.count}>
+          <Text tag="div" variant="action-1" className={styles.count}>
             {count}
           </Text>
           <button

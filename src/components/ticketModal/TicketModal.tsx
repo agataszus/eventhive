@@ -1,7 +1,7 @@
 import { parseEventDate } from "../../helpers/parseEventDate";
 import { useTicketQuery } from "../../queries/useTicketQuery";
 import { Modal } from "../modal/Modal";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import { TicketQRCode } from "../ticketQRCode/TicketQRCode";
 import CloseLineIcon from "remixicon-react/CloseLineIcon";
 import styles from "./ticketModal.module.scss";
@@ -41,7 +41,7 @@ export const TicketModal = ({
   return (
     <Modal
       isOpen={isOpen}
-      setIsOpen={setIsOpen}
+      closeModal={() => setIsOpen(false)}
       isLoading={isLoading}
       isError={isError}
       errorMessage="Couldn't load ticket details. Try again later!"

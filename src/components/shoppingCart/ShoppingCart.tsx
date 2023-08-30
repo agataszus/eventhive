@@ -1,6 +1,6 @@
 import { Button } from "../button/Button";
 import { Divider } from "../divider/Divider";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import CloseLineIcon from "remixicon-react/CloseLineIcon";
 import styles from "./shoppingCart.module.scss";
 import { ShoppingItem } from "../shoppingItem/ShoppingItem";
@@ -65,10 +65,10 @@ export const ShoppingCart = () => {
         {cartContent.length !== 0 && (
           <div className={styles.checkoutContainer}>
             <div className={styles.subtotalPriceContainer}>
-              <Text tag="h6" variant="action-2">
+              <Text tag="h6" variant="action-1">
                 Subtotal
               </Text>
-              <Text tag="h6" variant="action-2">
+              <Text tag="h6" variant="action-1">
                 {subtotalPrice}
               </Text>
             </div>

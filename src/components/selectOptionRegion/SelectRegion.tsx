@@ -1,6 +1,6 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import styles from "./selectRegion.module.scss";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 
 type SelectOptionRegionProps = {
   name: string;

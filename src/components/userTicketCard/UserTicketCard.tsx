@@ -1,6 +1,6 @@
 import { parseEventDate } from "../../helpers/parseEventDate";
 import { DateTileSmall } from "../dateTileSmall/DateTileSmall";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import alternativePic from "../../assets/no-picture.png";
 import styles from "./userTicketCard.module.scss";
 import { Link } from "react-router-dom";
@@ -50,7 +50,7 @@ export const UserTicketCard = ({ ticket }: UserTicketCardProps) => {
         <div className={styles.descriptionContainer}>
           <Link to={getEventPath(eventId)}>
             <Text tag="h3" variant="heading-5" className={styles.eventTitle}>
-              {eventTitle}
+              {`${eventTitle} - #${id}`}
             </Text>
           </Link>
           <Text tag="h4" variant="subtitle-2" className={styles.ticketTitle}>

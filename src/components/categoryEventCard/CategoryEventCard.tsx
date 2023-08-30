@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { parseEventDate } from "../../helpers/parseEventDate";
 import { ListEventDto } from "../../services/api/event/types";
 import { DateTileSmall } from "../dateTileSmall/DateTileSmall";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import { Like } from "../like/Like";
 import { Button } from "../button/Button";
 import { getEventPath } from "../routes/paths";

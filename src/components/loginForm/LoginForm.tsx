@@ -7,7 +7,7 @@ import { useLoginMutation } from "../../queries/useLoginMutation";
 import { useQueryClient } from "react-query";
 import { useNavigate } from "react-router-dom";
 // import { useEffect } from "react";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import { getDashboardHomePath } from "../routes/paths";
 
 const EMAIL = "email";

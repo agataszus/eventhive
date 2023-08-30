@@ -50,6 +50,8 @@
 }
 
 .descriptionText {
+  color: $font-color-light;
+
   @include mobile {
     text-align: justify;
   }

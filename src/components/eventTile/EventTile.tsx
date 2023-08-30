@@ -1,5 +1,5 @@
 import { DateTileSmall } from "../dateTileSmall/DateTileSmall";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import styles from "./eventTile.module.scss";
 import HeartLineIcon from "remixicon-react/HeartLineIcon";
 import alternativePic from "../../assets/no-picture.png";
@@ -32,7 +32,7 @@ export const EventTile = ({ event, onClick }: EventTileProps) => {
           <DateTileSmall day={day} month={month} />
         </div>
       </div>
-      <Text tag="h4" variant="action-2" className={styles.title}>
+      <Text tag="h4" variant="action-1" className={styles.title}>
         {title}
       </Text>
       <Text tag="p" variant="caption-2" className={styles.description}>

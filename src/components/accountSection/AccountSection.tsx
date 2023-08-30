@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import styles from "./accountSection.module.scss";
 
 type AccountSectionProps = {

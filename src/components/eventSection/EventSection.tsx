@@ -1,5 +1,5 @@
 import styles from "./eventSection.module.scss";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import { EventProperty } from "../eventProperty/EventProperty";
 import { parseEventDate } from "../../helpers/parseEventDate";
 import { Button } from "../button/Button";
@@ -55,7 +55,7 @@ export const EventSection = ({
         />
       </div>
       <div className={styles.informationContainer}>
-        <Text tag="h3" variant="heading-5">
+        <Text tag="h3" variant="heading-3">
           {title}
         </Text>
         <ul className={styles.description}>
@@ -74,7 +74,7 @@ export const EventSection = ({
           <Text tag="h4" variant="subtitle-2">
             About
           </Text>
-          <Text tag="p" variant="caption-3" className={styles.descriptionText}>
+          <Text tag="p" variant="caption-2" className={styles.descriptionText}>
             {description}
           </Text>
         </div>

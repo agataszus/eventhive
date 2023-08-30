@@ -1,6 +1,6 @@
 import { Modal } from "../modal/Modal";
 import Coupon2LineIcon from "remixicon-react/Coupon2LineIcon";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import { Button } from "../button/Button";
 import styles from "./paymentSuccessModal.module.scss";
 import { useEffect, useState } from "react";
@@ -30,9 +30,15 @@ export const PaymentSuccessModal = ({ isOpen }: PaymentSuccessModalProps) => {
     return () => clearInterval(countTimeoutId);
   }, [count, navigate, isOpen, clearCart]);
 
+  const handleNavigateToTickets = () => {
+    navigate(getMyTicketsPath());
+    clearCart();
+  };
+
   return (
     <Modal
       isOpen={isOpen}
+      closeModal={handleNavigateToTickets}
       isLoading={false}
       isError={false}
       errorMessage=""
@@ -40,7 +46,7 @@ export const PaymentSuccessModal = ({ isOpen }: PaymentSuccessModalProps) => {
     >
       <div className={styles.content}>
         <Coupon2LineIcon className={styles.icon} />
-        <Text tag="p" variant="action-5" className={styles.success}>
+        <Text tag="p" variant="action-3" className={styles.success}>
           Success!
         </Text>
         <Text tag="p" variant="caption-2" className={styles.message}>
@@ -51,10 +57,7 @@ export const PaymentSuccessModal = ({ isOpen }: PaymentSuccessModalProps) => {
           <Button
             variant="thick"
             text="See your tickets"
-            onClick={() => {
-              navigate(getMyTicketsPath());
-              clearCart();
-            }}
+            onClick={handleNavigateToTickets}
           />
         </div>
       </div>

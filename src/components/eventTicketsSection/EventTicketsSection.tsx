@@ -27,7 +27,7 @@ const DEFAULT_TICKETS = [
     title: "Normal Pass",
     id: 8765643678908765,
   },
-];
+].sort((ticketA, ticketB) => ticketA.price - ticketB.price);
 
 type EventTicketsSectionProps = {
   event: IdEventDto;
@@ -42,6 +42,10 @@ export const EventTicketsSection = ({ event }: EventTicketsSectionProps) => {
     setIsSoldOut(!ticketTypes?.length);
   }, [isSoldOut, ticketTypes?.length]);
 
+  const sortedTicketTypes =
+    ticketTypes?.sort((ticketA, ticketB) => ticketA.price - ticketB.price) ??
+    [];
+
   return (
     <div className={styles.ticketsSection}>
       <Carousel
@@ -50,7 +54,7 @@ export const EventTicketsSection = ({ event }: EventTicketsSectionProps) => {
         gap={32}
       >
         <div className={styles.tickets}>
-          {(ticketTypes?.length ? ticketTypes : DEFAULT_TICKETS).map(
+          {(ticketTypes?.length ? sortedTicketTypes : DEFAULT_TICKETS).map(
             (ticket) => (
               <div key={ticket.id}>
                 <TicketTile

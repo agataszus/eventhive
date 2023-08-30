@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { useShoppingCartStore } from "../../services/shoppingCartStore/useShoppingCartStore";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import SubtractLineIcon from "remixicon-react/SubtractLineIcon";
 import AddLineIcon from "remixicon-react/AddLineIcon";
 import styles from "./stepper.module.scss";
@@ -49,7 +49,7 @@ export const Stepper = ({ ticket }: StepperProps) => {
       >
         <SubtractLineIcon className={styles.countIcon} />
       </button>
-      <Text tag="div" variant="action-2" className={styles.count}>
+      <Text tag="div" variant="action-1" className={styles.count}>
         {quantity}
       </Text>
       <button

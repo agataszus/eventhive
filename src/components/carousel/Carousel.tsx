@@ -1,4 +1,4 @@
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import ArrowRightSLineIcon from "remixicon-react/ArrowRightSLineIcon";
 import ArrowLeftSLineIcon from "remixicon-react/ArrowLeftSLineIcon";
 import { PropsWithChildren, useLayoutEffect, useRef, useState } from "react";

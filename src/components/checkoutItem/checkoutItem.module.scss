@@ -51,12 +51,12 @@
 }
 
 .img {
-  width: 70px;
-  height: 70px;
   border-radius: 6px;
   object-fit: cover;
   object-position: center;
   background-color: $background-color-medium-dark;
+  width: 70%;
+  height: 100%;
 
   @include mobile {
     width: 100%;

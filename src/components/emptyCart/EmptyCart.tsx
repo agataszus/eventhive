@@ -1,5 +1,5 @@
 import ShoppingCart2LineIcon from "remixicon-react/ShoppingCart2LineIcon";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import { Button } from "../button/Button";
 import { useNavigate } from "react-router-dom";
 import { getDashboardHomePath } from "../routes/paths";
@@ -13,7 +13,7 @@ export const EmptyCart = () => {
   return (
     <div className={styles.emptyCartContainer}>
       <ShoppingCart2LineIcon className={styles.emptyCartIcon} />
-      <Text tag="p" variant="action-5" className={styles.emptyCartText}>
+      <Text tag="p" variant="action-3" className={styles.emptyCartText}>
         Your cart is empty
       </Text>
       <Text tag="p" variant="caption-2" className={styles.emptyCartSubtitle}>

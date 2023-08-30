@@ -1,7 +1,7 @@
 import { useTicketQuery } from "../../queries/useTicketQuery";
 import { QRCodeSVG } from "qrcode.react";
 import { Loader } from "../loader/Loader";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import {
   DESKTOP_SMALL,
   MOBILE,

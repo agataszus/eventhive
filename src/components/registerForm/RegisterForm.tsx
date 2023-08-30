@@ -4,7 +4,7 @@ import { RegisterDto } from "../../services/api/api-types.gen";
 import { useAuthToken } from "../../services/authTokenStore/useAuthToken";
 import { Button } from "../button/Button";
 import { Input } from "../input/Input";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import styles from "./registerForm.module.scss";
 import { useNavigate } from "react-router-dom";
 import { RegisteredUserDto } from "../../services/api/auth/types";

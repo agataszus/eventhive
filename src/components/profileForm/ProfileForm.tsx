@@ -7,7 +7,7 @@ import { useUserProfile } from "../../services/userProfileStore/useUserProfile";
 import { Button } from "../button/Button";
 import { Input } from "../input/Input";
 import { SelectOptionRegion } from "../selectOptionRegion/SelectRegion";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import styles from "./profileForm.module.scss";
 import { useAccountQuery } from "../../queries/useAccountQuery";
 import { useState } from "react";

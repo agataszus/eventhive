@@ -2,7 +2,7 @@ import Gravatar from "react-gravatar";
 import { useAccountQuery } from "../../queries/useAccountQuery";
 import { Loader } from "../loader/Loader";
 import styles from "./personalInformation.module.scss";
-import { Text } from "../text/text";
+import { Text } from "../text/Text";
 import { MOBILE, useMediaQueries } from "../../hooks/useMediaQueries";
 
 export const PersonalInformation = () => {
