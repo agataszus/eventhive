@@ -14,7 +14,7 @@ https://github.com/agataszus/eventhive/assets/122212953/f69dea15-21fa-4e67-8514-
 
 ### Installation
 
-Use [npm](https://www.npmjs.com/) package menager to install this app.
+Use [npm](https://www.npmjs.com/) package manager to install this app.
 
 ```
 $ git clone https://github.com/agataszus/eventhive.git
@@ -24,7 +24,7 @@ $ npm install
 
 ### Usage
 
-To run application use 
+To run the application use 
 
 ```
 $ npm start
